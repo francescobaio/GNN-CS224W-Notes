@@ -3,16 +3,16 @@ project:
 
 website:
   title: "GNN CS224W Notes"
-  site-url: "https://francescobaio.github.io/GNN-CS224W-Notes/"
   navbar:
     right:
       - text: "GitHub"
         href: "https://github.com/francescobaio/GNN-CS224W-Notes"
 
-output-dir: docs
+output-dir: _site
 
 format:
   html:
     theme: cosmo
     # toc: true
     # css: ["styles.css"]
+
