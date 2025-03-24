@@ -1,0 +1,29 @@
+---
+title: "Course Overview"
+description: "Personal notes on the Stanford Graph Neural Networks (GNN) Course."
+---
+
+Welcome to my **personal notes** on the Stanford Graph Neural Networks (GNN) Course.  
+These notes capture my own takeaways, clarifications and code examples from each lecture. Since there are many lessons, I keep their detailed list in a separate note. 
+
+***
+## Key Sections
+
+- [Lessons_index](Lessons_index.html) – Complete list of all lessons, each with summaries and links.
+- [Glossary](Glossary.html)  – Definitions of common GNN terms and acronyms.
+- [References](References.html) – Links to papers, official resources and anything useful.
+- `Code_Examples/` – Folder containing practical notebooks for hands-on GNN experiments.
+
+***
+## How to Use These Notes
+
+- **Personal Perspective**: These are my own summaries of what I’ve learned; they may not be exhaustive.  
+- **Full Lesson List**: If you want a detailed breakdown of each lecture, check out [Lessons_index](Lessons_index.html). 
+- **Hands-On Practice**: You can explore the `Code_Examples` folder for GNN implementations and experiments. (coming soon...)
+
+***
+
+## Contributing
+
+If you see something off or have a better explanation, feel free to open a pull request or suggest edits. <br>
+Thanks for reading, let’s dive into GNNs together.  :)

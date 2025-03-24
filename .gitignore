@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+.obsidian/workspace.json
+.obsidian/plugins/
+.obsidian/snippets/
+.obsidian/themes/
+*.bak
+*.tmp
+
+/.quarto/
+_site/
+

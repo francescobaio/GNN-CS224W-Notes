@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "GNN CS224W Notes"
+  navbar:
+    right:
+      - text: "GitHub"
+        href: "https://github.com/francescobaio/GNN-CS224W-Notes"
+
+output-dir: docs
+
+# format:
+#   html:
+#     toc: true
+#     css: ["styles.css"]  
+
+format:
+  html:
+    theme: cosmo
