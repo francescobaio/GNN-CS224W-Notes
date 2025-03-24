@@ -9,16 +9,16 @@ These notes capture my own takeaways, clarifications and code examples from each
 ***
 ## Key Sections
 
-- [Lessons_index](Lessons_index.html) – Complete list of all lessons, each with summaries and links.
-- [Glossary](Glossary.html)  – Definitions of common GNN terms and acronyms.
-- [References](References.html) – Links to papers, official resources and anything useful.
+- [Lessons_index](/GNN-CS224W-Notes/Lessons_index.html) – Complete list of all lessons, each with summaries and links.
+- [Glossary](/GNN-CS224W-Notes/Glossary.html)  – Definitions of common GNN terms and acronyms.
+- [References](/GNN-CS224W-Notes/References.html) – Links to papers, official resources and anything useful.
 - `Code_Examples/` – Folder containing practical notebooks for hands-on GNN experiments.
 
 ***
 ## How to Use These Notes
 
 - **Personal Perspective**: These are my own summaries of what I’ve learned; they may not be exhaustive.  
-- **Full Lesson List**: If you want a detailed breakdown of each lecture, check out [Lessons_index](Lessons_index.html). 
+- **Full Lesson List**: If you want a detailed breakdown of each lecture, check out [Lessons_index](/GNN-CS224W-Notes/Lessons_index.html). 
 - **Hands-On Practice**: You can explore the `Code_Examples` folder for GNN implementations and experiments. (coming soon...)
 
 ***
