@@ -1,159 +1,5 @@
 [
   {
-    "objectID": "GNN-CS224W-Notes/Course_Overview.html",
-    "href": "GNN-CS224W-Notes/Course_Overview.html",
-    "title": "Course Overview",
-    "section": "",
-    "text": "Welcome to my personal notes on the Stanford Graph Neural Networks (GNN) Course.\nThese notes capture my own takeaways, clarifications and code examples from each lecture. Since there are many lessons, I keep their detailed list in a separate note."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Course_Overview.html#key-sections",
-    "href": "GNN-CS224W-Notes/Course_Overview.html#key-sections",
-    "title": "Course Overview",
-    "section": "Key Sections",
-    "text": "Key Sections\n\nLessons_index – Complete list of all lessons, each with summaries and links.\nGlossary – Definitions of common GNN terms and acronyms.\nReferences – Links to papers, official resources and anything useful.\nCode_Examples/ – Folder containing practical notebooks for hands-on GNN experiments."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Course_Overview.html#how-to-use-these-notes",
-    "href": "GNN-CS224W-Notes/Course_Overview.html#how-to-use-these-notes",
-    "title": "Course Overview",
-    "section": "How to Use These Notes",
-    "text": "How to Use These Notes\n\nPersonal Perspective: These are my own summaries of what I’ve learned; they may not be exhaustive.\n\nFull Lesson List: If you want a detailed breakdown of each lecture, check out Lessons_index.\nHands-On Practice: You can explore the Code_Examples folder for GNN implementations and experiments. (coming soon…)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Course_Overview.html#contributing",
-    "href": "GNN-CS224W-Notes/Course_Overview.html#contributing",
-    "title": "Course Overview",
-    "section": "Contributing",
-    "text": "Contributing\nIf you see something off or have a better explanation, feel free to open a pull request or suggest edits.  Thanks for reading, let’s dive into GNNs together. :)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html",
-    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html",
-    "title": "Introduction to Graph Neural Networks",
-    "section": "",
-    "text": "Video: Lecture 1 – Introduction to GNNs\nOfficial Course Slides: Stanford CS224W\n\n\n\n\nWhy Graphs Matter\n\nMany real-world systems (social networks, molecules, knowledge graphs, etc.) can be modeled as graphs.\nA graph perspective captures the relationships between entities (nodes) through interactions (edges).\n\nTraditional ML vs. Graph ML\n\nTraditional ML often relies on manual feature engineering, treating each sample independently.\nIn Graph ML, the model automatically extracts structural information through representation learning.\n\nHigh-Level Overview of GNNs\n\nGNNs learn node representations by iteratively aggregating and transforming features from neighboring nodes.\nMessage Passing: Nodes receive “messages” from adjacent nodes to update their embeddings.\nMapping Nodes to Embeddings: Each node is assigned a d-dimensional vector (in ℝ^d) so that similar nodes (in terms of structure and attributes) are embedded close together.\n\nUnique Challenges in Graph Data\n\nNo strict spatial locality: Unlike images, graphs don’t have a regular grid structure.\nNo universal reference point: There’s no fixed origin to anchor node positions.\nNo fixed ordering: Nodes are not arranged in a specific order (e.g., left-to-right, top-to-bottom).\n\nCore GNN Tasks\n\nNode-level: Predict labels or properties for individual nodes (e.g., node classification).\nLink-level: Predict the existence or strength of an edge (e.g., friend recommendations).\nGraph-level: Classify or regress properties for entire graphs (e.g., molecule toxicity).\n\nApplications\n\nSocial Networks: Friend recommendations, community detection.\nRecommendation Systems: Product or content suggestions based on user–item interactions.\nSoccer Analytics: GNNs can model complex interactions in sports (e.g., player positions and passing patterns); see Tactics AI for an example. (My work on this coming soon…)\n\n\n\n\n\n\n\nUnified Perspective:\nGNNs bring together various graph-related tasks—node classification, link prediction, and more—under a single framework.\nComplexity of Graph Data:\nGraphs are inherently sparse and irregular, making the design and training of models more challenging compared to regular data formats like images or text.\nRepresentation Learning Advantage:\nWith GNNs, there’s no need for extensive manual feature engineering; the model learns effective embeddings automatically through message passing.\nExcitement About Sports Analytics:\nThe potential to analyze passing networks and player positions using GNNs could revolutionize team tactics and coaching strategies.\n\n\n\n\n\n\n“Graphs are a universal language to describe relationships.”\n(Paraphrased from the lecture)\n\nThis highlights the versatility and broad applicability of graphs across different domains.\n\n\n\n\n\nLesson 1.2:\nIn the next lesson, we’ll explore in depth the Graph ML applications examining node, edge, subgraph and graph-level tasks and their real-world impacts.\nFurther Reading:\nRefer to the Glossary for definitions and the References for foundational papers.\n\n\nEnd of Lesson 01 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#key-topics",
-    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#key-topics",
-    "title": "Introduction to Graph Neural Networks",
-    "section": "",
-    "text": "Why Graphs Matter\n\nMany real-world systems (social networks, molecules, knowledge graphs, etc.) can be modeled as graphs.\nA graph perspective captures the relationships between entities (nodes) through interactions (edges).\n\nTraditional ML vs. Graph ML\n\nTraditional ML often relies on manual feature engineering, treating each sample independently.\nIn Graph ML, the model automatically extracts structural information through representation learning.\n\nHigh-Level Overview of GNNs\n\nGNNs learn node representations by iteratively aggregating and transforming features from neighboring nodes.\nMessage Passing: Nodes receive “messages” from adjacent nodes to update their embeddings.\nMapping Nodes to Embeddings: Each node is assigned a d-dimensional vector (in ℝ^d) so that similar nodes (in terms of structure and attributes) are embedded close together.\n\nUnique Challenges in Graph Data\n\nNo strict spatial locality: Unlike images, graphs don’t have a regular grid structure.\nNo universal reference point: There’s no fixed origin to anchor node positions.\nNo fixed ordering: Nodes are not arranged in a specific order (e.g., left-to-right, top-to-bottom).\n\nCore GNN Tasks\n\nNode-level: Predict labels or properties for individual nodes (e.g., node classification).\nLink-level: Predict the existence or strength of an edge (e.g., friend recommendations).\nGraph-level: Classify or regress properties for entire graphs (e.g., molecule toxicity).\n\nApplications\n\nSocial Networks: Friend recommendations, community detection.\nRecommendation Systems: Product or content suggestions based on user–item interactions.\nSoccer Analytics: GNNs can model complex interactions in sports (e.g., player positions and passing patterns); see Tactics AI for an example. (My work on this coming soon…)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#my-personal-takeaways",
-    "title": "Introduction to Graph Neural Networks",
-    "section": "",
-    "text": "Unified Perspective:\nGNNs bring together various graph-related tasks—node classification, link prediction, and more—under a single framework.\nComplexity of Graph Data:\nGraphs are inherently sparse and irregular, making the design and training of models more challenging compared to regular data formats like images or text.\nRepresentation Learning Advantage:\nWith GNNs, there’s no need for extensive manual feature engineering; the model learns effective embeddings automatically through message passing.\nExcitement About Sports Analytics:\nThe potential to analyze passing networks and player positions using GNNs could revolutionize team tactics and coaching strategies."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#quotes-or-interesting-points",
-    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#quotes-or-interesting-points",
-    "title": "Introduction to Graph Neural Networks",
-    "section": "",
-    "text": "“Graphs are a universal language to describe relationships.”\n(Paraphrased from the lecture)\n\nThis highlights the versatility and broad applicability of graphs across different domains."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#next-steps",
-    "title": "Introduction to Graph Neural Networks",
-    "section": "",
-    "text": "Lesson 1.2:\nIn the next lesson, we’ll explore in depth the Graph ML applications examining node, edge, subgraph and graph-level tasks and their real-world impacts.\nFurther Reading:\nRefer to the Glossary for definitions and the References for foundational papers.\n\n\nEnd of Lesson 01 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html",
-    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "Video: Lecture 1.3 – Choice of Graph Representation\nOfficial Course Slides: Stanford CS224W\n\n\n\n\nBuilding a Graph:\n\nDeciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.\n\nGraph Types:\n\nUndirected vs. Directed:\n\nRefer to the Glossary for definitions on node degree and other related terms.\n\nBipartite Graphs:\n\nGraphs that consist of two distinct sets of nodes with edges only between sets.\n\n\nGraph Representations:\n\nAdjacency Matrix:\n\nA common method to represent graphs.\nThese matrices are typically sparse (e.g., in human social networks or email graphs).\n\nAdjacency List:\n\nOften more efficient and easier to use for sparse graphs.\n\n\nNodes and Edges Properties:\n\nBoth nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.\n\nMultigraphs:\n\nGraphs that allow more than one edge between the same pair of nodes.\n\nConnectivity Concepts:\n- General Connectivity:\n- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - Directed Graph Connectivity:\n- Strong Connectivity: A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\n- Weak Connectivity: A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.\n\nStrongly Connected Components:\n\nThese are maximal subgraphs in which every node is reachable from every other node via directed paths.\n\n\n\n\n\n\n\n\nChoosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.\nDeciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.\nFamiliarity with different representations (adjacency matrices vs. lists) and connectivity concepts is key to harnessing the full power of Graph ML.\n\n\n\n\n\n\n“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”\n(Paraphrased from the lecture)\n\n\n\n\n\n\nNext lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#key-topics",
-    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#key-topics",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "Building a Graph:\n\nDeciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.\n\nGraph Types:\n\nUndirected vs. Directed:\n\nRefer to the Glossary for definitions on node degree and other related terms.\n\nBipartite Graphs:\n\nGraphs that consist of two distinct sets of nodes with edges only between sets.\n\n\nGraph Representations:\n\nAdjacency Matrix:\n\nA common method to represent graphs.\nThese matrices are typically sparse (e.g., in human social networks or email graphs).\n\nAdjacency List:\n\nOften more efficient and easier to use for sparse graphs.\n\n\nNodes and Edges Properties:\n\nBoth nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.\n\nMultigraphs:\n\nGraphs that allow more than one edge between the same pair of nodes.\n\nConnectivity Concepts:\n- General Connectivity:\n- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - Directed Graph Connectivity:\n- Strong Connectivity: A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\n- Weak Connectivity: A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.\n\nStrongly Connected Components:\n\nThese are maximal subgraphs in which every node is reachable from every other node via directed paths."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#my-personal-takeaways",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "Choosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.\nDeciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.\nFamiliarity with different representations (adjacency matrices vs. lists) and connectivity concepts is key to harnessing the full power of Graph ML."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#quotes-or-interesting-points",
-    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#quotes-or-interesting-points",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”\n(Paraphrased from the lecture)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#next-steps",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "Next lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html",
-    "href": "GNN-CS224W-Notes/Lessons_index.html",
-    "title": "GNN CS224W Notes",
-    "section": "",
-    "text": "Below is a high-level index for all 60+ lessons in the Stanford GNN Course.\nFeel free to update these groupings if you prefer a different organization."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
-    "href": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
-    "title": "GNN CS224W Notes",
-    "section": "Module 1: Introduction & Basics",
-    "text": "Module 1: Introduction & Basics\n\n1.1_Why_Graphs\n1.2_Applications & Tasks in Graph ML\n1.3_Choice of Graph Representation"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
-    "href": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
-    "title": "GNN CS224W Notes",
-    "section": "Module 2: Core GNN Architectures",
-    "text": "Module 2: Core GNN Architectures"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html",
-    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "Video: Lecture 1.2 – Applications of Graph ML\nOfficial Course Slides: Stanford CS224W\n\n\n\n\n\n\nProtein Structure & AlphaFold:\n\nModeling the three-dimensional organization of proteins as graphs.\nSpatial Graph Idea:\n\nNodes: Represent amino acids.\n\nEdges: Connect amino acids based on proximity.\n\nUnderpins methods like AlphaFold.\n\n\n\n\n\n\nEdge Prediction & Recommender Systems:\n\nPredicting the existence or strength of edges between nodes.\nLearning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.\n\nBipartite Graphs in Image Analysis:\n\nCombining image features with graph structure can outperform using image data alone.\n\nPredicting Drug-Protein Impact:\n\nAnalyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.\n\n\n\n\n\n\nTraffic Prediction:\n\nUsing subgraph-level ML tasks to forecast traffic patterns.\nDeployed in production systems like Google Maps. ### Graph-Level Tasks\n\nDrug Discovery & Molecule Generation:\n\nApplying graph-level ML for drug discovery, including deep learning for antibiotic discovery.\nGraph Generation:\n\nGenerating molecules in a targeted way for novel drug design.\n\n\n\n\n\n\n\n\n\nTask Diversity:\nGraph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.\nRepresentation Learning is Central:\nLearning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.\nReal-World Impact:\nApplications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations.\n\n\n\n\n\n\n“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”\n(Paraphrased from the lecture)\n\n\n\n\n\n\nLecture 1.3:\nNext lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.\nFurther Reading:\nReview the notes from Lecture 1.2 and consult the Glossary for key terms related to graph representation.\n\n\nEnd of Lecture 1.2 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#key-topics",
-    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#key-topics",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "Protein Structure & AlphaFold:\n\nModeling the three-dimensional organization of proteins as graphs.\nSpatial Graph Idea:\n\nNodes: Represent amino acids.\n\nEdges: Connect amino acids based on proximity.\n\nUnderpins methods like AlphaFold.\n\n\n\n\n\n\nEdge Prediction & Recommender Systems:\n\nPredicting the existence or strength of edges between nodes.\nLearning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.\n\nBipartite Graphs in Image Analysis:\n\nCombining image features with graph structure can outperform using image data alone.\n\nPredicting Drug-Protein Impact:\n\nAnalyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.\n\n\n\n\n\n\nTraffic Prediction:\n\nUsing subgraph-level ML tasks to forecast traffic patterns.\nDeployed in production systems like Google Maps. ### Graph-Level Tasks\n\nDrug Discovery & Molecule Generation:\n\nApplying graph-level ML for drug discovery, including deep learning for antibiotic discovery.\nGraph Generation:\n\nGenerating molecules in a targeted way for novel drug design."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#my-personal-takeaways",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "Task Diversity:\nGraph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.\nRepresentation Learning is Central:\nLearning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.\nReal-World Impact:\nApplications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#quotes-or-interesting-points",
-    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#quotes-or-interesting-points",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”\n(Paraphrased from the lecture)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#next-steps",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "Lecture 1.3:\nNext lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.\nFurther Reading:\nReview the notes from Lecture 1.2 and consult the Glossary for key terms related to graph representation.\n\n\nEnd of Lecture 1.2 Notes"
-  },
-  {
     "objectID": "GNN-CS224W-Notes/Glossary.html",
     "href": "GNN-CS224W-Notes/Glossary.html",
     "title": "GNN CS224W Notes",
@@ -222,5 +68,159 @@
     "title": "GNN CS224W Notes",
     "section": "S",
     "text": "S\n\nSpatial Graph:\nA graph in which nodes have a physical or geometric interpretation, such as representing amino acids in a protein where edges are defined based on spatial proximity.\nStrong Connectivity:\nIn a directed graph, the condition where for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\nStrongly Connected Components:\nMaximal subgraphs of a directed graph in which every node is reachable from every other node via directed paths.\nWeak Connectivity:\nIn a directed graph, the graph is weakly connected if replacing all directed edges with undirected edges results in a connected graph."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html",
+    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "Video: Lecture 1.2 – Applications of Graph ML\nOfficial Course Slides: Stanford CS224W\n\n\n\n\n\n\nProtein Structure & AlphaFold:\n\nModeling the three-dimensional organization of proteins as graphs.\nSpatial Graph Idea:\n\nNodes: Represent amino acids.\n\nEdges: Connect amino acids based on proximity.\n\nUnderpins methods like AlphaFold.\n\n\n\n\n\n\nEdge Prediction & Recommender Systems:\n\nPredicting the existence or strength of edges between nodes.\nLearning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.\n\nBipartite Graphs in Image Analysis:\n\nCombining image features with graph structure can outperform using image data alone.\n\nPredicting Drug-Protein Impact:\n\nAnalyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.\n\n\n\n\n\n\nTraffic Prediction:\n\nUsing subgraph-level ML tasks to forecast traffic patterns.\nDeployed in production systems like Google Maps. ### Graph-Level Tasks\n\nDrug Discovery & Molecule Generation:\n\nApplying graph-level ML for drug discovery, including deep learning for antibiotic discovery.\nGraph Generation:\n\nGenerating molecules in a targeted way for novel drug design.\n\n\n\n\n\n\n\n\n\nTask Diversity:\nGraph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.\nRepresentation Learning is Central:\nLearning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.\nReal-World Impact:\nApplications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations.\n\n\n\n\n\n\n“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”\n(Paraphrased from the lecture)\n\n\n\n\n\n\nLecture 1.3:\nNext lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.\nFurther Reading:\nReview the notes from Lecture 1.2 and consult the Glossary for key terms related to graph representation.\n\n\nEnd of Lecture 1.2 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#key-topics",
+    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#key-topics",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "Protein Structure & AlphaFold:\n\nModeling the three-dimensional organization of proteins as graphs.\nSpatial Graph Idea:\n\nNodes: Represent amino acids.\n\nEdges: Connect amino acids based on proximity.\n\nUnderpins methods like AlphaFold.\n\n\n\n\n\n\nEdge Prediction & Recommender Systems:\n\nPredicting the existence or strength of edges between nodes.\nLearning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.\n\nBipartite Graphs in Image Analysis:\n\nCombining image features with graph structure can outperform using image data alone.\n\nPredicting Drug-Protein Impact:\n\nAnalyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.\n\n\n\n\n\n\nTraffic Prediction:\n\nUsing subgraph-level ML tasks to forecast traffic patterns.\nDeployed in production systems like Google Maps. ### Graph-Level Tasks\n\nDrug Discovery & Molecule Generation:\n\nApplying graph-level ML for drug discovery, including deep learning for antibiotic discovery.\nGraph Generation:\n\nGenerating molecules in a targeted way for novel drug design."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#my-personal-takeaways",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "Task Diversity:\nGraph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.\nRepresentation Learning is Central:\nLearning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.\nReal-World Impact:\nApplications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#quotes-or-interesting-points",
+    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#quotes-or-interesting-points",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”\n(Paraphrased from the lecture)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/1.2 Applications & Tasks in Graph ML.html#next-steps",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "Lecture 1.3:\nNext lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.\nFurther Reading:\nReview the notes from Lecture 1.2 and consult the Glossary for key terms related to graph representation.\n\n\nEnd of Lecture 1.2 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html",
+    "href": "GNN-CS224W-Notes/Lessons_index.html",
+    "title": "GNN CS224W Notes",
+    "section": "",
+    "text": "Below is a high-level index for all 60+ lessons in the Stanford GNN Course.\nFeel free to update these groupings if you prefer a different organization."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
+    "href": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
+    "title": "GNN CS224W Notes",
+    "section": "Module 1: Introduction & Basics",
+    "text": "Module 1: Introduction & Basics\n\n1.1_Why_Graphs\n1.2_Applications & Tasks in Graph ML\n1.3_Choice of Graph Representation"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
+    "href": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
+    "title": "GNN CS224W Notes",
+    "section": "Module 2: Core GNN Architectures",
+    "text": "Module 2: Core GNN Architectures"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Course Overview",
+    "section": "",
+    "text": "Welcome to my personal notes on the Stanford Graph Neural Networks (GNN) Course.\nThese notes capture my own takeaways, clarifications and code examples from each lecture. Since there are many lessons, I keep their detailed list in a separate note."
+  },
+  {
+    "objectID": "index.html#key-sections",
+    "href": "index.html#key-sections",
+    "title": "Course Overview",
+    "section": "Key Sections",
+    "text": "Key Sections\n\nLessons_index – Complete list of all lessons, each with summaries and links.\nGlossary – Definitions of common GNN terms and acronyms.\nReferences – Links to papers, official resources and anything useful.\nCode_Examples/ – Folder containing practical notebooks for hands-on GNN experiments."
+  },
+  {
+    "objectID": "index.html#how-to-use-these-notes",
+    "href": "index.html#how-to-use-these-notes",
+    "title": "Course Overview",
+    "section": "How to Use These Notes",
+    "text": "How to Use These Notes\n\nPersonal Perspective: These are my own summaries of what I’ve learned; they may not be exhaustive.\n\nFull Lesson List: If you want a detailed breakdown of each lecture, check out Lessons_index.\nHands-On Practice: You can explore the Code_Examples folder for GNN implementations and experiments. (coming soon…)"
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Course Overview",
+    "section": "Contributing",
+    "text": "Contributing\nIf you see something off or have a better explanation, feel free to open a pull request or suggest edits.  Thanks for reading, let’s dive into GNNs together. :)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html",
+    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "Video: Lecture 1.3 – Choice of Graph Representation\nOfficial Course Slides: Stanford CS224W\n\n\n\n\nBuilding a Graph:\n\nDeciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.\n\nGraph Types:\n\nUndirected vs. Directed:\n\nRefer to the Glossary for definitions on node degree and other related terms.\n\nBipartite Graphs:\n\nGraphs that consist of two distinct sets of nodes with edges only between sets.\n\n\nGraph Representations:\n\nAdjacency Matrix:\n\nA common method to represent graphs.\nThese matrices are typically sparse (e.g., in human social networks or email graphs).\n\nAdjacency List:\n\nOften more efficient and easier to use for sparse graphs.\n\n\nNodes and Edges Properties:\n\nBoth nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.\n\nMultigraphs:\n\nGraphs that allow more than one edge between the same pair of nodes.\n\nConnectivity Concepts:\n- General Connectivity:\n- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - Directed Graph Connectivity:\n- Strong Connectivity: A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\n- Weak Connectivity: A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.\n\nStrongly Connected Components:\n\nThese are maximal subgraphs in which every node is reachable from every other node via directed paths.\n\n\n\n\n\n\n\n\nChoosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.\nDeciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.\nFamiliarity with different representations (adjacency matrices vs. lists) and connectivity concepts is key to harnessing the full power of Graph ML.\n\n\n\n\n\n\n“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”\n(Paraphrased from the lecture)\n\n\n\n\n\n\nNext lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#key-topics",
+    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#key-topics",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "Building a Graph:\n\nDeciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.\n\nGraph Types:\n\nUndirected vs. Directed:\n\nRefer to the Glossary for definitions on node degree and other related terms.\n\nBipartite Graphs:\n\nGraphs that consist of two distinct sets of nodes with edges only between sets.\n\n\nGraph Representations:\n\nAdjacency Matrix:\n\nA common method to represent graphs.\nThese matrices are typically sparse (e.g., in human social networks or email graphs).\n\nAdjacency List:\n\nOften more efficient and easier to use for sparse graphs.\n\n\nNodes and Edges Properties:\n\nBoth nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.\n\nMultigraphs:\n\nGraphs that allow more than one edge between the same pair of nodes.\n\nConnectivity Concepts:\n- General Connectivity:\n- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - Directed Graph Connectivity:\n- Strong Connectivity: A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\n- Weak Connectivity: A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.\n\nStrongly Connected Components:\n\nThese are maximal subgraphs in which every node is reachable from every other node via directed paths."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#my-personal-takeaways",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "Choosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.\nDeciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.\nFamiliarity with different representations (adjacency matrices vs. lists) and connectivity concepts is key to harnessing the full power of Graph ML."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#quotes-or-interesting-points",
+    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#quotes-or-interesting-points",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”\n(Paraphrased from the lecture)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html#next-steps",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "Next lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html",
+    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html",
+    "title": "Introduction to Graph Neural Networks",
+    "section": "",
+    "text": "Video: Lecture 1 – Introduction to GNNs\nOfficial Course Slides: Stanford CS224W\n\n\n\n\nWhy Graphs Matter\n\nMany real-world systems (social networks, molecules, knowledge graphs, etc.) can be modeled as graphs.\nA graph perspective captures the relationships between entities (nodes) through interactions (edges).\n\nTraditional ML vs. Graph ML\n\nTraditional ML often relies on manual feature engineering, treating each sample independently.\nIn Graph ML, the model automatically extracts structural information through representation learning.\n\nHigh-Level Overview of GNNs\n\nGNNs learn node representations by iteratively aggregating and transforming features from neighboring nodes.\nMessage Passing: Nodes receive “messages” from adjacent nodes to update their embeddings.\nMapping Nodes to Embeddings: Each node is assigned a d-dimensional vector (in ℝ^d) so that similar nodes (in terms of structure and attributes) are embedded close together.\n\nUnique Challenges in Graph Data\n\nNo strict spatial locality: Unlike images, graphs don’t have a regular grid structure.\nNo universal reference point: There’s no fixed origin to anchor node positions.\nNo fixed ordering: Nodes are not arranged in a specific order (e.g., left-to-right, top-to-bottom).\n\nCore GNN Tasks\n\nNode-level: Predict labels or properties for individual nodes (e.g., node classification).\nLink-level: Predict the existence or strength of an edge (e.g., friend recommendations).\nGraph-level: Classify or regress properties for entire graphs (e.g., molecule toxicity).\n\nApplications\n\nSocial Networks: Friend recommendations, community detection.\nRecommendation Systems: Product or content suggestions based on user–item interactions.\nSoccer Analytics: GNNs can model complex interactions in sports (e.g., player positions and passing patterns); see Tactics AI for an example. (My work on this coming soon…)\n\n\n\n\n\n\n\nUnified Perspective:\nGNNs bring together various graph-related tasks—node classification, link prediction, and more—under a single framework.\nComplexity of Graph Data:\nGraphs are inherently sparse and irregular, making the design and training of models more challenging compared to regular data formats like images or text.\nRepresentation Learning Advantage:\nWith GNNs, there’s no need for extensive manual feature engineering; the model learns effective embeddings automatically through message passing.\nExcitement About Sports Analytics:\nThe potential to analyze passing networks and player positions using GNNs could revolutionize team tactics and coaching strategies.\n\n\n\n\n\n\n“Graphs are a universal language to describe relationships.”\n(Paraphrased from the lecture)\n\nThis highlights the versatility and broad applicability of graphs across different domains.\n\n\n\n\n\nLesson 1.2:\nIn the next lesson, we’ll explore in depth the Graph ML applications examining node, edge, subgraph and graph-level tasks and their real-world impacts.\nFurther Reading:\nRefer to the Glossary for definitions and the References for foundational papers.\n\n\nEnd of Lesson 01 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#key-topics",
+    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#key-topics",
+    "title": "Introduction to Graph Neural Networks",
+    "section": "",
+    "text": "Why Graphs Matter\n\nMany real-world systems (social networks, molecules, knowledge graphs, etc.) can be modeled as graphs.\nA graph perspective captures the relationships between entities (nodes) through interactions (edges).\n\nTraditional ML vs. Graph ML\n\nTraditional ML often relies on manual feature engineering, treating each sample independently.\nIn Graph ML, the model automatically extracts structural information through representation learning.\n\nHigh-Level Overview of GNNs\n\nGNNs learn node representations by iteratively aggregating and transforming features from neighboring nodes.\nMessage Passing: Nodes receive “messages” from adjacent nodes to update their embeddings.\nMapping Nodes to Embeddings: Each node is assigned a d-dimensional vector (in ℝ^d) so that similar nodes (in terms of structure and attributes) are embedded close together.\n\nUnique Challenges in Graph Data\n\nNo strict spatial locality: Unlike images, graphs don’t have a regular grid structure.\nNo universal reference point: There’s no fixed origin to anchor node positions.\nNo fixed ordering: Nodes are not arranged in a specific order (e.g., left-to-right, top-to-bottom).\n\nCore GNN Tasks\n\nNode-level: Predict labels or properties for individual nodes (e.g., node classification).\nLink-level: Predict the existence or strength of an edge (e.g., friend recommendations).\nGraph-level: Classify or regress properties for entire graphs (e.g., molecule toxicity).\n\nApplications\n\nSocial Networks: Friend recommendations, community detection.\nRecommendation Systems: Product or content suggestions based on user–item interactions.\nSoccer Analytics: GNNs can model complex interactions in sports (e.g., player positions and passing patterns); see Tactics AI for an example. (My work on this coming soon…)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#my-personal-takeaways",
+    "title": "Introduction to Graph Neural Networks",
+    "section": "",
+    "text": "Unified Perspective:\nGNNs bring together various graph-related tasks—node classification, link prediction, and more—under a single framework.\nComplexity of Graph Data:\nGraphs are inherently sparse and irregular, making the design and training of models more challenging compared to regular data formats like images or text.\nRepresentation Learning Advantage:\nWith GNNs, there’s no need for extensive manual feature engineering; the model learns effective embeddings automatically through message passing.\nExcitement About Sports Analytics:\nThe potential to analyze passing networks and player positions using GNNs could revolutionize team tactics and coaching strategies."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#quotes-or-interesting-points",
+    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#quotes-or-interesting-points",
+    "title": "Introduction to Graph Neural Networks",
+    "section": "",
+    "text": "“Graphs are a universal language to describe relationships.”\n(Paraphrased from the lecture)\n\nThis highlights the versatility and broad applicability of graphs across different domains."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html#next-steps",
+    "title": "Introduction to Graph Neural Networks",
+    "section": "",
+    "text": "Lesson 1.2:\nIn the next lesson, we’ll explore in depth the Graph ML applications examining node, edge, subgraph and graph-level tasks and their real-world impacts.\nFurther Reading:\nRefer to the Glossary for definitions and the References for foundational papers.\n\n\nEnd of Lesson 01 Notes"
   }
 ]
