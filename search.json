@@ -189,6 +189,41 @@
     "text": "Module 2: Core GNN Architectures"
   },
   {
+    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html",
+    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "",
+    "text": "Video: Lecture 2.1 – Traditional Feature-based Methods: Node\nOfficial Course Slides: Stanford CS224W Slides\n\n\n\n\nTraditional Feature Engineering in Graphs\n\nManual extraction of node attributes using domain expertise.\nLeveraging statistical techniques and signal processing to derive informative features.\n\nAdvantages and Limitations\n\nAdvantages:\n\nSimpler models and higher interpretability.\nEffective when high-quality, domain-specific features are available.\n\nLimitations:\n\nHeavy reliance on manual feature design, which can miss subtle patterns.\nOften less adaptable and scalable compared to end-to-end learning approaches like GNNs.\n\n\nCommon Techniques\n\nApplication of traditional classifiers (e.g., logistic regression, SVM, decision trees) on engineered features.\nFeature selection and dimensionality reduction methods (e.g., PCA) per node.\n\nContrast with Graph Neural Networks (GNNs)\n\nTraditional methods use static, handcrafted features, whereas GNNs learn representations automatically through message passing.\nThis difference lays the groundwork for understanding the improvements brought by GNNs.\n\nPractical Considerations\n\nSuccess is highly contingent on the quality and relevance of the input features.\nOften used as a baseline to benchmark more advanced, learned representations.\n\n\n\n\n\n\n\nInterpretability vs. Complexity:\nTraditional methods offer clarity and are easier to interpret, but they can be limited when handling complex, relational data.\nQuality of Features is Crucial:\nThe overall performance depends on how well the handcrafted features capture the intrinsic properties of the data.\nBaseline for Further Innovation:\nThese methods provide an important baseline, highlighting the benefits of moving toward automated, representation learning techniques (e.g., GNNs).\nUsefulness in Specific Scenarios:\nThey can be particularly effective in environments with limited data or when model interpretability is essential.\n\n\n\n\n\n\n“Handcrafted features offer transparency, but they might restrict the model’s ability to capture the rich, underlying structure of graph data.”\n\nThis quote underscores the trade-off between interpretability and the expressive power of learned representations.\n\n\n\n\n\nLecture 2.2:\nIn the next lecture, the focus will shift to GNN-based approaches for node representation learning.\nFurther Reading:\nConsult foundational papers on feature-based node classification and comparative studies between traditional methods and GNNs for deeper insights.\n\n\nEnd of Lecture 2.1 Notes\nTraditional Feature-based Methods: Node"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#key-topics",
+    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#key-topics",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "",
+    "text": "Traditional Feature Engineering in Graphs\n\nManual extraction of node attributes using domain expertise.\nLeveraging statistical techniques and signal processing to derive informative features.\n\nAdvantages and Limitations\n\nAdvantages:\n\nSimpler models and higher interpretability.\nEffective when high-quality, domain-specific features are available.\n\nLimitations:\n\nHeavy reliance on manual feature design, which can miss subtle patterns.\nOften less adaptable and scalable compared to end-to-end learning approaches like GNNs.\n\n\nCommon Techniques\n\nApplication of traditional classifiers (e.g., logistic regression, SVM, decision trees) on engineered features.\nFeature selection and dimensionality reduction methods (e.g., PCA) per node.\n\nContrast with Graph Neural Networks (GNNs)\n\nTraditional methods use static, handcrafted features, whereas GNNs learn representations automatically through message passing.\nThis difference lays the groundwork for understanding the improvements brought by GNNs.\n\nPractical Considerations\n\nSuccess is highly contingent on the quality and relevance of the input features.\nOften used as a baseline to benchmark more advanced, learned representations."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "",
+    "text": "Interpretability vs. Complexity:\nTraditional methods offer clarity and are easier to interpret, but they can be limited when handling complex, relational data.\nQuality of Features is Crucial:\nThe overall performance depends on how well the handcrafted features capture the intrinsic properties of the data.\nBaseline for Further Innovation:\nThese methods provide an important baseline, highlighting the benefits of moving toward automated, representation learning techniques (e.g., GNNs).\nUsefulness in Specific Scenarios:\nThey can be particularly effective in environments with limited data or when model interpretability is essential."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#quotes-or-interesting-points",
+    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#quotes-or-interesting-points",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "",
+    "text": "“Handcrafted features offer transparency, but they might restrict the model’s ability to capture the rich, underlying structure of graph data.”\n\nThis quote underscores the trade-off between interpretability and the expressive power of learned representations."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#next-steps",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "",
+    "text": "Lecture 2.2:\nIn the next lecture, the focus will shift to GNN-based approaches for node representation learning.\nFurther Reading:\nConsult foundational papers on feature-based node classification and comparative studies between traditional methods and GNNs for deeper insights.\n\n\nEnd of Lecture 2.1 Notes\nTraditional Feature-based Methods: Node"
+  },
+  {
     "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html",
     "href": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html",
     "title": "Introduction to Graph Neural Networks",

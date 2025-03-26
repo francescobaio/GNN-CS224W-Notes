@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Notes on traditional feature-based methods for node-level tasks in graph ML from Stanford CS224W (2021).">
 
-<title>untitled – GNN CS224W Notes</title>
+<title>Lecture 2.1: Traditional Feature-based Methods: Node – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,13 +105,123 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 2.1: Traditional Feature-based Methods: Node</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">CS224W</div>
+    <div class="quarto-category">Graph ML</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Notes on traditional feature-based methods for node-level tasks in graph ML from Stanford CS224W (2021).
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<section id="traditional-feature-based-methods-node" class="level1">
+<h1>Traditional Feature-based Methods: Node</h1>
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=3IS7UhNMQ3U&amp;list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn&amp;index=4">Lecture 2.1 – Traditional Feature-based Methods: Node</a><br>
+<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf">Stanford CS224W Slides</a></p>
+<hr>
+<section id="key-topics" class="level2">
+<h2 class="anchored" data-anchor-id="key-topics">Key Topics</h2>
+<ul>
+<li><strong>Traditional Feature Engineering in Graphs</strong>
+<ul>
+<li>Manual extraction of node attributes using domain expertise.</li>
+<li>Leveraging statistical techniques and signal processing to derive informative features.</li>
+</ul></li>
+<li><strong>Advantages and Limitations</strong>
+<ul>
+<li><strong>Advantages:</strong>
+<ul>
+<li>Simpler models and higher interpretability.</li>
+<li>Effective when high-quality, domain-specific features are available.</li>
+</ul></li>
+<li><strong>Limitations:</strong>
+<ul>
+<li>Heavy reliance on manual feature design, which can miss subtle patterns.</li>
+<li>Often less adaptable and scalable compared to end-to-end learning approaches like GNNs.</li>
+</ul></li>
+</ul></li>
+<li><strong>Common Techniques</strong>
+<ul>
+<li>Application of traditional classifiers (e.g., logistic regression, SVM, decision trees) on engineered features.</li>
+<li>Feature selection and dimensionality reduction methods (e.g., PCA) per node.</li>
+</ul></li>
+<li><strong>Contrast with Graph Neural Networks (GNNs)</strong>
+<ul>
+<li>Traditional methods use static, handcrafted features, whereas GNNs learn representations automatically through message passing.</li>
+<li>This difference lays the groundwork for understanding the improvements brought by GNNs.</li>
+</ul></li>
+<li><strong>Practical Considerations</strong>
+<ul>
+<li>Success is highly contingent on the quality and relevance of the input features.</li>
+<li>Often used as a baseline to benchmark more advanced, learned representations.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="my-personal-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
+<ol type="1">
+<li><strong>Interpretability vs.&nbsp;Complexity:</strong><br>
+Traditional methods offer clarity and are easier to interpret, but they can be limited when handling complex, relational data.</li>
+<li><strong>Quality of Features is Crucial:</strong><br>
+The overall performance depends on how well the handcrafted features capture the intrinsic properties of the data.</li>
+<li><strong>Baseline for Further Innovation:</strong><br>
+These methods provide an important baseline, highlighting the benefits of moving toward automated, representation learning techniques (e.g., GNNs).</li>
+<li><strong>Usefulness in Specific Scenarios:</strong><br>
+They can be particularly effective in environments with limited data or when model interpretability is essential.</li>
+</ol>
+<hr>
+</section>
+<section id="quotes-or-interesting-points" class="level2">
+<h2 class="anchored" data-anchor-id="quotes-or-interesting-points">Quotes or Interesting Points</h2>
+<blockquote class="blockquote">
+<p><em>“Handcrafted features offer transparency, but they might restrict the model’s ability to capture the rich, underlying structure of graph data.”</em></p>
+</blockquote>
+<p>This quote underscores the trade-off between interpretability and the expressive power of learned representations.</p>
+<hr>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<ul>
+<li><strong>Lecture 2.2:</strong><br>
+In the next lecture, the focus will shift to GNN-based approaches for node representation learning.</li>
+<li><strong>Further Reading:</strong><br>
+Consult foundational papers on feature-based node classification and comparative studies between traditional methods and GNNs for deeper insights.</li>
+</ul>
+<hr>
+<p><strong>End of Lecture 2.1 Notes</strong></p>
+<p>Traditional Feature-based Methods: Node</p>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
