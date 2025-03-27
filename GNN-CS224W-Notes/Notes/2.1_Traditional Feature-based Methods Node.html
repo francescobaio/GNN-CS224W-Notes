@@ -141,83 +141,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<hr>
 <section id="traditional-feature-based-methods-node" class="level1">
 <h1>Traditional Feature-based Methods: Node</h1>
 <p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=3IS7UhNMQ3U&amp;list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn&amp;index=4">Lecture 2.1 – Traditional Feature-based Methods: Node</a><br>
-<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf">Stanford CS224W Slides</a></p>
+<strong>Official Course Slides:</strong> [https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf)</p>
 <hr>
-<section id="key-topics" class="level2">
-<h2 class="anchored" data-anchor-id="key-topics">Key Topics</h2>
+<section id="discussion-of-key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
+<p>This lecture explores traditional, handcrafted approaches to assess node importance within a graph. It covers:</p>
 <ul>
-<li><strong>Traditional Feature Engineering in Graphs</strong>
+<li><p><strong>Node Degree:</strong><br>
+The simplest metric that counts the number of edges incident to a node. It provides a basic measure of connectivity and hints at a node’s potential influence.</p></li>
+<li><p><strong>Centrality Measures:</strong><br>
+These go beyond simple connectivity to evaluate the role of a node within the overall structure of the network.</p>
 <ul>
-<li>Manual extraction of node attributes using domain expertise.</li>
-<li>Leveraging statistical techniques and signal processing to derive informative features.</li>
+<li><p><strong>Eigenvector Centrality:</strong><br>
+Measures a node’s influence by considering the importance of its neighbors. It is computed from the leading eigenvector of the graph’s adjacency matrix (associated with the largest eigenvalue).</p></li>
+<li><p><strong>Betweenness Centrality:</strong><br>
+Quantifies how frequently a node lies on the shortest paths between other nodes, indicating its role as a bridge or bottleneck within the network.</p></li>
+<li><p><strong>Closeness Centrality:</strong><br>
+Assesses how close a node is to all other nodes based on the average shortest path lengths, showing how quickly information can spread from that node.</p></li>
+<li><p><strong>Clustering Centrality:</strong><br>
+Reflects the degree to which a node’s neighbors are interconnected, offering insights into the local density and community structure.</p></li>
 </ul></li>
-<li><strong>Advantages and Limitations</strong>
-<ul>
-<li><strong>Advantages:</strong>
-<ul>
-<li>Simpler models and higher interpretability.</li>
-<li>Effective when high-quality, domain-specific features are available.</li>
-</ul></li>
-<li><strong>Limitations:</strong>
-<ul>
-<li>Heavy reliance on manual feature design, which can miss subtle patterns.</li>
-<li>Often less adaptable and scalable compared to end-to-end learning approaches like GNNs.</li>
-</ul></li>
-</ul></li>
-<li><strong>Common Techniques</strong>
-<ul>
-<li>Application of traditional classifiers (e.g., logistic regression, SVM, decision trees) on engineered features.</li>
-<li>Feature selection and dimensionality reduction methods (e.g., PCA) per node.</li>
-</ul></li>
-<li><strong>Contrast with Graph Neural Networks (GNNs)</strong>
-<ul>
-<li>Traditional methods use static, handcrafted features, whereas GNNs learn representations automatically through message passing.</li>
-<li>This difference lays the groundwork for understanding the improvements brought by GNNs.</li>
-</ul></li>
-<li><strong>Practical Considerations</strong>
-<ul>
-<li>Success is highly contingent on the quality and relevance of the input features.</li>
-<li>Often used as a baseline to benchmark more advanced, learned representations.</li>
-</ul></li>
+<li><p><strong>Graphlets:</strong><br>
+These are small, connected subgraphs that capture recurring local patterns in the network. Graphlets serve as additional features to describe the local topology around each node, complementing the traditional centrality metrics.</p></li>
 </ul>
+<p>By combining these techniques, one can obtain a robust and multi-faceted understanding of node importance, which not only aids in interpreting graph structure but also sets the stage for advanced approaches like Graph Neural Networks.</p>
 <hr>
 </section>
 <section id="my-personal-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
 <ol type="1">
-<li><strong>Interpretability vs.&nbsp;Complexity:</strong><br>
-Traditional methods offer clarity and are easier to interpret, but they can be limited when handling complex, relational data.</li>
-<li><strong>Quality of Features is Crucial:</strong><br>
-The overall performance depends on how well the handcrafted features capture the intrinsic properties of the data.</li>
-<li><strong>Baseline for Further Innovation:</strong><br>
-These methods provide an important baseline, highlighting the benefits of moving toward automated, representation learning techniques (e.g., GNNs).</li>
-<li><strong>Usefulness in Specific Scenarios:</strong><br>
-They can be particularly effective in environments with limited data or when model interpretability is essential.</li>
+<li><p><strong>Baseline Interpretability:</strong><br>
+Traditional metrics such as node degree and centrality measures are straightforward and provide an intuitive starting point for assessing node importance.</p></li>
+<li><p><strong>Importance of Feature Normalization:</strong><br>
+A critical point from the slides is the need to normalize centrality measures. Normalization ensures that values are comparable across nodes and minimizes the impact of outliers.</p></li>
+<li><p><strong>Simplicity vs.&nbsp;Complexity Trade-off:</strong><br>
+While handcrafted features are transparent and easy to compute, they may fail to capture complex interactions in the data, highlighting the limitations that motivate the shift toward learning-based methods like GNNs.</p></li>
+<li><p><strong>Complementary Insights:</strong><br>
+No single metric tells the whole story—combining multiple centrality measures with graphlet features leads to a more comprehensive view of node importance.</p></li>
+<li><p><strong>Scalability and Robustness:</strong><br>
+An additional important insight from the slides is the challenge of scaling these methods to large graphs and ensuring robustness to noise, issues that further justify the move to automated representation learning with GNNs.</p></li>
 </ol>
-<hr>
-</section>
-<section id="quotes-or-interesting-points" class="level2">
-<h2 class="anchored" data-anchor-id="quotes-or-interesting-points">Quotes or Interesting Points</h2>
-<blockquote class="blockquote">
-<p><em>“Handcrafted features offer transparency, but they might restrict the model’s ability to capture the rich, underlying structure of graph data.”</em></p>
-</blockquote>
-<p>This quote underscores the trade-off between interpretability and the expressive power of learned representations.</p>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
 <li><strong>Lecture 2.2:</strong><br>
-In the next lecture, the focus will shift to GNN-based approaches for node representation learning.</li>
+The next lecture will focus on GNN-based approaches for node representation learning, addressing the limitations of traditional feature-based methods.</li>
 <li><strong>Further Reading:</strong><br>
-Consult foundational papers on feature-based node classification and comparative studies between traditional methods and GNNs for deeper insights.</li>
+Explore foundational papers on centrality measures and graphlet analysis for a deeper understanding of these traditional techniques.</li>
 </ul>
 <hr>
 <p><strong>End of Lecture 2.1 Notes</strong></p>
-<p>Traditional Feature-based Methods: Node</p>
 
 
 </section>
