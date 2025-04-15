@@ -133,76 +133,6 @@
     "text": "Further Reading:\nExplore research on the Katz Index, matrix power methods, and their closed-form solutions to understand the theoretical foundations behind these techniques.\nPractical Applications:\nConsider how these traditional metrics can serve as baseline features when designing and benchmarking modern link prediction algorithms.\n\n\nEnd of Lecture 2.2 Notes"
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#discussion-of-key-concepts",
-    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
-    "section": "Discussion of Key Concepts",
-    "text": "Discussion of Key Concepts\nThis lecture explores traditional, handcrafted approaches to assess node importance within a graph. It covers:\n\nNode Degree:\nThe simplest metric that counts the number of edges incident to a node. It provides a basic measure of connectivity and hints at a node’s potential influence.\nCentrality Measures:\nThese go beyond simple connectivity to evaluate the role of a node within the overall structure of the network.\n\nEigenvector Centrality:\nMeasures a node’s influence by considering the importance of its neighbors. It is computed from the leading eigenvector of the graph’s adjacency matrix (associated with the largest eigenvalue).\nBetweenness Centrality:\nQuantifies how frequently a node lies on the shortest paths between other nodes, indicating its role as a bridge or bottleneck within the network.\nCloseness Centrality:\nAssesses how close a node is to all other nodes based on the average shortest path lengths, showing how quickly information can spread from that node.\nClustering Centrality:\nReflects the degree to which a node’s neighbors are interconnected, offering insights into the local density and community structure.\n\nGraphlets:\nThese are small, connected subgraphs that capture recurring local patterns in the network. Graphlets serve as additional features to describe the local topology around each node, complementing the traditional centrality metrics.\n\nBy combining these techniques, one can obtain a robust and multi-faceted understanding of node importance, which not only aids in interpreting graph structure but also sets the stage for advanced approaches like Graph Neural Networks."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
-    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
-    "section": "My Personal Takeaways",
-    "text": "My Personal Takeaways\n\nBaseline Interpretability:\nTraditional metrics such as node degree and centrality measures are straightforward and provide an intuitive starting point for assessing node importance.\nImportance of Feature Normalization:\nA critical point from the slides is the need to normalize centrality measures. Normalization ensures that values are comparable across nodes and minimizes the impact of outliers.\nSimplicity vs. Complexity Trade-off:\nWhile handcrafted features are transparent and easy to compute, they may fail to capture complex interactions in the data, highlighting the limitations that motivate the shift toward learning-based methods like GNNs.\nComplementary Insights:\nNo single metric tells the whole story—combining multiple centrality measures with graphlet features leads to a more comprehensive view of node importance.\nScalability and Robustness:\nAn additional important insight from the slides is the challenge of scaling these methods to large graphs and ensuring robustness to noise, issues that further justify the move to automated representation learning with GNNs."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#next-steps",
-    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
-    "section": "Next Steps",
-    "text": "Next Steps\n\nLecture 2.2:\nThe next lecture will focus on GNN-based approaches for node representation learning, addressing the limitations of traditional feature-based methods.\nFurther Reading:\nExplore foundational papers on centrality measures and graphlet analysis for a deeper understanding of these traditional techniques.\n\n\nEnd of Lecture 2.1 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html",
-    "href": "GNN-CS224W-Notes/Lessons_index.html",
-    "title": "GNN CS224W Notes",
-    "section": "",
-    "text": "Below is a high-level index for all 60+ lessons in the Stanford GNN Course.\nFeel free to update these groupings if you prefer a different organization."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
-    "href": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
-    "title": "GNN CS224W Notes",
-    "section": "Module 1: Introduction & Basics",
-    "text": "Module 1: Introduction & Basics\n\n1.1_Why_Graphs\n1.2_Applications & Tasks in Graph ML\n1.3_Choice of Graph Representation"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
-    "href": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
-    "title": "GNN CS224W Notes",
-    "section": "Module 2: Core GNN Architectures",
-    "text": "Module 2: Core GNN Architectures"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Course Overview",
-    "section": "",
-    "text": "Welcome to my personal notes on the Stanford Graph Neural Networks (GNN) Course.\nThese notes capture my own takeaways, clarifications and code examples from each lecture. Since there are many lessons, I keep their detailed list in a separate note."
-  },
-  {
-    "objectID": "index.html#key-sections",
-    "href": "index.html#key-sections",
-    "title": "Course Overview",
-    "section": "Key Sections",
-    "text": "Key Sections\n\nLessons_index – Complete list of all lessons, each with summaries and links.\nGlossary – Definitions of common GNN terms and acronyms.\nReferences – Links to papers, official resources and anything useful.\nCode_Examples/ – Folder containing practical notebooks for hands-on GNN experiments."
-  },
-  {
-    "objectID": "index.html#how-to-use-these-notes",
-    "href": "index.html#how-to-use-these-notes",
-    "title": "Course Overview",
-    "section": "How to Use These Notes",
-    "text": "How to Use These Notes\n\nPersonal Perspective: These are my own summaries of what I’ve learned; they may not be exhaustive.\n\nFull Lesson List: If you want a detailed breakdown of each lecture, check out Lessons_index.\nHands-On Practice: You can explore the Code_Examples folder for GNN implementations and experiments. (coming soon…)"
-  },
-  {
-    "objectID": "index.html#contributing",
-    "href": "index.html#contributing",
-    "title": "Course Overview",
-    "section": "Contributing",
-    "text": "Contributing\nIf you see something off or have a better explanation, feel free to open a pull request or suggest edits.  Thanks for reading, let’s dive into GNNs together. :)"
-  },
-  {
     "objectID": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html",
     "href": "GNN-CS224W-Notes/Notes/1.3_Choice of Graph Representation.html",
     "title": "Choice of Graph Representation",
@@ -238,6 +168,76 @@
     "text": "Next lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Course Overview",
+    "section": "",
+    "text": "Welcome to my personal notes on the Stanford Graph Neural Networks (GNN) Course.\nThese notes capture my own takeaways, clarifications and code examples from each lecture. Since there are many lessons, I keep their detailed list in a separate note."
+  },
+  {
+    "objectID": "index.html#key-sections",
+    "href": "index.html#key-sections",
+    "title": "Course Overview",
+    "section": "Key Sections",
+    "text": "Key Sections\n\nLessons_index – Complete list of all lessons, each with summaries and links.\nGlossary – Definitions of common GNN terms and acronyms.\nReferences – Links to papers, official resources and anything useful.\nCode_Examples/ – Folder containing practical notebooks for hands-on GNN experiments."
+  },
+  {
+    "objectID": "index.html#how-to-use-these-notes",
+    "href": "index.html#how-to-use-these-notes",
+    "title": "Course Overview",
+    "section": "How to Use These Notes",
+    "text": "How to Use These Notes\n\nPersonal Perspective: These are my own summaries of what I’ve learned; they may not be exhaustive.\n\nFull Lesson List: If you want a detailed breakdown of each lecture, check out Lessons_index.\nHands-On Practice: You can explore the Code_Examples folder for GNN implementations and experiments. (coming soon…)"
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Course Overview",
+    "section": "Contributing",
+    "text": "Contributing\nIf you see something off or have a better explanation, feel free to open a pull request or suggest edits.  Thanks for reading, let’s dive into GNNs together. :)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html",
+    "href": "GNN-CS224W-Notes/Lessons_index.html",
+    "title": "GNN CS224W Notes",
+    "section": "",
+    "text": "Below is a high-level index for all 60+ lessons in the Stanford GNN Course.\nFeel free to update these groupings if you prefer a different organization."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
+    "href": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
+    "title": "GNN CS224W Notes",
+    "section": "Module 1: Introduction & Basics",
+    "text": "Module 1: Introduction & Basics\n\n1.1_Why_Graphs\n1.2_Applications & Tasks in Graph ML\n1.3_Choice of Graph Representation"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
+    "href": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
+    "title": "GNN CS224W Notes",
+    "section": "Module 2: Core GNN Architectures",
+    "text": "Module 2: Core GNN Architectures"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#discussion-of-key-concepts",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "Discussion of Key Concepts",
+    "text": "Discussion of Key Concepts\nThis lecture explores traditional, handcrafted approaches to assess node importance within a graph. It covers:\n\nNode Degree:\nThe simplest metric that counts the number of edges incident to a node. It provides a basic measure of connectivity and hints at a node’s potential influence.\nCentrality Measures:\nThese go beyond simple connectivity to evaluate the role of a node within the overall structure of the network.\n\nEigenvector Centrality:\nMeasures a node’s influence by considering the importance of its neighbors. It is computed from the leading eigenvector of the graph’s adjacency matrix (associated with the largest eigenvalue).\nBetweenness Centrality:\nQuantifies how frequently a node lies on the shortest paths between other nodes, indicating its role as a bridge or bottleneck within the network.\nCloseness Centrality:\nAssesses how close a node is to all other nodes based on the average shortest path lengths, showing how quickly information can spread from that node.\nClustering Centrality:\nReflects the degree to which a node’s neighbors are interconnected, offering insights into the local density and community structure.\n\nGraphlets:\nThese are small, connected subgraphs that capture recurring local patterns in the network. Graphlets serve as additional features to describe the local topology around each node, complementing the traditional centrality metrics.\n\nBy combining these techniques, one can obtain a robust and multi-faceted understanding of node importance, which not only aids in interpreting graph structure but also sets the stage for advanced approaches like Graph Neural Networks."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "My Personal Takeaways",
+    "text": "My Personal Takeaways\n\nBaseline Interpretability:\nTraditional metrics such as node degree and centrality measures are straightforward and provide an intuitive starting point for assessing node importance.\nImportance of Feature Normalization:\nA critical point from the slides is the need to normalize centrality measures. Normalization ensures that values are comparable across nodes and minimizes the impact of outliers.\nSimplicity vs. Complexity Trade-off:\nWhile handcrafted features are transparent and easy to compute, they may fail to capture complex interactions in the data, highlighting the limitations that motivate the shift toward learning-based methods like GNNs.\nComplementary Insights:\nNo single metric tells the whole story—combining multiple centrality measures with graphlet features leads to a more comprehensive view of node importance.\nScalability and Robustness:\nAn additional important insight from the slides is the challenge of scaling these methods to large graphs and ensuring robustness to noise, issues that further justify the move to automated representation learning with GNNs."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/2.1_Traditional Feature-based Methods Node.html#next-steps",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nLecture 2.2:\nThe next lecture will focus on GNN-based approaches for node representation learning, addressing the limitations of traditional feature-based methods.\nFurther Reading:\nExplore foundational papers on centrality measures and graphlet analysis for a deeper understanding of these traditional techniques.\n\n\nEnd of Lecture 2.1 Notes"
+  },
+  {
     "objectID": "GNN-CS224W-Notes/Notes/2.3_Traditional Feature-based Methods_Graph.html",
     "href": "GNN-CS224W-Notes/Notes/2.3_Traditional Feature-based Methods_Graph.html",
     "title": "Traditional Feature-based Methods: Graph",
@@ -264,6 +264,34 @@
     "title": "Traditional Feature-based Methods: Graph",
     "section": "",
     "text": "Further Reading:\nReview foundational literature on graph kernels and the Weisfeiler-Lehman algorithm to deepen your understanding of how these methods extract and leverage graph structure.\nPractical Implementation:\nExperiment with implementing the WL kernel on sample graphs to observe how color refinement and feature aggregation work in practice.\n\n\nEnd of Lecture 2.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/3.1_Node Embeddings.html",
+    "href": "GNN-CS224W-Notes/Notes/3.1_Node Embeddings.html",
+    "title": "Node Embeddings",
+    "section": "",
+    "text": "Video: Lecture 3.1 – Node Embeddings\nOfficial Course Slides: Link to Slides\n\n\n\nThis lecture delves into the challenges of manual feature engineering for nodes and introduces representation learning as a solution to automatically learn these features. Key concepts include:\n\nChallenges of Manual Feature Engineering:\nFinding good features for nodes is difficult and often insufficient to capture the complex relationships in large graphs. This limitation sets the stage for representation learning.\nRepresentation Learning for Nodes:\nThe goal is to automatically learn node features such that nodes that are similar in the original graph are also similar in the embedding space.\n\nSimilarity in Embedding Space:\nSimilarity is typically defined using vector operations. The dot product or cosine similarity (the angle between two vectors) is used to quantify how close two node embeddings are. This means that if two nodes are close in the network, their respective vectors should have a high dot product (or a small angular difference), making them “similar” in the learned space.\n\nEncoder and Low-Dimensional Embeddings:\nThe lecture (especially slide 11, which is very important) introduces the concept of an encoder. The encoder maps nodes into low-dimensional vector representations. In its simplest form, this is just an embedding lookup in a large matrix (with one column per node).\n\nScalability Challenge: For very large graphs, the embedding matrix becomes huge (with a size of O(N×d), where N is the number of nodes and d is the embedding dimension).\n\nHow to Define Node Similarity:\nIn this context, node similarity in the embedding space is measured by comparing the vector representations:\n\nDot Product: A higher dot product indicates greater similarity.\nCosine Similarity: By normalizing the vectors, similarity can be captured via the cosine of the angle between them.\nThese measures ensure that nodes with similar connectivity patterns in the original graph are represented by vectors that are close together.\n\nEarly Methods and Future Directions:\nThe lecture briefly introduces early methods like DeepWalk and node2vec that laid the foundation for learning node embeddings.\n\n\n\n\n\n\nAutomating Feature Discovery:\nThe difficulty in manually crafting node features makes the case for representation learning compelling. By automatically learning embeddings, we can capture subtle, complex relationships in the graph without hand-engineering features.\nEfficiency and Scalability Challenges:\nAlthough a simple embedding lookup is conceptually elegant, scaling this approach to very large graphs introduces significant challenges. The O(N×d) storage requirement motivates the development of more efficient embedding techniques.\nTask Independence:\nOne of the most exciting aspects is that these node embeddings are task independent. This means they are not tailored for a specific downstream task, they provide a general-purpose representation of graph nodes that can be leveraged for various applications, such as node classification, link prediction, clustering, and beyond.\n\n\n\n\n\n\nDeep Dive into Advanced Methods:\nUpcoming lectures will explore methods such as DeepWalk, node2vec, and others that build on these foundations to offer more scalable and robust techniques for node embedding.\nFurther Reading:\nReview seminal papers on DeepWalk, node2vec, and other representation learning frameworks to deepen your understanding of the evolution and innovations in node embedding techniques.\n\n\nEnd of Lecture 3.1 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/3.1_Node Embeddings.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/3.1_Node Embeddings.html#discussion-of-key-concepts",
+    "title": "Node Embeddings",
+    "section": "",
+    "text": "This lecture delves into the challenges of manual feature engineering for nodes and introduces representation learning as a solution to automatically learn these features. Key concepts include:\n\nChallenges of Manual Feature Engineering:\nFinding good features for nodes is difficult and often insufficient to capture the complex relationships in large graphs. This limitation sets the stage for representation learning.\nRepresentation Learning for Nodes:\nThe goal is to automatically learn node features such that nodes that are similar in the original graph are also similar in the embedding space.\n\nSimilarity in Embedding Space:\nSimilarity is typically defined using vector operations. The dot product or cosine similarity (the angle between two vectors) is used to quantify how close two node embeddings are. This means that if two nodes are close in the network, their respective vectors should have a high dot product (or a small angular difference), making them “similar” in the learned space.\n\nEncoder and Low-Dimensional Embeddings:\nThe lecture (especially slide 11, which is very important) introduces the concept of an encoder. The encoder maps nodes into low-dimensional vector representations. In its simplest form, this is just an embedding lookup in a large matrix (with one column per node).\n\nScalability Challenge: For very large graphs, the embedding matrix becomes huge (with a size of O(N×d), where N is the number of nodes and d is the embedding dimension).\n\nHow to Define Node Similarity:\nIn this context, node similarity in the embedding space is measured by comparing the vector representations:\n\nDot Product: A higher dot product indicates greater similarity.\nCosine Similarity: By normalizing the vectors, similarity can be captured via the cosine of the angle between them.\nThese measures ensure that nodes with similar connectivity patterns in the original graph are represented by vectors that are close together.\n\nEarly Methods and Future Directions:\nThe lecture briefly introduces early methods like DeepWalk and node2vec that laid the foundation for learning node embeddings."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/3.1_Node Embeddings.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/3.1_Node Embeddings.html#my-personal-takeaways",
+    "title": "Node Embeddings",
+    "section": "",
+    "text": "Automating Feature Discovery:\nThe difficulty in manually crafting node features makes the case for representation learning compelling. By automatically learning embeddings, we can capture subtle, complex relationships in the graph without hand-engineering features.\nEfficiency and Scalability Challenges:\nAlthough a simple embedding lookup is conceptually elegant, scaling this approach to very large graphs introduces significant challenges. The O(N×d) storage requirement motivates the development of more efficient embedding techniques.\nTask Independence:\nOne of the most exciting aspects is that these node embeddings are task independent. This means they are not tailored for a specific downstream task, they provide a general-purpose representation of graph nodes that can be leveraged for various applications, such as node classification, link prediction, clustering, and beyond."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/3.1_Node Embeddings.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/3.1_Node Embeddings.html#next-steps",
+    "title": "Node Embeddings",
+    "section": "",
+    "text": "Deep Dive into Advanced Methods:\nUpcoming lectures will explore methods such as DeepWalk, node2vec, and others that build on these foundations to offer more scalable and robust techniques for node embedding.\nFurther Reading:\nReview seminal papers on DeepWalk, node2vec, and other representation learning frameworks to deepen your understanding of the evolution and innovations in node embedding techniques.\n\n\nEnd of Lecture 3.1 Notes"
   },
   {
     "objectID": "GNN-CS224W-Notes/Notes/1.1_Why_Graphs.html",

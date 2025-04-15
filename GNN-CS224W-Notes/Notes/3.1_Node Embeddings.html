@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lecture-3.1---node-embeddings – GNN CS224W Notes</title>
+<title>node-embeddings – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,8 +109,66 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="node-embeddings" class="level1">
+<h1>Node Embeddings</h1>
+<p><strong>Video:</strong> <a href="#">Lecture 3.1 – Node Embeddings</a><br>
+<strong>Official Course Slides:</strong> <a href="#">Link to Slides</a></p>
+<hr>
+<section id="discussion-of-key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
+<p>This lecture delves into the challenges of manual feature engineering for nodes and introduces representation learning as a solution to automatically learn these features. Key concepts include:</p>
+<ul>
+<li><p><strong>Challenges of Manual Feature Engineering:</strong><br>
+Finding good features for nodes is difficult and often insufficient to capture the complex relationships in large graphs. This limitation sets the stage for <strong>representation learning</strong>.</p></li>
+<li><p><strong>Representation Learning for Nodes:</strong><br>
+The goal is to automatically learn node features such that nodes that are similar in the original graph are also similar in the embedding space.</p>
+<ul>
+<li><strong>Similarity in Embedding Space:</strong><br>
+Similarity is typically defined using vector operations. The dot product or cosine similarity (the angle between two vectors) is used to quantify how close two node embeddings are. This means that if two nodes are close in the network, their respective vectors should have a high dot product (or a small angular difference), making them “similar” in the learned space.</li>
+</ul></li>
+<li><p><strong>Encoder and Low-Dimensional Embeddings:</strong><br>
+The lecture (especially slide 11, which is very important) introduces the concept of an encoder. The <strong>encoder</strong> maps nodes into low-dimensional vector representations. In its simplest form, this is just an <strong>embedding lookup</strong> in a large matrix (with one column per node).</p>
+<ul>
+<li><strong>Scalability Challenge:</strong> For very large graphs, the embedding matrix becomes huge (with a size of O(N×d), where N is the number of nodes and d is the embedding dimension).</li>
+</ul></li>
+<li><p><strong>How to Define Node Similarity:</strong><br>
+In this context, node similarity in the embedding space is measured by comparing the vector representations:</p>
+<ul>
+<li><p><strong>Dot Product:</strong> A higher dot product indicates greater similarity.</p></li>
+<li><p><strong>Cosine Similarity:</strong> By normalizing the vectors, similarity can be captured via the cosine of the angle between them.<br>
+These measures ensure that nodes with similar connectivity patterns in the original graph are represented by vectors that are close together.</p></li>
+</ul></li>
+<li><p><strong>Early Methods and Future Directions:</strong><br>
+The lecture briefly introduces early methods like DeepWalk and node2vec that laid the foundation for learning node embeddings.</p></li>
+</ul>
+<hr>
+</section>
+<section id="my-personal-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
+<ol type="1">
+<li><p><strong>Automating Feature Discovery:</strong><br>
+The difficulty in manually crafting node features makes the case for representation learning compelling. By automatically learning embeddings, we can capture subtle, complex relationships in the graph without hand-engineering features.</p></li>
+<li><p><strong>Efficiency and Scalability Challenges:</strong><br>
+Although a simple embedding lookup is conceptually elegant, scaling this approach to very large graphs introduces significant challenges. The O(N×d) storage requirement motivates the development of more efficient embedding techniques.</p></li>
+<li><p><strong>Task Independence:</strong><br>
+One of the most exciting aspects is that these node embeddings are <strong>task independent</strong>. This means they are not tailored for a specific downstream task, they provide a <strong>general-purpose representation</strong> of graph nodes that can be leveraged for various applications, such as node classification, link prediction, clustering, and beyond.</p></li>
+</ol>
+<hr>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<ul>
+<li><p><strong>Deep Dive into Advanced Methods:</strong><br>
+Upcoming lectures will explore methods such as DeepWalk, node2vec, and others that build on these foundations to offer more scalable and robust techniques for node embedding.</p></li>
+<li><p><strong>Further Reading:</strong><br>
+Review seminal papers on DeepWalk, node2vec, and other representation learning frameworks to deepen your understanding of the evolution and innovations in node embedding techniques.</p></li>
+</ul>
+<hr>
+<p><strong>End of Lecture 3.1 Notes</strong></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
