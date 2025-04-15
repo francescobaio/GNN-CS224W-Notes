@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>traditional-feature-based-methods_graph – GNN CS224W Notes</title>
+<title>why_graphs – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">GNN CS224W Notes</span>
     </a>
   </div>
@@ -109,34 +109,47 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="traditional-feature-based-methods-graph" class="level1">
-<h1>Traditional Feature-based Methods: Graph</h1>
-<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=LEcHd8NpvJU">Lecture 2.3 – Traditional Feature-based Methods: Graph</a><br>
-<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/03-graphkernels.pdf">Link to slides</a></p>
+<section id="introduction-to-graph-neural-networks" class="level1">
+<h1>Introduction to Graph Neural Networks</h1>
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=JAB_plj2rbA&amp;list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn&amp;index=1">Lecture 1 – Introduction to GNNs</a><br>
+<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/01-intro.pdf">Stanford CS224W</a></p>
 <hr>
-<section id="discussion-of-key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
-<p>This lecture focuses on traditional feature-based approaches for comparing whole graphs using graph kernels. It covers:</p>
+<section id="key-topics" class="level2">
+<h2 class="anchored" data-anchor-id="key-topics">Key Topics</h2>
 <ul>
-<li><p><strong>Graph Kernels Overview:</strong><br>
-Graph kernels provide a way to measure the similarity between graphs by comparing feature representations extracted from them. These features often come from counts of specific substructures or patterns.</p></li>
-<li><p><strong>Graphlets Kernel:</strong><br>
-Graphlets are small, connected subgraphs that capture local topology.</p>
+<li><strong>Why Graphs Matter</strong>
 <ul>
-<li><p><strong>Counting Challenge:</strong> Exact counts of graphlets are NP-hard to compute for large graphs, limiting the practical usability of graphlets-based kernels.</p></li>
-<li><p>Graphlets serve as a basis for feature vectors describing the graph but because counting them exactly is computationally prohibitive, alternative approaches are often preferred.</p></li>
+<li>Many real-world systems (social networks, molecules, knowledge graphs, etc.) can be modeled as graphs.</li>
+<li>A graph perspective captures the relationships between entities (nodes) through interactions (edges).</li>
 </ul></li>
-<li><p><strong>Weisfeiler-Lehman (WL) Graph Kernel:</strong><br>
-The lecture introduces the WL kernel as a more efficient alternative to traditional graphlet kernels.</p>
+<li><strong>Traditional ML vs.&nbsp;Graph ML</strong>
 <ul>
-<li><p><strong>Color Refinement:</strong><br>
-Every node starts with the same color. In successive iterations, each node aggregates the colors of its neighbors and applies a hash function to generate a new color. This process refines the node labels, capturing richer structural information.</p></li>
-<li><p><strong>Feature Description via Color Counts:</strong><br>
-After a series of iterations, the frequency of each color (how many nodes have a given label) forms a feature vector for the graph.</p></li>
-<li><p><strong>Kernel Computation:</strong><br>
-The similarity between two graphs is computed as the dot product of their color count feature vectors.</p></li>
-<li><p><strong>Efficiency:</strong><br>
-This method is efficient <strong>linear in the number of edges</strong>. The maximum number of distinct colors is bounded by the number of nodes, ensuring the overall approach scales linearly with the size of the graph.</p></li>
+<li>Traditional ML often relies on manual feature engineering, treating each sample independently.</li>
+<li>In Graph ML, the model automatically extracts structural information through <strong>representation learning</strong>.</li>
+</ul></li>
+<li><strong>High-Level Overview of GNNs</strong>
+<ul>
+<li>GNNs learn node representations by iteratively aggregating and transforming features from neighboring nodes.</li>
+<li><strong>Message Passing:</strong> Nodes receive “messages” from adjacent nodes to update their embeddings.</li>
+<li><strong>Mapping Nodes to Embeddings:</strong> Each node is assigned a d-dimensional vector (in ℝ^d) so that similar nodes (in terms of structure and attributes) are embedded close together.</li>
+</ul></li>
+<li><strong>Unique Challenges in Graph Data</strong>
+<ul>
+<li><strong>No strict spatial locality:</strong> Unlike images, graphs don’t have a regular grid structure.</li>
+<li><strong>No universal reference point:</strong> There’s no fixed origin to anchor node positions.</li>
+<li><strong>No fixed ordering:</strong> Nodes are not arranged in a specific order (e.g., left-to-right, top-to-bottom).</li>
+</ul></li>
+<li><strong>Core GNN Tasks</strong>
+<ul>
+<li><strong>Node-level:</strong> Predict labels or properties for individual nodes (e.g., node classification).</li>
+<li><strong>Link-level:</strong> Predict the existence or strength of an edge (e.g., friend recommendations).</li>
+<li><strong>Graph-level:</strong> Classify or regress properties for entire graphs (e.g., molecule toxicity).</li>
+</ul></li>
+<li><strong>Applications</strong>
+<ul>
+<li><strong>Social Networks:</strong> Friend recommendations, community detection.</li>
+<li><strong>Recommendation Systems:</strong> Product or content suggestions based on user–item interactions.</li>
+<li><strong>Soccer Analytics:</strong> GNNs can model complex interactions in sports (e.g., player positions and passing patterns); see <a href="https://deepmind.google/discover/blog/tacticai-ai-assistant-for-football-tactics/">Tactics AI</a> for an example. (My work on this coming soon…)</li>
 </ul></li>
 </ul>
 <hr>
@@ -144,23 +157,36 @@ This method is efficient <strong>linear in the number of edges</strong>. The max
 <section id="my-personal-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
 <ol type="1">
-<li><p><strong>Balancing Complexity:</strong><br>
-While traditional graphlet-based methods are conceptually appealing, their computational complexity makes them less practical for large graphs. The WL kernel offers a smart compromise, capturing essential structural information in a computationally efficient manner.</p></li>
-<li><p><strong>Foundation for Modern Methods:</strong><br>
-Understanding these traditional approaches is crucial, as they lay the groundwork for modern graph representation learning. Many advanced methods build on or draw inspiration from these foundational techniques.</p></li>
+<li><p><strong>Unified Perspective:</strong><br>
+GNNs bring together various graph-related tasks—node classification, link prediction, and more—under a single framework.</p></li>
+<li><p><strong>Complexity of Graph Data:</strong><br>
+Graphs are inherently sparse and irregular, making the design and training of models more challenging compared to regular data formats like images or text.</p></li>
+<li><p><strong>Representation Learning Advantage:</strong><br>
+With GNNs, there’s no need for extensive manual feature engineering; the model learns effective embeddings automatically through message passing.</p></li>
+<li><p><strong>Excitement About Sports Analytics:</strong><br>
+The potential to analyze passing networks and player positions using GNNs could revolutionize team tactics and coaching strategies.</p></li>
 </ol>
+<hr>
+</section>
+<section id="quotes-or-interesting-points" class="level2">
+<h2 class="anchored" data-anchor-id="quotes-or-interesting-points">Quotes or Interesting Points</h2>
+<blockquote class="blockquote">
+<p><em>“Graphs are a universal language to describe relationships.”</em><br>
+(Paraphrased from the lecture)</p>
+</blockquote>
+<p>This highlights the versatility and broad applicability of graphs across different domains.</p>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
+<li><p><strong>Lesson 1.2:</strong><br>
+In the next lesson, we’ll explore in depth the Graph ML applications examining node, edge, subgraph and graph-level tasks and their real-world impacts.</p></li>
 <li><p><strong>Further Reading:</strong><br>
-Review foundational literature on graph kernels and the Weisfeiler-Lehman algorithm to deepen your understanding of how these methods extract and leverage graph structure.</p></li>
-<li><p><strong>Practical Implementation:</strong><br>
-Experiment with implementing the WL kernel on sample graphs to observe how color refinement and feature aggregation work in practice.</p></li>
+Refer to the <a href="Glossary.html">Glossary</a> for definitions and the <a href="">References</a> for foundational papers.</p></li>
 </ul>
 <hr>
-<p><strong>End of Lecture 2.3 Notes</strong></p>
+<p><strong>End of Lesson 01 Notes</strong></p>
 
 
 </section>

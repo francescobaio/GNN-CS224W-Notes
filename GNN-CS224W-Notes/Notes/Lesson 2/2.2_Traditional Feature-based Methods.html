@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>choice-of-graph-representation – GNN CS224W Notes</title>
+<title>traditional-feature-based-methods – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">GNN CS224W Notes</span>
     </a>
   </div>
@@ -109,88 +109,53 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="choice-of-graph-representation" class="level1">
-<h1>Choice of Graph Representation</h1>
-<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=P-m1Qv6-8cI&amp;list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn&amp;index=3">Lecture 1.3 – Choice of Graph Representation</a><br>
-<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/01-intro.pdf">Stanford CS224W</a></p>
+<section id="traditional-feature-based-methods-link" class="level1">
+<h1>Traditional Feature-based Methods: Link</h1>
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=4dVwlE9jYxY&amp;list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn&amp;index=5">Lecture 2.2 - Traditional Feature-based Methods</a><br>
+<strong>Official Course Slides:</strong> [https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf)</p>
 <hr>
-<section id="key-topics" class="level2">
-<h2 class="anchored" data-anchor-id="key-topics">Key Topics</h2>
+<section id="discussion-of-key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
+<p>This lecture explores traditional, handcrafted approaches for link prediction, focusing on how to extract and utilize graph structural features to predict the presence of links between nodes. Key topics include:</p>
 <ul>
-<li><p><strong>Building a Graph:</strong></p>
+<li><p><strong>Link Prediction Overview:</strong><br>
+The task is formulated as a binary classification problem where, given a pair of nodes, the goal is to predict whether a link exists. Handcrafted features derived from the graph’s topology are used as predictors.</p></li>
+<li><p><strong>Local Similarity Metrics:</strong><br>
+Several metrics are introduced to assess the likelihood of a link:</p>
 <ul>
-<li>Deciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.</li>
+<li><p><strong>Common Neighbors:</strong> counts the number of shared neighbors between two nodes.</p></li>
+<li><p><strong>Jaccard Coefficient:</strong> ratio of common neighbors on the union of their neighbors.</p></li>
+<li><p><strong>Adamic/Adar Index:</strong> weighs shared neighbors inversely by their overall connectivity.</p></li>
 </ul></li>
-<li><p><strong>Graph Types:</strong></p>
-<ul>
-<li><strong>Undirected vs.&nbsp;Directed:</strong>
-<ul>
-<li>Refer to the <a href="Glossary.html">Glossary</a> for definitions on node degree and other related terms.</li>
-</ul></li>
-<li><strong>Bipartite Graphs:</strong>
-<ul>
-<li>Graphs that consist of two distinct sets of nodes with edges only between sets.</li>
-</ul></li>
-</ul></li>
-<li><p><strong>Graph Representations:</strong></p>
-<ul>
-<li><strong>Adjacency Matrix:</strong>
-<ul>
-<li>A common method to represent graphs.</li>
-<li>These matrices are typically sparse (e.g., in human social networks or email graphs).</li>
-</ul></li>
-<li><strong>Adjacency List:</strong>
-<ul>
-<li>Often more efficient and easier to use for sparse graphs.</li>
-</ul></li>
-</ul></li>
-<li><p><strong>Nodes and Edges Properties:</strong></p>
-<ul>
-<li>Both nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.</li>
-</ul></li>
-<li><p><strong>Multigraphs:</strong></p>
-<ul>
-<li>Graphs that allow more than one edge between the same pair of nodes.</li>
-</ul></li>
-<li><p><strong>Connectivity Concepts:</strong><br>
-- <strong>General Connectivity:</strong><br>
-- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - <strong>Directed Graph Connectivity:</strong><br>
-- <strong>Strong Connectivity:</strong> A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.<br>
-- <strong>Weak Connectivity:</strong> A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.</p>
-<ul>
-<li><strong>Strongly Connected Components:</strong>
-<ul>
-<li>These are maximal subgraphs in which every node is reachable from every other node via directed paths.</li>
-</ul></li>
-</ul></li>
+<li><p><strong>Katz Index:</strong><br>
+Moves beyond immediate neighborhoods by summing over the total number of paths between node pairs. A damping factor exponentially penalizes longer paths, thus incorporating both local and global network information.</p></li>
+<li><p><strong>Adjacency Matrix Powers:</strong><br>
+The lecture explains that the k-th power of the adjacency matrix reveals the number of distinct paths of length k between nodes. Under the proper conditions, the infinite series summing the weighted powers of the adjacency matrix can be expressed in a <strong>closed form</strong>. This provides an elegant mathematical formulation of link prediction that unifies local metrics (like common neighbors) with contributions from longer-range connections.</p></li>
 </ul>
 <hr>
 </section>
 <section id="my-personal-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
 <ol type="1">
-<li>Choosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.</li>
-<li>Deciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.</li>
-<li>Familiarity with different representations (adjacency matrices vs.&nbsp;lists) and connectivity concepts is key to harnessing the full power of Graph ML.</li>
+<li><p><strong>Capturing Global Structure:</strong><br>
+Techniques like the Katz Index and adjacency matrix powers allow for the consideration of paths of varying lengths, integrating both local and global information.</p></li>
+<li><p><strong>Mathematical Elegance:</strong><br>
+The closed-form expression derived from the weighted sum of adjacency matrix powers offers a powerful and compact way to summarize connectivity, even if it is often computationally intensive for large graphs.</p></li>
+<li><p><strong>Scalability Concerns:</strong><br>
+Traditional metrics can be computationally expensive on large graphs, emphasizing the importance of exploring scalable alternatives in modern graph learning.</p></li>
 </ol>
-<hr>
-</section>
-<section id="quotes-or-interesting-points" class="level2">
-<h2 class="anchored" data-anchor-id="quotes-or-interesting-points">Quotes or Interesting Points</h2>
-<blockquote class="blockquote">
-<p><em>“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”</em><br>
-(Paraphrased from the lecture)</p>
-</blockquote>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
-<li>Next lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.</li>
-<li>Refer to the <a href="Glossary.html">Glossary</a> for detailed definitions of key terms like node degree, connectivity, and graph types.</li>
+<li><p><strong>Further Reading:</strong><br>
+Explore research on the Katz Index, matrix power methods, and their closed-form solutions to understand the theoretical foundations behind these techniques.</p></li>
+<li><p><strong>Practical Applications:</strong><br>
+Consider how these traditional metrics can serve as baseline features when designing and benchmarking modern link prediction algorithms.</p></li>
 </ul>
 <hr>
-<p><strong>End of Lecture 1.3 Notes</strong></p>
+<p><strong>End of Lecture 2.2 Notes</strong></p>
 
 
 </section>

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Notes on traditional feature-based methods for node-level tasks in graph ML from Stanford CS224W (2021).">
 
-<title>Lecture 2.1: Traditional Feature-based Methods: Node – GNN CS224W Notes</title>
+<title>applications--tasks-in-graph-ml – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">GNN CS224W Notes</span>
     </a>
   </div>
@@ -105,98 +104,102 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Lecture 2.1: Traditional Feature-based Methods: Node</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">CS224W</div>
-    <div class="quarto-category">Graph ML</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    Notes on traditional feature-based methods for node-level tasks in graph ML from Stanford CS224W (2021).
-  </div>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
 
 
-</header>
-
-
+<section id="applications-tasks-in-graph-ml" class="level1">
+<h1>Applications &amp; Tasks in Graph ML</h1>
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=aBHC6xzx9YI&amp;list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn&amp;index=2">Lecture 1.2 – Applications of Graph ML</a><br>
+<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/01-intro.pdf">Stanford CS224W</a></p>
 <hr>
-<section id="traditional-feature-based-methods-node" class="level1">
-<h1>Traditional Feature-based Methods: Node</h1>
-<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=3IS7UhNMQ3U&amp;list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn&amp;index=4">Lecture 2.1 – Traditional Feature-based Methods: Node</a><br>
-<strong>Official Course Slides:</strong> [https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf)</p>
-<hr>
-<section id="discussion-of-key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
-<p>This lecture explores traditional, handcrafted approaches to assess node importance within a graph. It covers:</p>
+<section id="key-topics" class="level2">
+<h2 class="anchored" data-anchor-id="key-topics">Key Topics</h2>
+<section id="node-level-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="node-level-tasks">Node-Level Tasks</h3>
 <ul>
-<li><p><strong>Node Degree:</strong><br>
-The simplest metric that counts the number of edges incident to a node. It provides a basic measure of connectivity and hints at a node’s potential influence.</p></li>
-<li><p><strong>Centrality Measures:</strong><br>
-These go beyond simple connectivity to evaluate the role of a node within the overall structure of the network.</p>
+<li><strong>Protein Structure &amp; AlphaFold:</strong>
 <ul>
-<li><p><strong>Eigenvector Centrality:</strong><br>
-Measures a node’s influence by considering the importance of its neighbors. It is computed from the leading eigenvector of the graph’s adjacency matrix (associated with the largest eigenvalue).</p></li>
-<li><p><strong>Betweenness Centrality:</strong><br>
-Quantifies how frequently a node lies on the shortest paths between other nodes, indicating its role as a bridge or bottleneck within the network.</p></li>
-<li><p><strong>Closeness Centrality:</strong><br>
-Assesses how close a node is to all other nodes based on the average shortest path lengths, showing how quickly information can spread from that node.</p></li>
-<li><p><strong>Clustering Centrality:</strong><br>
-Reflects the degree to which a node’s neighbors are interconnected, offering insights into the local density and community structure.</p></li>
+<li>Modeling the three-dimensional organization of proteins as graphs.</li>
+<li><strong>Spatial Graph Idea:</strong>
+<ul>
+<li><strong>Nodes:</strong> Represent amino acids.<br>
+</li>
+<li><strong>Edges:</strong> Connect amino acids based on proximity.</li>
 </ul></li>
-<li><p><strong>Graphlets:</strong><br>
-These are small, connected subgraphs that capture recurring local patterns in the network. Graphlets serve as additional features to describe the local topology around each node, complementing the traditional centrality metrics.</p></li>
+<li>Underpins methods like AlphaFold.</li>
+</ul></li>
 </ul>
-<p>By combining these techniques, one can obtain a robust and multi-faceted understanding of node importance, which not only aids in interpreting graph structure but also sets the stage for advanced approaches like Graph Neural Networks.</p>
+</section>
+<section id="edge-level-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="edge-level-tasks">Edge-Level Tasks</h3>
+<ul>
+<li><strong>Edge Prediction &amp; Recommender Systems:</strong>
+<ul>
+<li>Predicting the existence or strength of edges between nodes.</li>
+<li>Learning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.</li>
+</ul></li>
+<li><strong>Bipartite Graphs in Image Analysis:</strong>
+<ul>
+<li>Combining image features with graph structure can outperform using image data alone.</li>
+</ul></li>
+<li><strong>Predicting Drug-Protein Impact:</strong>
+<ul>
+<li>Analyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.</li>
+</ul></li>
+</ul>
+</section>
+<section id="subgraph-level-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="subgraph-level-tasks">Subgraph-Level Tasks</h3>
+<ul>
+<li><strong>Traffic Prediction:</strong>
+<ul>
+<li>Using subgraph-level ML tasks to forecast traffic patterns.</li>
+<li>Deployed in production systems like Google Maps. ### Graph-Level Tasks</li>
+</ul></li>
+<li><strong>Drug Discovery &amp; Molecule Generation:</strong>
+<ul>
+<li>Applying graph-level ML for drug discovery, including deep learning for antibiotic discovery.</li>
+<li><strong>Graph Generation:</strong>
+<ul>
+<li>Generating molecules in a targeted way for novel drug design.</li>
+</ul></li>
+</ul></li>
+</ul>
 <hr>
+</section>
 </section>
 <section id="my-personal-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
 <ol type="1">
-<li><p><strong>Baseline Interpretability:</strong><br>
-Traditional metrics such as node degree and centrality measures are straightforward and provide an intuitive starting point for assessing node importance.</p></li>
-<li><p><strong>Importance of Feature Normalization:</strong><br>
-A critical point from the slides is the need to normalize centrality measures. Normalization ensures that values are comparable across nodes and minimizes the impact of outliers.</p></li>
-<li><p><strong>Simplicity vs.&nbsp;Complexity Trade-off:</strong><br>
-While handcrafted features are transparent and easy to compute, they may fail to capture complex interactions in the data, highlighting the limitations that motivate the shift toward learning-based methods like GNNs.</p></li>
-<li><p><strong>Complementary Insights:</strong><br>
-No single metric tells the whole story—combining multiple centrality measures with graphlet features leads to a more comprehensive view of node importance.</p></li>
-<li><p><strong>Scalability and Robustness:</strong><br>
-An additional important insight from the slides is the challenge of scaling these methods to large graphs and ensuring robustness to noise, issues that further justify the move to automated representation learning with GNNs.</p></li>
+<li><strong>Task Diversity:</strong><br>
+Graph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.</li>
+<li><strong>Representation Learning is Central:</strong><br>
+Learning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.</li>
+<li><strong>Real-World Impact:</strong><br>
+Applications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations.</li>
 </ol>
+<hr>
+</section>
+<section id="quotes-or-interesting-points" class="level2">
+<h2 class="anchored" data-anchor-id="quotes-or-interesting-points">Quotes or Interesting Points</h2>
+<blockquote class="blockquote">
+<p><em>“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”</em><br>
+(Paraphrased from the lecture)</p>
+</blockquote>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
-<li><strong>Lecture 2.2:</strong><br>
-The next lecture will focus on GNN-based approaches for node representation learning, addressing the limitations of traditional feature-based methods.</li>
-<li><strong>Further Reading:</strong><br>
-Explore foundational papers on centrality measures and graphlet analysis for a deeper understanding of these traditional techniques.</li>
+<li><p><strong>Lecture 1.3:</strong><br>
+Next lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.</p></li>
+<li><p><strong>Further Reading:</strong><br>
+Review the notes from Lecture 1.2 and consult the <a href="Glossary.html">Glossary</a> for key terms related to graph representation.</p></li>
 </ul>
 <hr>
-<p><strong>End of Lecture 2.1 Notes</strong></p>
+<p><strong>End of Lecture 1.2 Notes</strong></p>
 
 
 </section>
