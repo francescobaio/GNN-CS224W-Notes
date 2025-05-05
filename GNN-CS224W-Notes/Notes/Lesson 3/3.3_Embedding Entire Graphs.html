@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-input812f03c50b2329f3 – GNN CS224W Notes</title>
+<title>embedding-entire-graphs – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,8 +109,70 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="embedding-entire-graphs" class="level1">
+<h1>Embedding Entire Graphs</h1>
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=eliMLfJeu7A&amp;list=PLoROMvodv4rOP-ImU-O1rYRg2RFxomvFp&amp;index=9">Lecture 3.3 – Embedding Entire Graphs</a><br>
+<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf">Link to Slides</a></p>
+<hr>
+<section id="discussion-of-key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
+<p>This lecture focuses on methods to embed an entire graph (or a subgraph) into a continuous vector space. Rather than representing individual nodes, the goal here is to capture the holistic structure of the graph. Key topics include:</p>
+<ul>
+<li><p><strong>Graph Embedding Objectives:</strong><br>
+The main objective is to map a whole graph (or subgraph) into an embedding space such that similar graphs have embeddings that are close together. Main approaches involve:</p>
+<ul>
+<li><p><strong>Averaging Node Embeddings:</strong><br>
+A baseline method that simply averages the embeddings of nodes already computed within a graph. -&gt; classification of molecules</p></li>
+<li><p><strong>Virtual Node Approach:</strong><br>
+An improved technique introduces a virtual node whose embedding is learned via methods similar to node2vec. This node acts as a proxy for the entire graph, thereby capturing a more robust summary of the structure.</p></li>
+</ul></li>
+<li><p><strong>Anonymous Walks:</strong><br>
+Anonymous walks represent random walks by recording the <strong>index</strong> of the first time each node is visited, effectively ignoring the actual node identities.</p>
+<ul>
+<li><p><strong>Invariant Representation:</strong><br>
+Since the anonymous walk depends solely on the order of first visits, two walks with the same order yield the same representation an n-dimensional vector where each dimension represents the probability of a particular anonymous walk pattern in the graph.</p></li>
+<li><p><strong>Random Walk Sampling:</strong><br>
+A crucial aspect discussed is determining the number of random walks needed to reliably capture the graph’s structure.</p></li>
+</ul></li>
+<li><p><strong>Learning Embeddings for Entire Graphs:</strong><br>
+The idea is to learn a vector Zg that describes the graph. This is done by:</p>
+<ul>
+<li><p>Running T different random walks on the graph.</p></li>
+<li><p>Treating the set (or neighborhood) of random walks as the context, much like in DeepWalk for nodes.</p></li>
+<li><p>Optimizing the embeddings to maximize the likelihood of the observed co-occurrences of these random walks.</p></li>
+</ul>
+<p>The final graph embedding can be used for tasks such as graph classification, where the dot product between embeddings is used to measure similarity or as input features to a neural network.</p></li>
+<li><p><strong>Hierarchical Aggregation:</strong><br>
+One important question is to find methods to hierarchically aggregate node-level and walk-level information to obtain a comprehensive embedding of the entire graph.</p></li>
+</ul>
+<hr>
+</section>
+<section id="my-personal-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
+<ol type="1">
+<li><p><strong>Power of Anonymous Walks:</strong><br>
+The anonymous walk approach abstracts away node identities and focuses solely on structural patterns. This invariance allows for a generalized representation of graph topology across different graphs.</p></li>
+<li><p><strong>Trade-offs in Random Walk Sampling:</strong><br>
+A key challenge is determining the adequate number of random walks to accurately capture the underlying structure. It’s a delicate balance between sampling enough information and maintaining computational efficiency.</p></li>
+<li><p><strong>Task Independence:</strong><br>
+Much like node embeddings, these graph-level embeddings are task-independent. They provide a general-purpose representation that can be plugged into various downstream applications—whether for graph classification, similarity assessment, or as inputs to more complex models.</p></li>
+</ol>
+<hr>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<ul>
+<li><p><strong>Explore Hierarchical Methods:</strong><br>
+Delve into upcoming lectures and readings that address how to hierarchically aggregate information from nodes and substructures to further refine graph embeddings.</p></li>
+<li><p><strong>Further Reading:</strong><br>
+Investigate seminal papers on graph kernels and graph embedding methods (Graph2Vec) to deepen your understanding of the theory and applications behind these techniques.</p></li>
+</ul>
+<hr>
+<p><strong>End of Lecture 3.3 Notes</strong></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
