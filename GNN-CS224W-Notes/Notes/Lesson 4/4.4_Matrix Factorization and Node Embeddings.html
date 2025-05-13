@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>pagerank – GNN CS224W Notes</title>
+<title>matrix-factorization-and-node-embeddings – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -109,60 +138,56 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><strong>Lecture 4.1 – PageRank</strong><br>
-<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=TU0ankRcHmo&amp;ab_channel=StanfordOnline">Lecture 4.1 – PageRank</a><br>
+<p><strong>Lecture 4.4 – Matrix Factorization and Node Embeddings</strong><br>
+<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=r12qJZZVtqc&amp;list=PLoROMvodv4rOP-ImU-O1rYRg2RFxomvFp&amp;index=13&amp;ab_channel=StanfordOnline">Lecture 4.4 - Matrix Factorization and Node Embeddings</a><br>
 <strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf">Link to Slides</a></p>
 <hr>
 <section id="discussion-of-key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
 <ul>
-<li><p><strong>Motivation for PageRank:</strong><br>
-Web graphs are enormous and noisy; simple in‐/out‐degree statistics treat every link equally and miss how importance flows through the network. PageRank defines a page’s importance <strong>recursively</strong>: links from high‐rank pages count more than links from low‐rank pages.</p></li>
-<li><p><strong>Random Surfer Model &amp; Stochastic Matrix:</strong><br>
-Model the web as a Markov chain. At each step, a “random surfer” either:</p>
+<li><p><strong>Embedding via Matrix Factorization:</strong><br>
+We represent the graph by its adjacency matrix <span class="math inline">\(A\)</span> and seek a low dimensional embedding matrix <span class="math inline">\(Z \in R^{N \times d}\)</span> such that: <span class="math display">\[
+              A \approx Z\,Z^T
+              \]</span> We solve <span class="math inline">\(\min_{Z} \|A - Z Z^T\|_F^2\)</span> to find our embeddings, where is the Frobenius norm. This factorization yields node vectors whose inner products reconstruct original link strengths.</p></li>
+<li><p><strong>Scalability &amp; Computation:</strong><br>
+Computing the full factorization is and memory‑heavy for large graphs. Techniques include truncated SVD or sampling to approximate the Frobenius‑norm minimization.</p></li>
+<li><p><strong>Limitations:</strong></p>
 <ol type="1">
-<li><p>With probability α (the <em>teleportation</em> or <em>restart</em> probability), jumps to any page uniformly at random.</p></li>
-<li><p>With probability 1–α, follows one of the current page’s outgoing links chosen uniformly.</p></li>
-</ol>
-<p>We encode these transition probabilities in a <strong>stochastic matrix</strong> M, where each column sums to 1. This ensures the total probability is conserved as the surfer moves.</p></li>
-<li><p><strong>Stationary Distribution &amp; Fixed‐Point Equation:</strong><br>
-The PageRank vector r gives the long‐run fraction of time the surfer spends on each page. It satisfies the <strong>fixed‐point</strong> equation:</p>
-<blockquote class="blockquote">
-<p>r = (1–α)·M·r + α·(1/N)·1<br>
-subject to ∑ᵢ rᵢ = 1</p>
-</blockquote>
-<p>In plain terms, r is the <strong>stationary distribution</strong> of the random‐surfer process—it no longer changes once convergence is reached.</p></li>
-<li><p><strong>Google Matrix &amp; Power Iteration:</strong><br>
-Combine link‐following and teleportation into the <strong>Google matrix</strong> computing r by iterating: &gt; r^(t+1) = G·r^(t) Starting from any initial probability vector (e.g., uniform), this power‐method converges rapidly to the unique PageRank vector.</p></li>
-<li><p><strong>Handling Dangling Nodes:</strong><br>
-Pages with no outgoing links would absorb probability mass. We treat them as if they link to every page uniformly, replacing their column in M with 1/N mass to preserve stochasticity.</p></li>
-<li><p><strong>Personalized &amp; Topic‐Sensitive PageRank:</strong><br>
-To bias the ranks toward a set of seed pages, replace the uniform teleport vector (1/N·1) with a custom distribution v over those seeds. The same iteration yields ranks that reflect topic or user preferences.</p></li>
+<li><p><strong>No Inductive Ability:</strong> <strong>only nodes seen during training have embeddings</strong>; new or unseen nodes cannot be embedded without retraining.</p></li>
+<li><p><strong>Structural Similarity Blindness:</strong> captures identity of neighbors but fails to detect isomorphic or structurally equivalent roles (e.g., two nodes with similar patterns but different neighbor identities yield different embeddings).</p></li>
+<li><p><strong>Feature Agnosticism:</strong> uses only adjacency structure; ignores potentially useful node attributes or edge labels.</p></li>
+</ol></li>
+<li><p><strong>Bridging to GNNs:</strong><br>
+To incorporate both <strong>structure</strong> and <strong>feature</strong> information and to support inductive learning—Graph Neural Networks (GNNs) and deep graph architectures learn parametric aggregation functions. They generalize embeddings to unseen nodes and capture structural patterns beyond direct neighbor identity.</p></li>
 </ul>
 <hr>
 </section>
 <section id="my-personal-takeaways" class="level2">
-<h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
+<h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways:</h2>
 <ol type="1">
-<li><p><strong>Global vs.&nbsp;Local Importance:</strong><br>
-PageRank transforms local link counts into a <em>global</em> centrality measure, prestige propagates through the entire graph rather than stopping at immediate neighbors.</p></li>
-<li><p><strong>Teleportation as Regularization:</strong><br>
-The damping factor α not only ensures convergence and eliminates rank sinks, but also provides a simple handle for personalization by adjusting the teleport distribution.</p></li>
-<li><p><strong>Scalable &amp; Sparse Computation:</strong><br>
-Each iteration is just a sparse matrix vector multiply plus a teleport step. This makes PageRank practical at web scale using distributed systems.</p></li>
+<li><p><strong>Frobenius Norm as Graph Memory:</strong><br>
+Minimizing is like preserving every edge weight in a compressed memory bank, each dimension in stores a global snapshot of connectivity.</p></li>
+<li><p><strong>Induction Gap as Achilles’ Heel:</strong><br>
+Matrix factorization is brilliant at compression but deaf to change: once the graph grows, the old embeddings sit static, requiring full retraining to learn new patterns.</p></li>
+<li><p><strong>From Static Factorization to Dynamic Filtering:</strong><br>
+GNNs extend pure MF by learning filters that convolve node features over structure; this shift from memorizing links to learning propagation rules bridges the gap between representation and reasoning on graphs.</p></li>
 </ol>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
-<li><p><strong>Implement &amp; Experiment:</strong><br>
-Code the power‐method iteration for r = G·r on a small web graph. Try different α values (e.g., 0.15 vs.&nbsp;0.05) and plot the convergence ‖r<sup>(t+1)–r</sup>(t)‖ over iterations.</p></li>
-<li><p><strong>Read Foundational Papers:</strong><br>
-Review “The PageRank Citation Ranking: Bringing Order to the Web” (Page et al., 1999) and explore follow‐up work on accelerated solvers and personalized PageRank algorithms.</p></li>
+<li><p><strong>Implement MF Embeddings:</strong><br>
+Apply truncated SVD or gradient‑descent on for a small citation or social graph. Visualize how embedding quality (reconstruction error) varies with.</p></li>
+<li><p><strong>Further Reading:</strong></p>
+<ul>
+<li>Belkin &amp; Niyogi (2001): <em>Laplacian Eigenmaps for Dimensionality Reduction and Data Representation</em><br>
+</li>
+<li>Kipf &amp; Welling (2017): <em>Semi‑Supervised Classification with Graph Convolutional Networks</em></li>
+</ul></li>
 </ul>
 <hr>
-<p><strong>End of Lecture 4.1 Notes</strong></p>
+<p><strong>End of Lecture 4.4 Notes</strong></p>
 
 
 </section>

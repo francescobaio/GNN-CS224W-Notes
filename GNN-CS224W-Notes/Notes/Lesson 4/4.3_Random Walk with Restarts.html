@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>pagerank – GNN CS224W Notes</title>
+<title>random-walk-with-restarts – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -109,60 +138,77 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><strong>Lecture 4.1 – PageRank</strong><br>
-<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=TU0ankRcHmo&amp;ab_channel=StanfordOnline">Lecture 4.1 – PageRank</a><br>
+<p><strong>Lecture 4.3 – Random Walk with Restarts</strong><br>
+<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=HbzQzUaJ_9I&amp;list=PLoROMvodv4rOP-ImU-O1rYRg2RFxomvFp&amp;index=12&amp;ab_channel=StanfordOnline">Lecture 4.3 - Random Walk with Restarts</a><br>
 <strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf">Link to Slides</a></p>
 <hr>
 <section id="discussion-of-key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
 <ul>
-<li><p><strong>Motivation for PageRank:</strong><br>
-Web graphs are enormous and noisy; simple in‐/out‐degree statistics treat every link equally and miss how importance flows through the network. PageRank defines a page’s importance <strong>recursively</strong>: links from high‐rank pages count more than links from low‐rank pages.</p></li>
-<li><p><strong>Random Surfer Model &amp; Stochastic Matrix:</strong><br>
-Model the web as a Markov chain. At each step, a “random surfer” either:</p>
+<li><p><strong>Proximity on Graphs:</strong><br>
+Beyond global importance, we often care about <strong><em>proximity</em></strong> how close a node is to a given query node. Random walks measure this by the long-term probability of visiting nodes starting from the query.</p></li>
+<li><p><strong>Random Walk with Restarts (RWR):</strong><br>
+At each step:</p>
 <ol type="1">
-<li><p>With probability α (the <em>teleportation</em> or <em>restart</em> probability), jumps to any page uniformly at random.</p></li>
-<li><p>With probability 1–α, follows one of the current page’s outgoing links chosen uniformly.</p></li>
+<li><p>With probability 1–β, follow a random outgoing link according to the transition matrix M.</p></li>
+<li><p>With probability β, restart at the query node q.</p></li>
 </ol>
-<p>We encode these transition probabilities in a <strong>stochastic matrix</strong> M, where each column sums to 1. This ensures the total probability is conserved as the surfer moves.</p></li>
-<li><p><strong>Stationary Distribution &amp; Fixed‐Point Equation:</strong><br>
-The PageRank vector r gives the long‐run fraction of time the surfer spends on each page. It satisfies the <strong>fixed‐point</strong> equation:</p>
-<blockquote class="blockquote">
-<p>r = (1–α)·M·r + α·(1/N)·1<br>
-subject to ∑ᵢ rᵢ = 1</p>
-</blockquote>
-<p>In plain terms, r is the <strong>stationary distribution</strong> of the random‐surfer process—it no longer changes once convergence is reached.</p></li>
-<li><p><strong>Google Matrix &amp; Power Iteration:</strong><br>
-Combine link‐following and teleportation into the <strong>Google matrix</strong> computing r by iterating: &gt; r^(t+1) = G·r^(t) Starting from any initial probability vector (e.g., uniform), this power‐method converges rapidly to the unique PageRank vector.</p></li>
-<li><p><strong>Handling Dangling Nodes:</strong><br>
-Pages with no outgoing links would absorb probability mass. We treat them as if they link to every page uniformly, replacing their column in M with 1/N mass to preserve stochasticity.</p></li>
-<li><p><strong>Personalized &amp; Topic‐Sensitive PageRank:</strong><br>
-To bias the ranks toward a set of seed pages, replace the uniform teleport vector (1/N·1) with a custom distribution v over those seeds. The same iteration yields ranks that reflect topic or user preferences.</p></li>
+<p>Here, teleportation goes only to q, focusing the stationary distribution around it.</p></li>
+<li><p><strong>Stationary Proximity Vector:</strong><br>
+The stationary vector r satisfies the linear equation:</p></li>
+</ul>
+<p><span class="math display">\[
+r = (1 - \beta)\,M\,r \;+\; \beta\,e_q
+\]</span></p>
+<p>where <span class="math inline">\(e_q\)</span> is the one-hot vector for the query node. The value <span class="math inline">\(r_i\)</span> reflects the proximity of node i to q.</p>
+<ul>
+<li><p><strong>Connections to PageRank:</strong></p>
+<ul>
+<li><p><strong>PageRank:</strong> teleport to any node uniformly:</p>
+<p><span class="math display">\[
+  r = (1 - \beta) M r + \beta (1/N) * 1
+  \]</span></p></li>
+<li><p><strong>Personalized PageRank:</strong> teleport to a seed distribution v:</p>
+<p><span class="math display">\[
+  r = (1 - \beta) M r + \beta v
+  \]</span></p></li>
+<li><p><strong>RWR:</strong> special case with v = e_q, teleporting only to the query Q.</p></li>
+</ul></li>
+<li><p><strong>Applications of RWR:</strong></p>
+<ul>
+<li><p>Link prediction and recommendation by ranking proximity.</p></li>
+<li><p>Community and anomaly detection around seed nodes.</p></li>
+<li><p>Feature extraction: use r as local graph features for ML tasks.</p></li>
+</ul></li>
 </ul>
 <hr>
 </section>
 <section id="my-personal-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
 <ol type="1">
-<li><p><strong>Global vs.&nbsp;Local Importance:</strong><br>
-PageRank transforms local link counts into a <em>global</em> centrality measure, prestige propagates through the entire graph rather than stopping at immediate neighbors.</p></li>
-<li><p><strong>Teleportation as Regularization:</strong><br>
-The damping factor α not only ensures convergence and eliminates rank sinks, but also provides a simple handle for personalization by adjusting the teleport distribution.</p></li>
-<li><p><strong>Scalable &amp; Sparse Computation:</strong><br>
-Each iteration is just a sparse matrix vector multiply plus a teleport step. This makes PageRank practical at web scale using distributed systems.</p></li>
+<li><p><strong>RWR as a Graph Microscope:</strong><br>
+Constant restarts focus exploration narrowly, uncovering micro-communities that global methods miss.</p></li>
+<li><p><strong>Teleportation Encodes Bias:</strong><br>
+Restarting at q is like giving the walker memory, biasing paths without extra complexity.</p></li>
+<li><p><strong>Unified Random-Walk Framework:</strong><br>
+PageRank, Personalized PR, and RWR differ only by teleport sets, one vector tweaks a single parameter, unlocking both global and local insights.</p></li>
 </ol>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
-<li><p><strong>Implement &amp; Experiment:</strong><br>
-Code the power‐method iteration for r = G·r on a small web graph. Try different α values (e.g., 0.15 vs.&nbsp;0.05) and plot the convergence ‖r<sup>(t+1)–r</sup>(t)‖ over iterations.</p></li>
-<li><p><strong>Read Foundational Papers:</strong><br>
-Review “The PageRank Citation Ranking: Bringing Order to the Web” (Page et al., 1999) and explore follow‐up work on accelerated solvers and personalized PageRank algorithms.</p></li>
+<li><p><strong>Test on Real Data:</strong><br>
+Run RWR on social or citation graphs, comparing top-k proximity to known labels or communities.</p></li>
+<li><p><strong>Further Reading:</strong></p>
+<ul>
+<li>Tong, Faloutsos &amp; Pan (2006): _Fast Random Walk with Restart and Its Applications<br>
+</li>
+<li>Maehara &amp; Kawarabayashi (2020): <em>Computing Approximate Personalized PageRank on Dynamic Graphs</em></li>
+</ul></li>
 </ul>
 <hr>
-<p><strong>End of Lecture 4.1 Notes</strong></p>
+<p><strong>End of Lecture 4.3 Notes</strong></p>
 
 
 </section>
