@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>relational-and-iterative-classification – GNN CS224W Notes</title>
+<title>introduction-to-graph-neural-networks – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,55 +138,76 @@ window.Quarto = {
 
 
 
-<p><strong>Lecture 5.2 – Relational and Iterative Classification</strong><br>
-<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=QUO-HQ44EDc&amp;ab_channel=StanfordOnline">Lecture 5.2 – Relational and Iterative Classification</a><br>
-<strong>SNAP GitHub:</strong> <a href="https://snap-stanford.github.io/cs224w-notes/machine-learning-with-networks/message-passing-and-node-classification">SNAP GitHub</a></p>
+<p><strong>Lecture 6.1 – Introduction to Graph Neural Networks</strong> <strong>Video:</strong> <a href="https://www.youtube.com/watch?v=F3PgltDzllc&amp;ab_channel=StanfordOnline">Lecture 6.1 – Graph Neural Networks – Introduction</a><br>
+<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/03-GNN1.pdf">Link to Slides</a></p>
 <hr>
 <section id="discussion-of-key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
 <ul>
-<li><p><strong>Relational Classifier Recap</strong><br>
-Uses both a node’s own features and the labels of its neighbors to capture local label correlations.</p></li>
-<li><p><strong>Iterative Classifier</strong><br>
-Extends the relational classifier by updating node labels in multiple rounds, refining predictions with evolving neighbor information.</p></li>
-<li><p><strong>Summary Vector</strong><br>
-For each node v, compute a <strong>summary vector</strong> <span class="math inline">\(s_v\)</span> that aggregates the current label distribution (or other statistics) of v’s neighbors. This vector encodes “what my neighbors think about my label.”</p></li>
-<li><p><strong>Two-Stage Training</strong></p>
+<li><strong>Two Key Components</strong>
 <ol type="1">
-<li><p><strong>Stage 1:</strong> Train a base classifier <span class="math inline">\(C_1​\)</span> using only each node’s feature vector to predict labels.</p></li>
-<li><p><strong>Stage 2:</strong> Train an enhanced classifier <span class="math inline">\(C_2​\)</span> using both the node’s feature vector and its summary vector <span class="math inline">\(s_v\)</span>​ to predict labels.</p></li>
+<li><strong>Encoder</strong> <span class="math inline">\(\mathcal{E}\)</span> : maps each node’s raw representation (one-hot or features) to a low-dimensional embedding space.<br>
+</li>
+<li><strong>Decoder</strong> <span class="math inline">\(\mathcal{D}\)</span> : reconstructs relationships (e.g., via dot-product or cosine similarity) from embeddings.<br>
+</li>
+<li><strong>Similarity Function</strong>: defines how distances or scores in embedding space correspond to graph relationships (e.g., edge existence, edge weight).</li>
 </ol></li>
-<li><p><strong>Iterative Procedure</strong></p>
-<ol type="1">
-<li><p><strong>Initialize:</strong> Apply <span class="math inline">\(C_1\)</span>​ to assign initial labels to all nodes.</p></li>
-<li><p><strong>Compute Summaries:</strong> Build each <span class="math inline">\(s_v\)</span> from current neighbor labels.</p></li>
-<li><p><strong>Update Labels:</strong> Use <span class="math inline">\(C_2\)</span>​ on feature <span class="math inline">\(s_v\)</span> to produce new labels.</p></li>
-<li><p><strong>Repeat:</strong> Recompute summaries and update labels until labels converge or a maximum number of iterations <span class="math inline">\(n_{\max}\)</span>​ is reached (convergence is not guaranteed).</p></li>
+<li><strong>Shallow Encoding (Embedding Lookup)</strong>
+<ul>
+<li>Pre-assigns a unique embedding vector to each node.<br>
+</li>
+<li><strong>Limitations:</strong>
+<ol start="0" type="1">
+<li>Requires <span class="math inline">\((O(N \times d))\)</span> parameters (expensive for large <span class="math inline">\(N\)</span>).<br>
+</li>
+<li>No parameter sharing across nodes.<br>
+</li>
+<li><strong>Transductive</strong>: cannot embed unseen nodes at test time.<br>
+</li>
+<li>Ignores node features and graph structure dynamics.</li>
 </ol></li>
-<li><p><strong>Convergence Considerations</strong><br>
-Iterations may oscillate or fail to converge; practical implementations often set a fixed iteration limit and may apply damping (mixing old and new labels) to stabilize.</p></li>
+</ul></li>
+<li><strong>Graph Neural Networks (Deep Graph Encoders)</strong>
+<ul>
+<li>Stack multiple layers of <strong>non-linear graph convolutions</strong> or message-passing:<br>
+[ <span class="math inline">\(\mathbf{h}_v^{(k+1)} = \sigma\Bigl( W^{(k)} \cdot \text{AGGREGATE}\bigl(\{\mathbf{h}_u^{(k)}: u\in\mathcal{N}(v)\}\bigr) \Bigr)\)</span> ]<br>
+</li>
+<li><strong>Parameter sharing</strong> across nodes and layers enables inductive learning.<br>
+</li>
+<li>Can incorporate node features, edge features, and complex topologies.</li>
+</ul></li>
+<li><strong>What Can GNNs Do?</strong>
+<ul>
+<li><strong>Embed Nodes</strong> for downstream tasks (node classification, link prediction).<br>
+</li>
+<li><strong>Embed Subgraphs/Whole Graphs</strong> for graph classification or similarity.<br>
+</li>
+<li>Handle <strong>arbitrary graph sizes</strong>, <strong>heterogeneous features</strong>, and <strong>variable neighborhood structures</strong>.</li>
+</ul></li>
+<li><strong>Why Is This Hard?</strong><br>
+Traditional ML expects fixed-size, ordered inputs (images, sequences).<br>
+Graphs are <strong>unordered</strong>, <strong>variable-size</strong>, and <strong>multi-modal</strong>, requiring specialized architectures to aggregate and propagate information.</li>
 </ul>
 <hr>
 </section>
 <section id="my-personal-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
 <ol type="1">
-<li><p><strong>Design of Summary Vectors Is Crucial</strong><br>
-How you aggregate neighbor labels (e.g., average one-hot vectors, weighted counts) strongly influences both convergence behavior and final accuracy.</p></li>
-<li><p><strong>Expressivity vs.&nbsp;Stability Trade-off</strong><br>
-More complex iterative schemes can model richer dependencies but introduce risks of non-convergence; simple damping or early stopping often strikes the best practical balance.</p></li>
+<li><p><strong>Inductive vs.&nbsp;Transductive:</strong><br>
+GNNs generalize to new nodes/graphs by sharing parameters, overcoming shallow embedding limitations.</p></li>
+<li><p><strong>Topology as Architecture:</strong><br>
+The graph structure itself defines how information flows designing aggregation functions is as crucial as choosing network depth.</p></li>
+<li></li>
 </ol>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
-<li><p><strong>Implement on a Benchmark Graph</strong><br>
-Write code for the full iterative classification algorithm on Cora or Citeseer, experimenting with different summary-vector definitions (mean label proportions, max-pooling, etc.).</p></li>
-<li><p><strong>Further Reading</strong></p>
+<li><strong>Further Reading:</strong>
 <ul>
-<li>Neville, J., &amp; Jensen, D. “Iterative Classification in Relational Data” (2003)</li>
-<li>Lu, Q., &amp; Getoor, L. “Link-based Classification” (2003)</li>
+<li>Kipf &amp; Welling, “Semi-Supervised Classification with Graph Convolutional Networks” (2017)</li>
+<li>Hamilton, Ying &amp; Leskovec, “Inductive Representation Learning on Large Graphs (GraphSAGE)” (2017)</li>
 </ul></li>
 </ul>
 

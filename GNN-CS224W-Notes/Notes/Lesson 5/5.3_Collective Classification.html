@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>relational-and-iterative-classification – GNN CS224W Notes</title>
+<title>collective-classification – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,35 +67,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -138,57 +109,73 @@ window.Quarto = {
 
 
 
-<p><strong>Lecture 5.2 – Relational and Iterative Classification</strong><br>
-<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=QUO-HQ44EDc&amp;ab_channel=StanfordOnline">Lecture 5.2 – Relational and Iterative Classification</a><br>
+<p><strong>Lecture 5.3 – Collective Classification: Belief Propagation </strong> <strong>Video:</strong> <a href="https://www.youtube.com/watch?v=kh3I_UTtUOo&amp;ab_channel=StanfordOnline">Lecture 5.3 – Collective Classification: Belief Propagation</a><br>
 <strong>SNAP GitHub:</strong> <a href="https://snap-stanford.github.io/cs224w-notes/machine-learning-with-networks/message-passing-and-node-classification">SNAP GitHub</a></p>
 <hr>
 <section id="discussion-of-key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
 <ul>
-<li><p><strong>Relational Classifier Recap</strong><br>
-Uses both a node’s own features and the labels of its neighbors to capture local label correlations.</p></li>
-<li><p><strong>Iterative Classifier</strong><br>
-Extends the relational classifier by updating node labels in multiple rounds, refining predictions with evolving neighbor information.</p></li>
-<li><p><strong>Summary Vector</strong><br>
-For each node v, compute a <strong>summary vector</strong> <span class="math inline">\(s_v\)</span> that aggregates the current label distribution (or other statistics) of v’s neighbors. This vector encodes “what my neighbors think about my label.”</p></li>
-<li><p><strong>Two-Stage Training</strong></p>
+<li><p><strong>Loopy Belief Propagation</strong><br>
+A dynamic‐programming‐style approach on graphs with cycles, implemented by <strong>passing messages</strong> along edges until beliefs stabilize (or a max iteration cap).</p></li>
+<li><p><strong>Message Passing (Core Operation)</strong></p>
 <ol type="1">
-<li><p><strong>Stage 1:</strong> Train a base classifier <span class="math inline">\(C_1​\)</span> using only each node’s feature vector to predict labels.</p></li>
-<li><p><strong>Stage 2:</strong> Train an enhanced classifier <span class="math inline">\(C_2​\)</span> using both the node’s feature vector and its summary vector <span class="math inline">\(s_v\)</span>​ to predict labels.</p></li>
+<li><strong>Receive:</strong> Each node listens to incoming messages from all its neighbors.<br>
+</li>
+<li><strong>Update:</strong> It updates its own belief based on those messages plus its prior.<br>
+</li>
+<li><strong>Send:</strong> It forwards a new message to each neighbor.</li>
 </ol></li>
-<li><p><strong>Iterative Procedure</strong></p>
-<ol type="1">
-<li><p><strong>Initialize:</strong> Apply <span class="math inline">\(C_1\)</span>​ to assign initial labels to all nodes.</p></li>
-<li><p><strong>Compute Summaries:</strong> Build each <span class="math inline">\(s_v\)</span> from current neighbor labels.</p></li>
-<li><p><strong>Update Labels:</strong> Use <span class="math inline">\(C_2\)</span>​ on feature <span class="math inline">\(s_v\)</span> to produce new labels.</p></li>
-<li><p><strong>Repeat:</strong> Recompute summaries and update labels until labels converge or a maximum number of iterations <span class="math inline">\(n_{\max}\)</span>​ is reached (convergence is not guaranteed).</p></li>
-</ol></li>
-<li><p><strong>Convergence Considerations</strong><br>
-Iterations may oscillate or fail to converge; practical implementations often set a fixed iteration limit and may apply damping (mixing old and new labels) to stabilize.</p></li>
+<li><p><strong>Tree vs.&nbsp;Loopy Graphs</strong></p>
+<ul>
+<li><strong>Tree:</strong> Messages can be scheduled leaf→root then root→leaf; exact inference in two passes.<br>
+</li>
+<li><strong>Loopy Graph:</strong> No valid topological order; messages become interdependent—but you can still run BP iteratively, and in practice cycles often have only weak dampening effects.</li>
+</ul></li>
+<li><p><strong>Label–Label Potential Matrix</strong><br>
+Encodes compatibility between neighbor labels. In a <strong>homophilous</strong> network, the matrix has high values on its diagonal (same‐class pairs).</p></li>
+<li><p><strong>Prior Belief</strong><br>
+Each node (i) starts with a <strong>prior</strong> belief (e.g., from a local classifier) about belonging to each class.</p></li>
+<li><p><strong>Behavior on Cyclic Graphs</strong></p>
+<ul>
+<li>Cannot enforce a single sweep order—messages reinforce initial priors.<br>
+</li>
+<li>Empirically, loopy BP often converges even though theoretical guarantees are absent.</li>
+</ul></li>
+<li><p><strong>Pros of Loopy BP</strong></p>
+<ul>
+<li>Easy to parallelize and implement.<br>
+</li>
+<li>Scales to large graphs with simple local updates.</li>
+</ul></li>
 </ul>
 <hr>
 </section>
 <section id="my-personal-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
 <ol type="1">
-<li><p><strong>Design of Summary Vectors Is Crucial</strong><br>
-How you aggregate neighbor labels (e.g., average one-hot vectors, weighted counts) strongly influences both convergence behavior and final accuracy.</p></li>
-<li><p><strong>Expressivity vs.&nbsp;Stability Trade-off</strong><br>
-More complex iterative schemes can model richer dependencies but introduce risks of non-convergence; simple damping or early stopping often strikes the best practical balance.</p></li>
+<li><p><strong>Approximate but Effective:</strong><br>
+Despite lacking convergence guarantees on cycles, loopy BP often yields high‐quality approximations in real networks.</p></li>
+<li><p><strong>Modular Message Functions:</strong><br>
+Defining clear “prior → message → update” functions decouples model design from implementation, making it easy to swap potential functions.</p></li>
+<li><p><strong>Scalability:</strong><br>
+Localized operations allow for distributed or asynchronous execution, crucial for very large graphs.</p></li>
 </ol>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
-<li><p><strong>Implement on a Benchmark Graph</strong><br>
-Write code for the full iterative classification algorithm on Cora or Citeseer, experimenting with different summary-vector definitions (mean label proportions, max-pooling, etc.).</p></li>
-<li><p><strong>Further Reading</strong></p>
+<li><strong>Implement Loopy BP:</strong><br>
+Code belief propagation on a small cyclic graph (e.g., a grid), measure convergence behavior vs.&nbsp;iteration count.</li>
+<li></li>
+<li><strong>Further Reading:</strong>
 <ul>
-<li>Neville, J., &amp; Jensen, D. “Iterative Classification in Relational Data” (2003)</li>
-<li>Lu, Q., &amp; Getoor, L. “Link-based Classification” (2003)</li>
+<li>Yedidia, Freeman, Weiss, “Understanding Belief Propagation and its Generalizations” (2003)<br>
+</li>
+<li>Richardson &amp; Domingos, “Markov Logic Networks” (2006)</li>
 </ul></li>
 </ul>
+<hr>
 
 
 </section>

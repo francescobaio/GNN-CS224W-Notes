@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>relational-and-iterative-classification – GNN CS224W Notes</title>
+<title>basics-of-deep-learning – GNN CS224W Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,55 +138,87 @@ window.Quarto = {
 
 
 
-<p><strong>Lecture 5.2 – Relational and Iterative Classification</strong><br>
-<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=QUO-HQ44EDc&amp;ab_channel=StanfordOnline">Lecture 5.2 – Relational and Iterative Classification</a><br>
-<strong>SNAP GitHub:</strong> <a href="https://snap-stanford.github.io/cs224w-notes/machine-learning-with-networks/message-passing-and-node-classification">SNAP GitHub</a></p>
+<p><strong>Lecture 6.2 – Basics of Deep Learning</strong></p>
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=9zGEOiGkVjU&amp;ab_channel=StanfordOnline">Lecture 6.2 – Basics of Deep Learning</a><br>
+<strong>Official Course Slides:</strong> <a href="https://web.stanford.edu/class/cs224w/slides/06-gnn-intro.pdf">Link to Slides</a><br>
+<strong>SNAP GitHub:</strong> <a href="https://github.com/snap-stanford/snap">SNAP GitHub</a></p>
 <hr>
 <section id="discussion-of-key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-of-key-concepts">Discussion of Key Concepts</h2>
 <ul>
-<li><p><strong>Relational Classifier Recap</strong><br>
-Uses both a node’s own features and the labels of its neighbors to capture local label correlations.</p></li>
-<li><p><strong>Iterative Classifier</strong><br>
-Extends the relational classifier by updating node labels in multiple rounds, refining predictions with evolving neighbor information.</p></li>
-<li><p><strong>Summary Vector</strong><br>
-For each node v, compute a <strong>summary vector</strong> <span class="math inline">\(s_v\)</span> that aggregates the current label distribution (or other statistics) of v’s neighbors. This vector encodes “what my neighbors think about my label.”</p></li>
-<li><p><strong>Two-Stage Training</strong></p>
+<li><strong>ML as Optimization</strong>:<br>
+Formulate learning as <span class="math inline">\(\min_{\Theta} \;\mathcal{L}(y, f_{\Theta}(x))\)</span> ] where <span class="math inline">\(\Theta\)</span> is the set of parameters, <span class="math inline">\(x\)</span> the input, <span class="math inline">\(y\)</span> the true label, and <span class="math inline">\(\mathcal{L}\)</span> the loss.</li>
+<li><strong>Loss Functions</strong>:
+<ul>
+<li><strong>L2 Loss:</strong> <span class="math inline">\(\|y - f(x)\|_2^2\)</span></li>
+<li><strong>Cross‐Entropy (CE):</strong> for one‐hot <span class="math inline">\(y\)</span> and softmax <span class="math inline">\(f(x)\)</span>: <span class="math inline">\(\mathrm{CE}(y, f(x)) = -\sum_{i=1}^{C} y_i \,\log f(x)_i\)</span><br>
+</li>
+<li><strong>Total Training Loss:</strong><br>
+<span class="math inline">\(\mathcal{L}_{\mathrm{total}} = \sum_{(x,y)\in\mathcal{T}} \mathcal{L}(y, f_{\Theta}(x))\)</span></li>
+</ul></li>
+<li><strong>Gradient‐Based Optimization</strong>
+<ul>
+<li>Compute gradient <span class="math inline">\(\nabla_{\Theta}\mathcal{L}\)</span> to find downhill direction.<br>
+</li>
+<li><strong>Gradient Descent:</strong><br>
+<span class="math inline">\(\Theta \leftarrow \Theta - \eta \,\nabla_{\Theta}\mathcal{L}\)</span><br>
+where <span class="math inline">\(\eta\)</span> is the learning rate.<br>
+</li>
+<li><strong>Stopping Criteria:</strong>
+<ul>
+<li><span class="math inline">\(\|\nabla \mathcal{L}\|\approx 0\)</span><br>
+</li>
+<li>No validation‐set improvement</li>
+</ul></li>
+</ul></li>
+<li><strong>Stochastic Gradient Descent (SGD)</strong>
+<ul>
+<li>Approximate full gradient using a <strong>mini‐batch</strong> of size <span class="math inline">\(b\)</span>.<br>
+</li>
+<li><strong>Iteration:</strong> one update on a mini‐batch<br>
+</li>
+<li><strong>Epoch:</strong> one full pass over the dataset<br>
+</li>
+<li><strong>Properties &amp; Challenges:</strong>
 <ol type="1">
-<li><p><strong>Stage 1:</strong> Train a base classifier <span class="math inline">\(C_1​\)</span> using only each node’s feature vector to predict labels.</p></li>
-<li><p><strong>Stage 2:</strong> Train an enhanced classifier <span class="math inline">\(C_2​\)</span> using both the node’s feature vector and its summary vector <span class="math inline">\(s_v\)</span>​ to predict labels.</p></li>
+<li>Unbiased estimate of true gradient<br>
+</li>
+<li>No convergence guarantee without proper schedule<br>
+</li>
+<li>Requires careful tuning of <span class="math inline">\(\eta\)</span>, momentum, etc.</li>
 </ol></li>
-<li><p><strong>Iterative Procedure</strong></p>
-<ol type="1">
-<li><p><strong>Initialize:</strong> Apply <span class="math inline">\(C_1\)</span>​ to assign initial labels to all nodes.</p></li>
-<li><p><strong>Compute Summaries:</strong> Build each <span class="math inline">\(s_v\)</span> from current neighbor labels.</p></li>
-<li><p><strong>Update Labels:</strong> Use <span class="math inline">\(C_2\)</span>​ on feature <span class="math inline">\(s_v\)</span> to produce new labels.</p></li>
-<li><p><strong>Repeat:</strong> Recompute summaries and update labels until labels converge or a maximum number of iterations <span class="math inline">\(n_{\max}\)</span>​ is reached (convergence is not guaranteed).</p></li>
-</ol></li>
-<li><p><strong>Convergence Considerations</strong><br>
-Iterations may oscillate or fail to converge; practical implementations often set a fixed iteration limit and may apply damping (mixing old and new labels) to stabilize.</p></li>
+</ul></li>
+<li><strong>Backpropagation</strong>
+<ul>
+<li>Use chain rule to compute <span class="math inline">\(\nabla_{\Theta}\mathcal{L}\)</span> through multiple layers.<br>
+</li>
+<li>Efficiently reuses intermediate activations to propagate errors backward.</li>
+</ul></li>
 </ul>
 <hr>
 </section>
 <section id="my-personal-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="my-personal-takeaways">My Personal Takeaways</h2>
 <ol type="1">
-<li><p><strong>Design of Summary Vectors Is Crucial</strong><br>
-How you aggregate neighbor labels (e.g., average one-hot vectors, weighted counts) strongly influences both convergence behavior and final accuracy.</p></li>
-<li><p><strong>Expressivity vs.&nbsp;Stability Trade-off</strong><br>
-More complex iterative schemes can model richer dependencies but introduce risks of non-convergence; simple damping or early stopping often strikes the best practical balance.</p></li>
+<li><p><strong>Optimization Viewpoint:</strong><br>
+Seeing training as repeated descent steps clarifies the role of hyperparameters (learning rate, batch size) in convergence.</p></li>
+<li><p><strong>Mini‐Batch Trade‐Off:</strong><br>
+Small batches yield noisy gradients (fast updates), large batches more stable but slower per update—find the sweet spot.</p></li>
+<li><p><strong>Backprop as Automation:</strong><br>
+Chain‐rule‐based gradient computation abstracts away the complexity of deep architectures, letting us focus on model design.</p></li>
 </ol>
 <hr>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
-<li><p><strong>Implement on a Benchmark Graph</strong><br>
-Write code for the full iterative classification algorithm on Cora or Citeseer, experimenting with different summary-vector definitions (mean label proportions, max-pooling, etc.).</p></li>
-<li><p><strong>Further Reading</strong></p>
+<li><p><strong>Experiment with Optimizers:</strong><br>
+Compare SGD, SGD + momentum, Adam on a toy dataset; track training/validation loss curves.</p></li>
+<li><p><strong>Further Reading:</strong></p>
 <ul>
-<li>Neville, J., &amp; Jensen, D. “Iterative Classification in Relational Data” (2003)</li>
-<li>Lu, Q., &amp; Getoor, L. “Link-based Classification” (2003)</li>
+<li>Goodfellow, Bengio &amp; Courville, “Deep Learning” (2016), Ch. 6–8<br>
+</li>
+<li>Ruder, “An overview of gradient descent optimization algorithms” (2016)</li>
 </ul></li>
 </ul>
 
