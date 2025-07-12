@@ -1,31 +1,101 @@
 [
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html",
+    "objectID": "GNN-CS224W-Notes/Glossary.html",
+    "href": "GNN-CS224W-Notes/Glossary.html",
     "title": "GNN CS224W Notes",
     "section": "",
-    "text": "Lecture 4.4 – Matrix Factorization and Node Embeddings\nVideo: Lecture 4.4 - Matrix Factorization and Node Embeddings\nOfficial Course Slides: Link to Slides"
+    "text": "This glossary provides definitions for key terms referenced in these lecture notes on Graph Neural Networks. Each entry is organized alphabetically for quick reference."
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#discussion-of-key-concepts",
+    "objectID": "GNN-CS224W-Notes/Glossary.html#a",
+    "href": "GNN-CS224W-Notes/Glossary.html#a",
+    "title": "GNN CS224W Notes",
+    "section": "A",
+    "text": "A\n\nAdjacency List:\nA data structure used to represent a graph, where each node is associated with a list of its neighboring nodes. This is particularly efficient for sparse graphs.\nAdjacency Matrix:\nA square matrix used to represent a graph. Each element at row i and column j indicates the presence (and possibly the weight) of an edge between nodes i and j. In sparse graphs, most entries are zero."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Glossary.html#b",
+    "href": "GNN-CS224W-Notes/Glossary.html#b",
+    "title": "GNN CS224W Notes",
+    "section": "B",
+    "text": "B\n\nBipartite Graph:\nA graph whose vertices can be divided into two disjoint sets such that every edge connects a vertex from one set to a vertex from the other set. There are no edges connecting vertices within the same set."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Glossary.html#c",
+    "href": "GNN-CS224W-Notes/Glossary.html#c",
+    "title": "GNN CS224W Notes",
+    "section": "C",
+    "text": "C\n\nConnectivity:\nA property of a graph that determines whether there is a path between every pair of nodes. A graph is connected if every node can be reached from every other node.\nConnected Component:\nA subgraph in which any two vertices are connected by paths, and which is not connected to any additional vertices in the overall graph."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Glossary.html#d",
+    "href": "GNN-CS224W-Notes/Glossary.html#d",
+    "title": "GNN CS224W Notes",
+    "section": "D",
+    "text": "D\n\nDirected Graph (Digraph):\nA graph in which edges have a direction, indicating a one-way relationship between nodes.\nDegree (Node Degree):\nThe number of edges incident to a node. In directed graphs, this can be divided into in-degree (number of incoming edges) and out-degree (number of outgoing edges)."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Glossary.html#g",
+    "href": "GNN-CS224W-Notes/Glossary.html#g",
+    "title": "GNN CS224W Notes",
+    "section": "G",
+    "text": "G\n\nGraph:\nA mathematical structure composed of a set of nodes (vertices) and a set of edges that connect pairs of nodes. Graphs are used to model relationships between entities.\nGraph Representations:\nMethods for encoding a graph into a data structure that can be processed by algorithms, such as using an adjacency matrix or an adjacency list."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Glossary.html#m",
+    "href": "GNN-CS224W-Notes/Glossary.html#m",
+    "title": "GNN CS224W Notes",
+    "section": "M",
+    "text": "M\n\nManual Feature Engineering:\nThe process of manually selecting or designing features from raw data for use in machine learning models. In Graph ML, representation learning often reduces the need for extensive manual feature engineering.\nMultigraph:\nA graph that allows multiple edges (parallel edges) between the same pair of nodes."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Glossary.html#n",
+    "href": "GNN-CS224W-Notes/Glossary.html#n",
+    "title": "GNN CS224W Notes",
+    "section": "N",
+    "text": "N\n\nNode:\nThe fundamental unit or vertex in a graph, representing an individual entity.\nNode Embedding:\nA learned vector representation of a node in a d-dimensional space that captures the node’s properties and its structural position within the graph."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Glossary.html#r",
+    "href": "GNN-CS224W-Notes/Glossary.html#r",
+    "title": "GNN CS224W Notes",
+    "section": "R",
+    "text": "R\n\nRepresentation Learning:\nThe process by which a model automatically learns to represent data (such as nodes in a graph) in a way that is useful for downstream tasks, minimizing the need for manual feature engineering."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Glossary.html#s",
+    "href": "GNN-CS224W-Notes/Glossary.html#s",
+    "title": "GNN CS224W Notes",
+    "section": "S",
+    "text": "S\n\nSpatial Graph:\nA graph in which nodes have a physical or geometric interpretation, such as representing amino acids in a protein where edges are defined based on spatial proximity.\nStrong Connectivity:\nIn a directed graph, the condition where for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\nStrongly Connected Components:\nMaximal subgraphs of a directed graph in which every node is reachable from every other node via directed paths.\nWeak Connectivity:\nIn a directed graph, the graph is weakly connected if replacing all directed edges with undirected edges results in a connected graph."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html",
+    "title": "GNN CS224W Notes",
+    "section": "",
+    "text": "Lecture 4.2 – PageRank: How to Solve?\nVideo: Lecture 4.2 - PageRank: How to Solve?\nOfficial Course Slides: Link to Slides"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#discussion-of-key-concepts",
     "title": "GNN CS224W Notes",
     "section": "Discussion of Key Concepts",
-    "text": "Discussion of Key Concepts\n\nEmbedding via Matrix Factorization:\nWe represent the graph by its adjacency matrix \\(A\\) and seek a low dimensional embedding matrix \\(Z \\in R^{N \\times d}\\) such that: \\[\n              A \\approx Z\\,Z^T\n              \\] We solve \\(\\min_{Z} \\|A - Z Z^T\\|_F^2\\) to find our embeddings, where is the Frobenius norm. This factorization yields node vectors whose inner products reconstruct original link strengths.\nScalability & Computation:\nComputing the full factorization is and memory‑heavy for large graphs. Techniques include truncated SVD or sampling to approximate the Frobenius‑norm minimization.\nLimitations:\n\nNo Inductive Ability: only nodes seen during training have embeddings; new or unseen nodes cannot be embedded without retraining.\nStructural Similarity Blindness: captures identity of neighbors but fails to detect isomorphic or structurally equivalent roles (e.g., two nodes with similar patterns but different neighbor identities yield different embeddings).\nFeature Agnosticism: uses only adjacency structure; ignores potentially useful node attributes or edge labels.\n\nBridging to GNNs:\nTo incorporate both structure and feature information and to support inductive learning—Graph Neural Networks (GNNs) and deep graph architectures learn parametric aggregation functions. They generalize embeddings to unseen nodes and capture structural patterns beyond direct neighbor identity."
+    "text": "Discussion of Key Concepts\n\nPower Iteration Method:\nTo compute the PageRank vector , we use power iteration. Starting from any initial probability distribution , we repeatedly apply it until convergence. Each iteration involves one sparse matrix–vector multiplication plus a simple teleportation adjustment.\nConvergence & Uniqueness:\nThe Google matrix is constructed to be positive and column‑stochastic, ensuring a unique stationary distribution. Power iteration converges geometrically at a rate determined by the spectral gap, which is closely related to the damping factor.\nDead Ends & Spider Traps:\nNodes with zero out‑degree (dead ends) and subgraphs with no outgoing edges (spider traps) cause probability mass to vanish or become trapped, breaking the Markov chain’s stochasticity and preventing meaningful global rankings.\nTeleportation Fix:\nIt has been introduced a damping factor (commonly set to 0.8–0.9) and define the Google matrix, where teleportation simultaneously solves both dead ends and spider traps by ensuring irreducibility and aperiodicity.\nPageRank Equation:\nWe compute this solution via power iteration rather than sampling random walks, trading Monte Carlo variability for deterministic precision.\nDamping Factor Choice:\nEmpirically, setting balances following links and exploring new nodes, yielding robust rankings and reasonable convergence speeds."
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#my-personal-takeaways",
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#my-personal-takeaways",
     "title": "GNN CS224W Notes",
-    "section": "My Personal Takeaways:",
-    "text": "My Personal Takeaways:\n\nFrobenius Norm as Graph Memory:\nMinimizing is like preserving every edge weight in a compressed memory bank, each dimension in stores a global snapshot of connectivity.\nInduction Gap as Achilles’ Heel:\nMatrix factorization is brilliant at compression but deaf to change: once the graph grows, the old embeddings sit static, requiring full retraining to learn new patterns.\nFrom Static Factorization to Dynamic Filtering:\nGNNs extend pure MF by learning filters that convolve node features over structure; this shift from memorizing links to learning propagation rules bridges the gap between representation and reasoning on graphs."
+    "section": "My Personal Takeaways",
+    "text": "My Personal Takeaways\n\nTeleportation as Global Reset & Discovery:\nTeleportation not only prevents rank sinks but also injects a uniform exploration step, akin to hitting the “shuffle” button and discovering fresh parts of the graph.\nSpectral Gap as a Graph Health Indicator:\nThe speed of convergence reveals graph cohesion: well connected, rapidly mixing networks converge quickly, while modular graphs with tight communities stall the iteration.\nDeterministic Precision over Stochastic Trials:\nBy solving an eigenvector problem directly, we bypass the noise and variance of sampling random walks, gaining repeatable and exact rankings at the expense of relying on linear algebraic solvers."
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#next-steps",
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#next-steps",
     "title": "GNN CS224W Notes",
     "section": "Next Steps",
-    "text": "Next Steps\n\nImplement MF Embeddings:\nApply truncated SVD or gradient‑descent on for a small citation or social graph. Visualize how embedding quality (reconstruction error) varies with.\nFurther Reading:\n\nBelkin & Niyogi (2001): Laplacian Eigenmaps for Dimensionality Reduction and Data Representation\n\nKipf & Welling (2017): Semi‑Supervised Classification with Graph Convolutional Networks\n\n\n\nEnd of Lecture 4.4 Notes"
+    "text": "Next Steps\n\nExplore Localized PageRank:\nInvestigate push algorithms for personalized PageRank to see how local computations approximate global importance efficiently.\nFurther Reading:\n\nPage et al. (1999): The PageRank Citation Ranking: Bringing Order to the Web\nAndersen, Chung & Lang (2006): _Local Graph Partitioning using PageRank Vectors\nJeh & Widom (2003): Scaling Personalized Web Search\n\n\n\nEnd of Lecture 4.2 Notes"
   },
   {
     "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.1_PageRank.html",
@@ -56,32 +126,25 @@
     "text": "Next Steps\n\nImplement & Experiment:\nCode the power‐method iteration for r = G·r on a small web graph. Try different α values (e.g., 0.15 vs. 0.05) and plot the convergence ‖r(t+1)–r(t)‖ over iterations.\nRead Foundational Papers:\nReview “The PageRank Citation Ranking: Bringing Order to the Web” (Page et al., 1999) and explore follow‐up work on accelerated solvers and personalized PageRank algorithms.\n\n\nEnd of Lecture 4.1 Notes"
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html",
-    "title": "Traditional Feature-based Methods: Link",
-    "section": "",
-    "text": "Video: Lecture 2.2 - Traditional Feature-based Methods\nOfficial Course Slides: [https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf)\n\n\n\nThis lecture explores traditional, handcrafted approaches for link prediction, focusing on how to extract and utilize graph structural features to predict the presence of links between nodes. Key topics include:\n\nLink Prediction Overview:\nThe task is formulated as a binary classification problem where, given a pair of nodes, the goal is to predict whether a link exists. Handcrafted features derived from the graph’s topology are used as predictors.\nLocal Similarity Metrics:\nSeveral metrics are introduced to assess the likelihood of a link:\n\nCommon Neighbors: counts the number of shared neighbors between two nodes.\nJaccard Coefficient: ratio of common neighbors on the union of their neighbors.\nAdamic/Adar Index: weighs shared neighbors inversely by their overall connectivity.\n\nKatz Index:\nMoves beyond immediate neighborhoods by summing over the total number of paths between node pairs. A damping factor exponentially penalizes longer paths, thus incorporating both local and global network information.\nAdjacency Matrix Powers:\nThe lecture explains that the k-th power of the adjacency matrix reveals the number of distinct paths of length k between nodes. Under the proper conditions, the infinite series summing the weighted powers of the adjacency matrix can be expressed in a closed form. This provides an elegant mathematical formulation of link prediction that unifies local metrics (like common neighbors) with contributions from longer-range connections.\n\n\n\n\n\n\nCapturing Global Structure:\nTechniques like the Katz Index and adjacency matrix powers allow for the consideration of paths of varying lengths, integrating both local and global information.\nMathematical Elegance:\nThe closed-form expression derived from the weighted sum of adjacency matrix powers offers a powerful and compact way to summarize connectivity, even if it is often computationally intensive for large graphs.\nScalability Concerns:\nTraditional metrics can be computationally expensive on large graphs, emphasizing the importance of exploring scalable alternatives in modern graph learning.\n\n\n\n\n\n\nFurther Reading:\nExplore research on the Katz Index, matrix power methods, and their closed-form solutions to understand the theoretical foundations behind these techniques.\nPractical Applications:\nConsider how these traditional metrics can serve as baseline features when designing and benchmarking modern link prediction algorithms.\n\n\nEnd of Lecture 2.2 Notes"
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#discussion-of-key-concepts",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "Discussion of Key Concepts",
+    "text": "Discussion of Key Concepts\nThis lecture explores traditional, handcrafted approaches to assess node importance within a graph. It covers:\n\nNode Degree:\nThe simplest metric that counts the number of edges incident to a node. It provides a basic measure of connectivity and hints at a node’s potential influence.\nCentrality Measures:\nThese go beyond simple connectivity to evaluate the role of a node within the overall structure of the network.\n\nEigenvector Centrality:\nMeasures a node’s influence by considering the importance of its neighbors. It is computed from the leading eigenvector of the graph’s adjacency matrix (associated with the largest eigenvalue).\nBetweenness Centrality:\nQuantifies how frequently a node lies on the shortest paths between other nodes, indicating its role as a bridge or bottleneck within the network.\nCloseness Centrality:\nAssesses how close a node is to all other nodes based on the average shortest path lengths, showing how quickly information can spread from that node.\nClustering Centrality:\nReflects the degree to which a node’s neighbors are interconnected, offering insights into the local density and community structure.\n\nGraphlets:\nThese are small, connected subgraphs that capture recurring local patterns in the network. Graphlets serve as additional features to describe the local topology around each node, complementing the traditional centrality metrics.\n\nBy combining these techniques, one can obtain a robust and multi-faceted understanding of node importance, which not only aids in interpreting graph structure but also sets the stage for advanced approaches like Graph Neural Networks."
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#discussion-of-key-concepts",
-    "title": "Traditional Feature-based Methods: Link",
-    "section": "",
-    "text": "This lecture explores traditional, handcrafted approaches for link prediction, focusing on how to extract and utilize graph structural features to predict the presence of links between nodes. Key topics include:\n\nLink Prediction Overview:\nThe task is formulated as a binary classification problem where, given a pair of nodes, the goal is to predict whether a link exists. Handcrafted features derived from the graph’s topology are used as predictors.\nLocal Similarity Metrics:\nSeveral metrics are introduced to assess the likelihood of a link:\n\nCommon Neighbors: counts the number of shared neighbors between two nodes.\nJaccard Coefficient: ratio of common neighbors on the union of their neighbors.\nAdamic/Adar Index: weighs shared neighbors inversely by their overall connectivity.\n\nKatz Index:\nMoves beyond immediate neighborhoods by summing over the total number of paths between node pairs. A damping factor exponentially penalizes longer paths, thus incorporating both local and global network information.\nAdjacency Matrix Powers:\nThe lecture explains that the k-th power of the adjacency matrix reveals the number of distinct paths of length k between nodes. Under the proper conditions, the infinite series summing the weighted powers of the adjacency matrix can be expressed in a closed form. This provides an elegant mathematical formulation of link prediction that unifies local metrics (like common neighbors) with contributions from longer-range connections."
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "My Personal Takeaways",
+    "text": "My Personal Takeaways\n\nBaseline Interpretability:\nTraditional metrics such as node degree and centrality measures are straightforward and provide an intuitive starting point for assessing node importance.\nImportance of Feature Normalization:\nA critical point from the slides is the need to normalize centrality measures. Normalization ensures that values are comparable across nodes and minimizes the impact of outliers.\nSimplicity vs. Complexity Trade-off:\nWhile handcrafted features are transparent and easy to compute, they may fail to capture complex interactions in the data, highlighting the limitations that motivate the shift toward learning-based methods like GNNs.\nComplementary Insights:\nNo single metric tells the whole story—combining multiple centrality measures with graphlet features leads to a more comprehensive view of node importance.\nScalability and Robustness:\nAn additional important insight from the slides is the challenge of scaling these methods to large graphs and ensuring robustness to noise, issues that further justify the move to automated representation learning with GNNs."
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#my-personal-takeaways",
-    "title": "Traditional Feature-based Methods: Link",
-    "section": "",
-    "text": "Capturing Global Structure:\nTechniques like the Katz Index and adjacency matrix powers allow for the consideration of paths of varying lengths, integrating both local and global information.\nMathematical Elegance:\nThe closed-form expression derived from the weighted sum of adjacency matrix powers offers a powerful and compact way to summarize connectivity, even if it is often computationally intensive for large graphs.\nScalability Concerns:\nTraditional metrics can be computationally expensive on large graphs, emphasizing the importance of exploring scalable alternatives in modern graph learning."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#next-steps",
-    "title": "Traditional Feature-based Methods: Link",
-    "section": "",
-    "text": "Further Reading:\nExplore research on the Katz Index, matrix power methods, and their closed-form solutions to understand the theoretical foundations behind these techniques.\nPractical Applications:\nConsider how these traditional metrics can serve as baseline features when designing and benchmarking modern link prediction algorithms.\n\n\nEnd of Lecture 2.2 Notes"
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#next-steps",
+    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nLecture 2.2:\nThe next lecture will focus on GNN-based approaches for node representation learning, addressing the limitations of traditional feature-based methods.\nFurther Reading:\nExplore foundational papers on centrality measures and graphlet analysis for a deeper understanding of these traditional techniques.\n\n\nEnd of Lecture 2.1 Notes"
   },
   {
     "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.3_Traditional Feature-based Methods_Graph.html",
@@ -110,6 +173,216 @@
     "title": "Traditional Feature-based Methods: Graph",
     "section": "",
     "text": "Further Reading:\nReview foundational literature on graph kernels and the Weisfeiler-Lehman algorithm to deepen your understanding of how these methods extract and leverage graph structure.\nPractical Implementation:\nExperiment with implementing the WL kernel on sample graphs to observe how color refinement and feature aggregation work in practice.\n\n\nEnd of Lecture 2.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html",
+    "title": "GNN CS224W Notes",
+    "section": "",
+    "text": "Lecture 5.3 – Collective Classification: Belief Propagation  Video: Lecture 5.3 – Collective Classification: Belief Propagation\nSNAP GitHub: SNAP GitHub"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#discussion-of-key-concepts",
+    "title": "GNN CS224W Notes",
+    "section": "Discussion of Key Concepts",
+    "text": "Discussion of Key Concepts\n\nLoopy Belief Propagation\nA dynamic‐programming‐style approach on graphs with cycles, implemented by passing messages along edges until beliefs stabilize (or a max iteration cap).\nMessage Passing (Core Operation)\n\nReceive: Each node listens to incoming messages from all its neighbors.\n\nUpdate: It updates its own belief based on those messages plus its prior.\n\nSend: It forwards a new message to each neighbor.\n\nTree vs. Loopy Graphs\n\nTree: Messages can be scheduled leaf→root then root→leaf; exact inference in two passes.\n\nLoopy Graph: No valid topological order; messages become interdependent—but you can still run BP iteratively, and in practice cycles often have only weak dampening effects.\n\nLabel–Label Potential Matrix\nEncodes compatibility between neighbor labels. In a homophilous network, the matrix has high values on its diagonal (same‐class pairs).\nPrior Belief\nEach node (i) starts with a prior belief (e.g., from a local classifier) about belonging to each class.\nBehavior on Cyclic Graphs\n\nCannot enforce a single sweep order—messages reinforce initial priors.\n\nEmpirically, loopy BP often converges even though theoretical guarantees are absent.\n\nPros of Loopy BP\n\nEasy to parallelize and implement.\n\nScales to large graphs with simple local updates."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#my-personal-takeaways",
+    "title": "GNN CS224W Notes",
+    "section": "My Personal Takeaways",
+    "text": "My Personal Takeaways\n\nApproximate but Effective:\nDespite lacking convergence guarantees on cycles, loopy BP often yields high‐quality approximations in real networks.\nModular Message Functions:\nDefining clear “prior → message → update” functions decouples model design from implementation, making it easy to swap potential functions.\nScalability:\nLocalized operations allow for distributed or asynchronous execution, crucial for very large graphs."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#next-steps",
+    "title": "GNN CS224W Notes",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nImplement Loopy BP:\nCode belief propagation on a small cyclic graph (e.g., a grid), measure convergence behavior vs. iteration count.\n\nFurther Reading:\n\nYedidia, Freeman, Weiss, “Understanding Belief Propagation and its Generalizations” (2003)\n\nRichardson & Domingos, “Markov Logic Networks” (2006)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html",
+    "title": "GNN CS224W Notes",
+    "section": "",
+    "text": "Lecture 6.2 – Basics of Deep Learning\nVideo: Lecture 6.2 – Basics of Deep Learning\nOfficial Course Slides: Link to Slides\nSNAP GitHub: SNAP GitHub"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#discussion-of-key-concepts",
+    "title": "GNN CS224W Notes",
+    "section": "Discussion of Key Concepts",
+    "text": "Discussion of Key Concepts\n\nML as Optimization:\nFormulate learning as \\(\\min_{\\Theta} \\;\\mathcal{L}(y, f_{\\Theta}(x))\\) ] where \\(\\Theta\\) is the set of parameters, \\(x\\) the input, \\(y\\) the true label, and \\(\\mathcal{L}\\) the loss.\nLoss Functions:\n\nL2 Loss: \\(\\|y - f(x)\\|_2^2\\)\nCross‐Entropy (CE): for one‐hot \\(y\\) and softmax \\(f(x)\\): \\(\\mathrm{CE}(y, f(x)) = -\\sum_{i=1}^{C} y_i \\,\\log f(x)_i\\)\n\nTotal Training Loss:\n\\(\\mathcal{L}_{\\mathrm{total}} = \\sum_{(x,y)\\in\\mathcal{T}} \\mathcal{L}(y, f_{\\Theta}(x))\\)\n\nGradient‐Based Optimization\n\nCompute gradient \\(\\nabla_{\\Theta}\\mathcal{L}\\) to find downhill direction.\n\nGradient Descent:\n\\(\\Theta \\leftarrow \\Theta - \\eta \\,\\nabla_{\\Theta}\\mathcal{L}\\)\nwhere \\(\\eta\\) is the learning rate.\n\nStopping Criteria:\n\n\\(\\|\\nabla \\mathcal{L}\\|\\approx 0\\)\n\nNo validation‐set improvement\n\n\nStochastic Gradient Descent (SGD)\n\nApproximate full gradient using a mini‐batch of size \\(b\\).\n\nIteration: one update on a mini‐batch\n\nEpoch: one full pass over the dataset\n\nProperties & Challenges:\n\nUnbiased estimate of true gradient\n\nNo convergence guarantee without proper schedule\n\nRequires careful tuning of \\(\\eta\\), momentum, etc.\n\n\nBackpropagation\n\nUse chain rule to compute \\(\\nabla_{\\Theta}\\mathcal{L}\\) through multiple layers.\n\nEfficiently reuses intermediate activations to propagate errors backward."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#my-personal-takeaways",
+    "title": "GNN CS224W Notes",
+    "section": "My Personal Takeaways",
+    "text": "My Personal Takeaways\n\nOptimization Viewpoint:\nSeeing training as repeated descent steps clarifies the role of hyperparameters (learning rate, batch size) in convergence.\nMini‐Batch Trade‐Off:\nSmall batches yield noisy gradients (fast updates), large batches more stable but slower per update—find the sweet spot.\nBackprop as Automation:\nChain‐rule‐based gradient computation abstracts away the complexity of deep architectures, letting us focus on model design."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#next-steps",
+    "title": "GNN CS224W Notes",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nExperiment with Optimizers:\nCompare SGD, SGD + momentum, Adam on a toy dataset; track training/validation loss curves.\nFurther Reading:\n\nGoodfellow, Bengio & Courville, “Deep Learning” (2016), Ch. 6–8\n\nRuder, “An overview of gradient descent optimization algorithms” (2016)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html",
+    "title": "GNN CS224W Notes",
+    "section": "",
+    "text": "Lecture 6.1 – Introduction to Graph Neural Networks Video: Lecture 6.1 – Graph Neural Networks – Introduction\nOfficial Course Slides: Link to Slides"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#discussion-of-key-concepts",
+    "title": "GNN CS224W Notes",
+    "section": "Discussion of Key Concepts",
+    "text": "Discussion of Key Concepts\n\nTwo Key Components\n\nEncoder \\(\\mathcal{E}\\) : maps each node’s raw representation (one-hot or features) to a low-dimensional embedding space.\n\nDecoder \\(\\mathcal{D}\\) : reconstructs relationships (e.g., via dot-product or cosine similarity) from embeddings.\n\nSimilarity Function: defines how distances or scores in embedding space correspond to graph relationships (e.g., edge existence, edge weight).\n\nShallow Encoding (Embedding Lookup)\n\nPre-assigns a unique embedding vector to each node.\n\nLimitations:\n\nRequires \\((O(N \\times d))\\) parameters (expensive for large \\(N\\)).\n\nNo parameter sharing across nodes.\n\nTransductive: cannot embed unseen nodes at test time.\n\nIgnores node features and graph structure dynamics.\n\n\nGraph Neural Networks (Deep Graph Encoders)\n\nStack multiple layers of non-linear graph convolutions or message-passing:\n[ \\(\\mathbf{h}_v^{(k+1)} = \\sigma\\Bigl( W^{(k)} \\cdot \\text{AGGREGATE}\\bigl(\\{\\mathbf{h}_u^{(k)}: u\\in\\mathcal{N}(v)\\}\\bigr) \\Bigr)\\) ]\n\nParameter sharing across nodes and layers enables inductive learning.\n\nCan incorporate node features, edge features, and complex topologies.\n\nWhat Can GNNs Do?\n\nEmbed Nodes for downstream tasks (node classification, link prediction).\n\nEmbed Subgraphs/Whole Graphs for graph classification or similarity.\n\nHandle arbitrary graph sizes, heterogeneous features, and variable neighborhood structures.\n\nWhy Is This Hard?\nTraditional ML expects fixed-size, ordered inputs (images, sequences).\nGraphs are unordered, variable-size, and multi-modal, requiring specialized architectures to aggregate and propagate information."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#my-personal-takeaways",
+    "title": "GNN CS224W Notes",
+    "section": "My Personal Takeaways",
+    "text": "My Personal Takeaways\n\nInductive vs. Transductive:\nGNNs generalize to new nodes/graphs by sharing parameters, overcoming shallow embedding limitations.\nTopology as Architecture:\nThe graph structure itself defines how information flows designing aggregation functions is as crucial as choosing network depth."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#next-steps",
+    "title": "GNN CS224W Notes",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nFurther Reading:\n\nKipf & Welling, “Semi-Supervised Classification with Graph Convolutional Networks” (2017)\nHamilton, Ying & Leskovec, “Inductive Representation Learning on Large Graphs (GraphSAGE)” (2017)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html",
+    "title": "Embedding Entire Graphs",
+    "section": "",
+    "text": "Video: Lecture 3.3 – Embedding Entire Graphs\nOfficial Course Slides: Link to Slides\n\n\n\nThis lecture focuses on methods to embed an entire graph (or a subgraph) into a continuous vector space. Rather than representing individual nodes, the goal here is to capture the holistic structure of the graph. Key topics include:\n\nGraph Embedding Objectives:\nThe main objective is to map a whole graph (or subgraph) into an embedding space such that similar graphs have embeddings that are close together. Main approaches involve:\n\nAveraging Node Embeddings:\nA baseline method that simply averages the embeddings of nodes already computed within a graph. -&gt; classification of molecules\nVirtual Node Approach:\nAn improved technique introduces a virtual node whose embedding is learned via methods similar to node2vec. This node acts as a proxy for the entire graph, thereby capturing a more robust summary of the structure.\n\nAnonymous Walks:\nAnonymous walks represent random walks by recording the index of the first time each node is visited, effectively ignoring the actual node identities.\n\nInvariant Representation:\nSince the anonymous walk depends solely on the order of first visits, two walks with the same order yield the same representation an n-dimensional vector where each dimension represents the probability of a particular anonymous walk pattern in the graph.\nRandom Walk Sampling:\nA crucial aspect discussed is determining the number of random walks needed to reliably capture the graph’s structure.\n\nLearning Embeddings for Entire Graphs:\nThe idea is to learn a vector Zg that describes the graph. This is done by:\n\nRunning T different random walks on the graph.\nTreating the set (or neighborhood) of random walks as the context, much like in DeepWalk for nodes.\nOptimizing the embeddings to maximize the likelihood of the observed co-occurrences of these random walks.\n\nThe final graph embedding can be used for tasks such as graph classification, where the dot product between embeddings is used to measure similarity or as input features to a neural network.\nHierarchical Aggregation:\nOne important question is to find methods to hierarchically aggregate node-level and walk-level information to obtain a comprehensive embedding of the entire graph.\n\n\n\n\n\n\nPower of Anonymous Walks:\nThe anonymous walk approach abstracts away node identities and focuses solely on structural patterns. This invariance allows for a generalized representation of graph topology across different graphs.\nTrade-offs in Random Walk Sampling:\nA key challenge is determining the adequate number of random walks to accurately capture the underlying structure. It’s a delicate balance between sampling enough information and maintaining computational efficiency.\nTask Independence:\nMuch like node embeddings, these graph-level embeddings are task-independent. They provide a general-purpose representation that can be plugged into various downstream applications—whether for graph classification, similarity assessment, or as inputs to more complex models.\n\n\n\n\n\n\nExplore Hierarchical Methods:\nDelve into upcoming lectures and readings that address how to hierarchically aggregate information from nodes and substructures to further refine graph embeddings.\nFurther Reading:\nInvestigate seminal papers on graph kernels and graph embedding methods (Graph2Vec) to deepen your understanding of the theory and applications behind these techniques.\n\n\nEnd of Lecture 3.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#discussion-of-key-concepts",
+    "title": "Embedding Entire Graphs",
+    "section": "",
+    "text": "This lecture focuses on methods to embed an entire graph (or a subgraph) into a continuous vector space. Rather than representing individual nodes, the goal here is to capture the holistic structure of the graph. Key topics include:\n\nGraph Embedding Objectives:\nThe main objective is to map a whole graph (or subgraph) into an embedding space such that similar graphs have embeddings that are close together. Main approaches involve:\n\nAveraging Node Embeddings:\nA baseline method that simply averages the embeddings of nodes already computed within a graph. -&gt; classification of molecules\nVirtual Node Approach:\nAn improved technique introduces a virtual node whose embedding is learned via methods similar to node2vec. This node acts as a proxy for the entire graph, thereby capturing a more robust summary of the structure.\n\nAnonymous Walks:\nAnonymous walks represent random walks by recording the index of the first time each node is visited, effectively ignoring the actual node identities.\n\nInvariant Representation:\nSince the anonymous walk depends solely on the order of first visits, two walks with the same order yield the same representation an n-dimensional vector where each dimension represents the probability of a particular anonymous walk pattern in the graph.\nRandom Walk Sampling:\nA crucial aspect discussed is determining the number of random walks needed to reliably capture the graph’s structure.\n\nLearning Embeddings for Entire Graphs:\nThe idea is to learn a vector Zg that describes the graph. This is done by:\n\nRunning T different random walks on the graph.\nTreating the set (or neighborhood) of random walks as the context, much like in DeepWalk for nodes.\nOptimizing the embeddings to maximize the likelihood of the observed co-occurrences of these random walks.\n\nThe final graph embedding can be used for tasks such as graph classification, where the dot product between embeddings is used to measure similarity or as input features to a neural network.\nHierarchical Aggregation:\nOne important question is to find methods to hierarchically aggregate node-level and walk-level information to obtain a comprehensive embedding of the entire graph."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#my-personal-takeaways",
+    "title": "Embedding Entire Graphs",
+    "section": "",
+    "text": "Power of Anonymous Walks:\nThe anonymous walk approach abstracts away node identities and focuses solely on structural patterns. This invariance allows for a generalized representation of graph topology across different graphs.\nTrade-offs in Random Walk Sampling:\nA key challenge is determining the adequate number of random walks to accurately capture the underlying structure. It’s a delicate balance between sampling enough information and maintaining computational efficiency.\nTask Independence:\nMuch like node embeddings, these graph-level embeddings are task-independent. They provide a general-purpose representation that can be plugged into various downstream applications—whether for graph classification, similarity assessment, or as inputs to more complex models."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#next-steps",
+    "title": "Embedding Entire Graphs",
+    "section": "",
+    "text": "Explore Hierarchical Methods:\nDelve into upcoming lectures and readings that address how to hierarchically aggregate information from nodes and substructures to further refine graph embeddings.\nFurther Reading:\nInvestigate seminal papers on graph kernels and graph embedding methods (Graph2Vec) to deepen your understanding of the theory and applications behind these techniques.\n\n\nEnd of Lecture 3.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "Video: Lecture 1.3 – Choice of Graph Representation\nOfficial Course Slides: Stanford CS224W\n\n\n\n\nBuilding a Graph:\n\nDeciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.\n\nGraph Types:\n\nUndirected vs. Directed:\n\nRefer to the Glossary for definitions on node degree and other related terms.\n\nBipartite Graphs:\n\nGraphs that consist of two distinct sets of nodes with edges only between sets.\n\n\nGraph Representations:\n\nAdjacency Matrix:\n\nA common method to represent graphs.\nThese matrices are typically sparse (e.g., in human social networks or email graphs).\n\nAdjacency List:\n\nOften more efficient and easier to use for sparse graphs.\n\n\nNodes and Edges Properties:\n\nBoth nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.\n\nMultigraphs:\n\nGraphs that allow more than one edge between the same pair of nodes.\n\nConnectivity Concepts:\n- General Connectivity:\n- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - Directed Graph Connectivity:\n- Strong Connectivity: A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\n- Weak Connectivity: A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.\n\nStrongly Connected Components:\n\nThese are maximal subgraphs in which every node is reachable from every other node via directed paths.\n\n\n\n\n\n\n\n\nChoosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.\nDeciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.\nFamiliarity with different representations (adjacency matrices vs. lists) and connectivity concepts is key to harnessing the full power of Graph ML.\n\n\n\n\n\n\n“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”\n(Paraphrased from the lecture)\n\n\n\n\n\n\nNext lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#key-topics",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#key-topics",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "Building a Graph:\n\nDeciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.\n\nGraph Types:\n\nUndirected vs. Directed:\n\nRefer to the Glossary for definitions on node degree and other related terms.\n\nBipartite Graphs:\n\nGraphs that consist of two distinct sets of nodes with edges only between sets.\n\n\nGraph Representations:\n\nAdjacency Matrix:\n\nA common method to represent graphs.\nThese matrices are typically sparse (e.g., in human social networks or email graphs).\n\nAdjacency List:\n\nOften more efficient and easier to use for sparse graphs.\n\n\nNodes and Edges Properties:\n\nBoth nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.\n\nMultigraphs:\n\nGraphs that allow more than one edge between the same pair of nodes.\n\nConnectivity Concepts:\n- General Connectivity:\n- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - Directed Graph Connectivity:\n- Strong Connectivity: A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\n- Weak Connectivity: A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.\n\nStrongly Connected Components:\n\nThese are maximal subgraphs in which every node is reachable from every other node via directed paths."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#my-personal-takeaways",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "Choosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.\nDeciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.\nFamiliarity with different representations (adjacency matrices vs. lists) and connectivity concepts is key to harnessing the full power of Graph ML."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#quotes-or-interesting-points",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#quotes-or-interesting-points",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”\n(Paraphrased from the lecture)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#next-steps",
+    "title": "Choice of Graph Representation",
+    "section": "",
+    "text": "Next lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "Video: Lecture 1.2 – Applications of Graph ML\nOfficial Course Slides: Stanford CS224W\n\n\n\n\n\n\nProtein Structure & AlphaFold:\n\nModeling the three-dimensional organization of proteins as graphs.\nSpatial Graph Idea:\n\nNodes: Represent amino acids.\n\nEdges: Connect amino acids based on proximity.\n\nUnderpins methods like AlphaFold.\n\n\n\n\n\n\nEdge Prediction & Recommender Systems:\n\nPredicting the existence or strength of edges between nodes.\nLearning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.\n\nBipartite Graphs in Image Analysis:\n\nCombining image features with graph structure can outperform using image data alone.\n\nPredicting Drug-Protein Impact:\n\nAnalyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.\n\n\n\n\n\n\nTraffic Prediction:\n\nUsing subgraph-level ML tasks to forecast traffic patterns.\nDeployed in production systems like Google Maps. ### Graph-Level Tasks\n\nDrug Discovery & Molecule Generation:\n\nApplying graph-level ML for drug discovery, including deep learning for antibiotic discovery.\nGraph Generation:\n\nGenerating molecules in a targeted way for novel drug design.\n\n\n\n\n\n\n\n\n\nTask Diversity:\nGraph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.\nRepresentation Learning is Central:\nLearning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.\nReal-World Impact:\nApplications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations.\n\n\n\n\n\n\n“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”\n(Paraphrased from the lecture)\n\n\n\n\n\n\nLecture 1.3:\nNext lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.\nFurther Reading:\nReview the notes from Lecture 1.2 and consult the Glossary for key terms related to graph representation.\n\n\nEnd of Lecture 1.2 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#key-topics",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#key-topics",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "Protein Structure & AlphaFold:\n\nModeling the three-dimensional organization of proteins as graphs.\nSpatial Graph Idea:\n\nNodes: Represent amino acids.\n\nEdges: Connect amino acids based on proximity.\n\nUnderpins methods like AlphaFold.\n\n\n\n\n\n\nEdge Prediction & Recommender Systems:\n\nPredicting the existence or strength of edges between nodes.\nLearning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.\n\nBipartite Graphs in Image Analysis:\n\nCombining image features with graph structure can outperform using image data alone.\n\nPredicting Drug-Protein Impact:\n\nAnalyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.\n\n\n\n\n\n\nTraffic Prediction:\n\nUsing subgraph-level ML tasks to forecast traffic patterns.\nDeployed in production systems like Google Maps. ### Graph-Level Tasks\n\nDrug Discovery & Molecule Generation:\n\nApplying graph-level ML for drug discovery, including deep learning for antibiotic discovery.\nGraph Generation:\n\nGenerating molecules in a targeted way for novel drug design."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#my-personal-takeaways",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "Task Diversity:\nGraph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.\nRepresentation Learning is Central:\nLearning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.\nReal-World Impact:\nApplications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#quotes-or-interesting-points",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#quotes-or-interesting-points",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”\n(Paraphrased from the lecture)"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#next-steps",
+    "title": "Applications & Tasks in Graph ML",
+    "section": "",
+    "text": "Lecture 1.3:\nNext lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.\nFurther Reading:\nReview the notes from Lecture 1.2 and consult the Glossary for key terms related to graph representation.\n\n\nEnd of Lecture 1.2 Notes"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Course Overview",
+    "section": "",
+    "text": "Welcome to my personal notes on the Stanford Graph Neural Networks (GNN) Course.\nThese notes capture my own takeaways, clarifications and code examples from each lecture. Since there are many lessons, I keep their detailed list in a separate note."
+  },
+  {
+    "objectID": "index.html#key-sections",
+    "href": "index.html#key-sections",
+    "title": "Course Overview",
+    "section": "Key Sections",
+    "text": "Key Sections\n\nLessons_index – Complete list of all lessons, each with summaries and links.\nGlossary – Definitions of common GNN terms and acronyms.\nReferences – Links to papers, official resources and anything useful.\nCode_Examples/ – Folder containing practical notebooks for hands-on GNN experiments."
+  },
+  {
+    "objectID": "index.html#how-to-use-these-notes",
+    "href": "index.html#how-to-use-these-notes",
+    "title": "Course Overview",
+    "section": "How to Use These Notes",
+    "text": "How to Use These Notes\n\nPersonal Perspective: These are my own summaries of what I’ve learned; they may not be exhaustive.\n\nFull Lesson List: If you want a detailed breakdown of each lecture, check out Lessons_index.\nHands-On Practice: You can explore the Code_Examples folder for GNN implementations and experiments. (coming soon…)"
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Course Overview",
+    "section": "Contributing",
+    "text": "Contributing\nIf you see something off or have a better explanation, feel free to open a pull request or suggest edits.  Thanks for reading, let’s dive into GNNs together. :)"
   },
   {
     "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.1_Why_Graphs.html",
@@ -231,209 +504,6 @@
     "text": "Next Steps\n\nImplement on a Benchmark Graph\nWrite code for the full iterative classification algorithm on Cora or Citeseer, experimenting with different summary-vector definitions (mean label proportions, max-pooling, etc.).\nFurther Reading\n\nNeville, J., & Jensen, D. “Iterative Classification in Relational Data” (2003)\nLu, Q., & Getoor, L. “Link-based Classification” (2003)"
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html",
-    "title": "GNN CS224W Notes",
-    "section": "",
-    "text": "Lecture 6.2 – Basics of Deep Learning\nVideo: Lecture 6.2 – Basics of Deep Learning\nOfficial Course Slides: Link to Slides\nSNAP GitHub: SNAP GitHub"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#discussion-of-key-concepts",
-    "title": "GNN CS224W Notes",
-    "section": "Discussion of Key Concepts",
-    "text": "Discussion of Key Concepts\n\nML as Optimization:\nFormulate learning as \\(\\min_{\\Theta} \\;\\mathcal{L}(y, f_{\\Theta}(x))\\) ] where \\(\\Theta\\) is the set of parameters, \\(x\\) the input, \\(y\\) the true label, and \\(\\mathcal{L}\\) the loss.\nLoss Functions:\n\nL2 Loss: \\(\\|y - f(x)\\|_2^2\\)\nCross‐Entropy (CE): for one‐hot \\(y\\) and softmax \\(f(x)\\): \\(\\mathrm{CE}(y, f(x)) = -\\sum_{i=1}^{C} y_i \\,\\log f(x)_i\\)\n\nTotal Training Loss:\n\\(\\mathcal{L}_{\\mathrm{total}} = \\sum_{(x,y)\\in\\mathcal{T}} \\mathcal{L}(y, f_{\\Theta}(x))\\)\n\nGradient‐Based Optimization\n\nCompute gradient \\(\\nabla_{\\Theta}\\mathcal{L}\\) to find downhill direction.\n\nGradient Descent:\n\\(\\Theta \\leftarrow \\Theta - \\eta \\,\\nabla_{\\Theta}\\mathcal{L}\\)\nwhere \\(\\eta\\) is the learning rate.\n\nStopping Criteria:\n\n\\(\\|\\nabla \\mathcal{L}\\|\\approx 0\\)\n\nNo validation‐set improvement\n\n\nStochastic Gradient Descent (SGD)\n\nApproximate full gradient using a mini‐batch of size \\(b\\).\n\nIteration: one update on a mini‐batch\n\nEpoch: one full pass over the dataset\n\nProperties & Challenges:\n\nUnbiased estimate of true gradient\n\nNo convergence guarantee without proper schedule\n\nRequires careful tuning of \\(\\eta\\), momentum, etc.\n\n\nBackpropagation\n\nUse chain rule to compute \\(\\nabla_{\\Theta}\\mathcal{L}\\) through multiple layers.\n\nEfficiently reuses intermediate activations to propagate errors backward."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#my-personal-takeaways",
-    "title": "GNN CS224W Notes",
-    "section": "My Personal Takeaways",
-    "text": "My Personal Takeaways\n\nOptimization Viewpoint:\nSeeing training as repeated descent steps clarifies the role of hyperparameters (learning rate, batch size) in convergence.\nMini‐Batch Trade‐Off:\nSmall batches yield noisy gradients (fast updates), large batches more stable but slower per update—find the sweet spot.\nBackprop as Automation:\nChain‐rule‐based gradient computation abstracts away the complexity of deep architectures, letting us focus on model design."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.2_Basics of Deep Learning.html#next-steps",
-    "title": "GNN CS224W Notes",
-    "section": "Next Steps",
-    "text": "Next Steps\n\nExperiment with Optimizers:\nCompare SGD, SGD + momentum, Adam on a toy dataset; track training/validation loss curves.\nFurther Reading:\n\nGoodfellow, Bengio & Courville, “Deep Learning” (2016), Ch. 6–8\n\nRuder, “An overview of gradient descent optimization algorithms” (2016)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html",
-    "title": "GNN CS224W Notes",
-    "section": "",
-    "text": "Lecture 6.1 – Introduction to Graph Neural Networks Video: Lecture 6.1 – Graph Neural Networks – Introduction\nOfficial Course Slides: Link to Slides"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#discussion-of-key-concepts",
-    "title": "GNN CS224W Notes",
-    "section": "Discussion of Key Concepts",
-    "text": "Discussion of Key Concepts\n\nTwo Key Components\n\nEncoder \\(\\mathcal{E}\\) : maps each node’s raw representation (one-hot or features) to a low-dimensional embedding space.\n\nDecoder \\(\\mathcal{D}\\) : reconstructs relationships (e.g., via dot-product or cosine similarity) from embeddings.\n\nSimilarity Function: defines how distances or scores in embedding space correspond to graph relationships (e.g., edge existence, edge weight).\n\nShallow Encoding (Embedding Lookup)\n\nPre-assigns a unique embedding vector to each node.\n\nLimitations:\n\nRequires \\((O(N \\times d))\\) parameters (expensive for large \\(N\\)).\n\nNo parameter sharing across nodes.\n\nTransductive: cannot embed unseen nodes at test time.\n\nIgnores node features and graph structure dynamics.\n\n\nGraph Neural Networks (Deep Graph Encoders)\n\nStack multiple layers of non-linear graph convolutions or message-passing:\n[ \\(\\mathbf{h}_v^{(k+1)} = \\sigma\\Bigl( W^{(k)} \\cdot \\text{AGGREGATE}\\bigl(\\{\\mathbf{h}_u^{(k)}: u\\in\\mathcal{N}(v)\\}\\bigr) \\Bigr)\\) ]\n\nParameter sharing across nodes and layers enables inductive learning.\n\nCan incorporate node features, edge features, and complex topologies.\n\nWhat Can GNNs Do?\n\nEmbed Nodes for downstream tasks (node classification, link prediction).\n\nEmbed Subgraphs/Whole Graphs for graph classification or similarity.\n\nHandle arbitrary graph sizes, heterogeneous features, and variable neighborhood structures.\n\nWhy Is This Hard?\nTraditional ML expects fixed-size, ordered inputs (images, sequences).\nGraphs are unordered, variable-size, and multi-modal, requiring specialized architectures to aggregate and propagate information."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#my-personal-takeaways",
-    "title": "GNN CS224W Notes",
-    "section": "My Personal Takeaways",
-    "text": "My Personal Takeaways\n\nInductive vs. Transductive:\nGNNs generalize to new nodes/graphs by sharing parameters, overcoming shallow embedding limitations.\nTopology as Architecture:\nThe graph structure itself defines how information flows designing aggregation functions is as crucial as choosing network depth."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 6/6.1_Introduction to Graph Neural Networks.html#next-steps",
-    "title": "GNN CS224W Notes",
-    "section": "Next Steps",
-    "text": "Next Steps\n\nFurther Reading:\n\nKipf & Welling, “Semi-Supervised Classification with Graph Convolutional Networks” (2017)\nHamilton, Ying & Leskovec, “Inductive Representation Learning on Large Graphs (GraphSAGE)” (2017)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html",
-    "href": "GNN-CS224W-Notes/Lessons_index.html",
-    "title": "GNN CS224W Notes",
-    "section": "",
-    "text": "Below is a high-level index for all 60+ lessons in the Stanford GNN Course.\nFeel free to update these groupings if you prefer a different organization."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
-    "href": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
-    "title": "GNN CS224W Notes",
-    "section": "Module 1: Introduction & Basics",
-    "text": "Module 1: Introduction & Basics\n\n1.1_Why_Graphs\n1.2_Applications & Tasks in Graph ML\n1.3_Choice of Graph Representation"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
-    "href": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
-    "title": "GNN CS224W Notes",
-    "section": "Module 2: Core GNN Architectures",
-    "text": "Module 2: Core GNN Architectures"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Course Overview",
-    "section": "",
-    "text": "Welcome to my personal notes on the Stanford Graph Neural Networks (GNN) Course.\nThese notes capture my own takeaways, clarifications and code examples from each lecture. Since there are many lessons, I keep their detailed list in a separate note."
-  },
-  {
-    "objectID": "index.html#key-sections",
-    "href": "index.html#key-sections",
-    "title": "Course Overview",
-    "section": "Key Sections",
-    "text": "Key Sections\n\nLessons_index – Complete list of all lessons, each with summaries and links.\nGlossary – Definitions of common GNN terms and acronyms.\nReferences – Links to papers, official resources and anything useful.\nCode_Examples/ – Folder containing practical notebooks for hands-on GNN experiments."
-  },
-  {
-    "objectID": "index.html#how-to-use-these-notes",
-    "href": "index.html#how-to-use-these-notes",
-    "title": "Course Overview",
-    "section": "How to Use These Notes",
-    "text": "How to Use These Notes\n\nPersonal Perspective: These are my own summaries of what I’ve learned; they may not be exhaustive.\n\nFull Lesson List: If you want a detailed breakdown of each lecture, check out Lessons_index.\nHands-On Practice: You can explore the Code_Examples folder for GNN implementations and experiments. (coming soon…)"
-  },
-  {
-    "objectID": "index.html#contributing",
-    "href": "index.html#contributing",
-    "title": "Course Overview",
-    "section": "Contributing",
-    "text": "Contributing\nIf you see something off or have a better explanation, feel free to open a pull request or suggest edits.  Thanks for reading, let’s dive into GNNs together. :)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html",
-    "href": "GNN-CS224W-Notes/Glossary.html",
-    "title": "GNN CS224W Notes",
-    "section": "",
-    "text": "This glossary provides definitions for key terms referenced in these lecture notes on Graph Neural Networks. Each entry is organized alphabetically for quick reference."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#a",
-    "href": "GNN-CS224W-Notes/Glossary.html#a",
-    "title": "GNN CS224W Notes",
-    "section": "A",
-    "text": "A\n\nAdjacency List:\nA data structure used to represent a graph, where each node is associated with a list of its neighboring nodes. This is particularly efficient for sparse graphs.\nAdjacency Matrix:\nA square matrix used to represent a graph. Each element at row i and column j indicates the presence (and possibly the weight) of an edge between nodes i and j. In sparse graphs, most entries are zero."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#b",
-    "href": "GNN-CS224W-Notes/Glossary.html#b",
-    "title": "GNN CS224W Notes",
-    "section": "B",
-    "text": "B\n\nBipartite Graph:\nA graph whose vertices can be divided into two disjoint sets such that every edge connects a vertex from one set to a vertex from the other set. There are no edges connecting vertices within the same set."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#c",
-    "href": "GNN-CS224W-Notes/Glossary.html#c",
-    "title": "GNN CS224W Notes",
-    "section": "C",
-    "text": "C\n\nConnectivity:\nA property of a graph that determines whether there is a path between every pair of nodes. A graph is connected if every node can be reached from every other node.\nConnected Component:\nA subgraph in which any two vertices are connected by paths, and which is not connected to any additional vertices in the overall graph."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#d",
-    "href": "GNN-CS224W-Notes/Glossary.html#d",
-    "title": "GNN CS224W Notes",
-    "section": "D",
-    "text": "D\n\nDirected Graph (Digraph):\nA graph in which edges have a direction, indicating a one-way relationship between nodes.\nDegree (Node Degree):\nThe number of edges incident to a node. In directed graphs, this can be divided into in-degree (number of incoming edges) and out-degree (number of outgoing edges)."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#g",
-    "href": "GNN-CS224W-Notes/Glossary.html#g",
-    "title": "GNN CS224W Notes",
-    "section": "G",
-    "text": "G\n\nGraph:\nA mathematical structure composed of a set of nodes (vertices) and a set of edges that connect pairs of nodes. Graphs are used to model relationships between entities.\nGraph Representations:\nMethods for encoding a graph into a data structure that can be processed by algorithms, such as using an adjacency matrix or an adjacency list."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#m",
-    "href": "GNN-CS224W-Notes/Glossary.html#m",
-    "title": "GNN CS224W Notes",
-    "section": "M",
-    "text": "M\n\nManual Feature Engineering:\nThe process of manually selecting or designing features from raw data for use in machine learning models. In Graph ML, representation learning often reduces the need for extensive manual feature engineering.\nMultigraph:\nA graph that allows multiple edges (parallel edges) between the same pair of nodes."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#n",
-    "href": "GNN-CS224W-Notes/Glossary.html#n",
-    "title": "GNN CS224W Notes",
-    "section": "N",
-    "text": "N\n\nNode:\nThe fundamental unit or vertex in a graph, representing an individual entity.\nNode Embedding:\nA learned vector representation of a node in a d-dimensional space that captures the node’s properties and its structural position within the graph."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#r",
-    "href": "GNN-CS224W-Notes/Glossary.html#r",
-    "title": "GNN CS224W Notes",
-    "section": "R",
-    "text": "R\n\nRepresentation Learning:\nThe process by which a model automatically learns to represent data (such as nodes in a graph) in a way that is useful for downstream tasks, minimizing the need for manual feature engineering."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Glossary.html#s",
-    "href": "GNN-CS224W-Notes/Glossary.html#s",
-    "title": "GNN CS224W Notes",
-    "section": "S",
-    "text": "S\n\nSpatial Graph:\nA graph in which nodes have a physical or geometric interpretation, such as representing amino acids in a protein where edges are defined based on spatial proximity.\nStrong Connectivity:\nIn a directed graph, the condition where for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\nStrongly Connected Components:\nMaximal subgraphs of a directed graph in which every node is reachable from every other node via directed paths.\nWeak Connectivity:\nIn a directed graph, the graph is weakly connected if replacing all directed edges with undirected edges results in a connected graph."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html",
-    "title": "GNN CS224W Notes",
-    "section": "",
-    "text": "Lecture 5.3 – Collective Classification: Belief Propagation  Video: Lecture 5.3 – Collective Classification: Belief Propagation\nSNAP GitHub: SNAP GitHub"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#discussion-of-key-concepts",
-    "title": "GNN CS224W Notes",
-    "section": "Discussion of Key Concepts",
-    "text": "Discussion of Key Concepts\n\nLoopy Belief Propagation\nA dynamic‐programming‐style approach on graphs with cycles, implemented by passing messages along edges until beliefs stabilize (or a max iteration cap).\nMessage Passing (Core Operation)\n\nReceive: Each node listens to incoming messages from all its neighbors.\n\nUpdate: It updates its own belief based on those messages plus its prior.\n\nSend: It forwards a new message to each neighbor.\n\nTree vs. Loopy Graphs\n\nTree: Messages can be scheduled leaf→root then root→leaf; exact inference in two passes.\n\nLoopy Graph: No valid topological order; messages become interdependent—but you can still run BP iteratively, and in practice cycles often have only weak dampening effects.\n\nLabel–Label Potential Matrix\nEncodes compatibility between neighbor labels. In a homophilous network, the matrix has high values on its diagonal (same‐class pairs).\nPrior Belief\nEach node (i) starts with a prior belief (e.g., from a local classifier) about belonging to each class.\nBehavior on Cyclic Graphs\n\nCannot enforce a single sweep order—messages reinforce initial priors.\n\nEmpirically, loopy BP often converges even though theoretical guarantees are absent.\n\nPros of Loopy BP\n\nEasy to parallelize and implement.\n\nScales to large graphs with simple local updates."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#my-personal-takeaways",
-    "title": "GNN CS224W Notes",
-    "section": "My Personal Takeaways",
-    "text": "My Personal Takeaways\n\nApproximate but Effective:\nDespite lacking convergence guarantees on cycles, loopy BP often yields high‐quality approximations in real networks.\nModular Message Functions:\nDefining clear “prior → message → update” functions decouples model design from implementation, making it easy to swap potential functions.\nScalability:\nLocalized operations allow for distributed or asynchronous execution, crucial for very large graphs."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.3_Collective Classification.html#next-steps",
-    "title": "GNN CS224W Notes",
-    "section": "Next Steps",
-    "text": "Next Steps\n\nImplement Loopy BP:\nCode belief propagation on a small cyclic graph (e.g., a grid), measure convergence behavior vs. iteration count.\n\nFurther Reading:\n\nYedidia, Freeman, Weiss, “Understanding Belief Propagation and its Generalizations” (2003)\n\nRichardson & Domingos, “Markov Logic Networks” (2006)"
-  },
-  {
     "objectID": "GNN-CS224W-Notes/Notes/Lesson 5/5.1_Message passing and Node Classification.html",
     "href": "GNN-CS224W-Notes/Notes/Lesson 5/5.1_Message passing and Node Classification.html",
     "title": "GNN CS224W Notes",
@@ -462,151 +532,32 @@
     "text": "Next Steps\n\nExplore Advanced Variants\nInvestigate probabilistic message passing methods (e.g., belief propagation, probabilistic relational models) to better handle uncertainty in node labels.\nFurther Reading\n\nSen, P., Getoor, L., et al. “Collective Classification in Network Data” (2008)\nMacskassy, S. A., & Provost, F. “Classification in Networked Data: A Toolkit and a Univariate Case Study” (2007)"
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html",
-    "title": "Embedding Entire Graphs",
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html",
+    "title": "Traditional Feature-based Methods: Link",
     "section": "",
-    "text": "Video: Lecture 3.3 – Embedding Entire Graphs\nOfficial Course Slides: Link to Slides\n\n\n\nThis lecture focuses on methods to embed an entire graph (or a subgraph) into a continuous vector space. Rather than representing individual nodes, the goal here is to capture the holistic structure of the graph. Key topics include:\n\nGraph Embedding Objectives:\nThe main objective is to map a whole graph (or subgraph) into an embedding space such that similar graphs have embeddings that are close together. Main approaches involve:\n\nAveraging Node Embeddings:\nA baseline method that simply averages the embeddings of nodes already computed within a graph. -&gt; classification of molecules\nVirtual Node Approach:\nAn improved technique introduces a virtual node whose embedding is learned via methods similar to node2vec. This node acts as a proxy for the entire graph, thereby capturing a more robust summary of the structure.\n\nAnonymous Walks:\nAnonymous walks represent random walks by recording the index of the first time each node is visited, effectively ignoring the actual node identities.\n\nInvariant Representation:\nSince the anonymous walk depends solely on the order of first visits, two walks with the same order yield the same representation an n-dimensional vector where each dimension represents the probability of a particular anonymous walk pattern in the graph.\nRandom Walk Sampling:\nA crucial aspect discussed is determining the number of random walks needed to reliably capture the graph’s structure.\n\nLearning Embeddings for Entire Graphs:\nThe idea is to learn a vector Zg that describes the graph. This is done by:\n\nRunning T different random walks on the graph.\nTreating the set (or neighborhood) of random walks as the context, much like in DeepWalk for nodes.\nOptimizing the embeddings to maximize the likelihood of the observed co-occurrences of these random walks.\n\nThe final graph embedding can be used for tasks such as graph classification, where the dot product between embeddings is used to measure similarity or as input features to a neural network.\nHierarchical Aggregation:\nOne important question is to find methods to hierarchically aggregate node-level and walk-level information to obtain a comprehensive embedding of the entire graph.\n\n\n\n\n\n\nPower of Anonymous Walks:\nThe anonymous walk approach abstracts away node identities and focuses solely on structural patterns. This invariance allows for a generalized representation of graph topology across different graphs.\nTrade-offs in Random Walk Sampling:\nA key challenge is determining the adequate number of random walks to accurately capture the underlying structure. It’s a delicate balance between sampling enough information and maintaining computational efficiency.\nTask Independence:\nMuch like node embeddings, these graph-level embeddings are task-independent. They provide a general-purpose representation that can be plugged into various downstream applications—whether for graph classification, similarity assessment, or as inputs to more complex models.\n\n\n\n\n\n\nExplore Hierarchical Methods:\nDelve into upcoming lectures and readings that address how to hierarchically aggregate information from nodes and substructures to further refine graph embeddings.\nFurther Reading:\nInvestigate seminal papers on graph kernels and graph embedding methods (Graph2Vec) to deepen your understanding of the theory and applications behind these techniques.\n\n\nEnd of Lecture 3.3 Notes"
+    "text": "Video: Lecture 2.2 - Traditional Feature-based Methods\nOfficial Course Slides: [https://web.stanford.edu/class/cs224w/slides/02-nodeemb.pdf)\n\n\n\nThis lecture explores traditional, handcrafted approaches for link prediction, focusing on how to extract and utilize graph structural features to predict the presence of links between nodes. Key topics include:\n\nLink Prediction Overview:\nThe task is formulated as a binary classification problem where, given a pair of nodes, the goal is to predict whether a link exists. Handcrafted features derived from the graph’s topology are used as predictors.\nLocal Similarity Metrics:\nSeveral metrics are introduced to assess the likelihood of a link:\n\nCommon Neighbors: counts the number of shared neighbors between two nodes.\nJaccard Coefficient: ratio of common neighbors on the union of their neighbors.\nAdamic/Adar Index: weighs shared neighbors inversely by their overall connectivity.\n\nKatz Index:\nMoves beyond immediate neighborhoods by summing over the total number of paths between node pairs. A damping factor exponentially penalizes longer paths, thus incorporating both local and global network information.\nAdjacency Matrix Powers:\nThe lecture explains that the k-th power of the adjacency matrix reveals the number of distinct paths of length k between nodes. Under the proper conditions, the infinite series summing the weighted powers of the adjacency matrix can be expressed in a closed form. This provides an elegant mathematical formulation of link prediction that unifies local metrics (like common neighbors) with contributions from longer-range connections.\n\n\n\n\n\n\nCapturing Global Structure:\nTechniques like the Katz Index and adjacency matrix powers allow for the consideration of paths of varying lengths, integrating both local and global information.\nMathematical Elegance:\nThe closed-form expression derived from the weighted sum of adjacency matrix powers offers a powerful and compact way to summarize connectivity, even if it is often computationally intensive for large graphs.\nScalability Concerns:\nTraditional metrics can be computationally expensive on large graphs, emphasizing the importance of exploring scalable alternatives in modern graph learning.\n\n\n\n\n\n\nFurther Reading:\nExplore research on the Katz Index, matrix power methods, and their closed-form solutions to understand the theoretical foundations behind these techniques.\nPractical Applications:\nConsider how these traditional metrics can serve as baseline features when designing and benchmarking modern link prediction algorithms.\n\n\nEnd of Lecture 2.2 Notes"
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#discussion-of-key-concepts",
-    "title": "Embedding Entire Graphs",
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#discussion-of-key-concepts",
+    "title": "Traditional Feature-based Methods: Link",
     "section": "",
-    "text": "This lecture focuses on methods to embed an entire graph (or a subgraph) into a continuous vector space. Rather than representing individual nodes, the goal here is to capture the holistic structure of the graph. Key topics include:\n\nGraph Embedding Objectives:\nThe main objective is to map a whole graph (or subgraph) into an embedding space such that similar graphs have embeddings that are close together. Main approaches involve:\n\nAveraging Node Embeddings:\nA baseline method that simply averages the embeddings of nodes already computed within a graph. -&gt; classification of molecules\nVirtual Node Approach:\nAn improved technique introduces a virtual node whose embedding is learned via methods similar to node2vec. This node acts as a proxy for the entire graph, thereby capturing a more robust summary of the structure.\n\nAnonymous Walks:\nAnonymous walks represent random walks by recording the index of the first time each node is visited, effectively ignoring the actual node identities.\n\nInvariant Representation:\nSince the anonymous walk depends solely on the order of first visits, two walks with the same order yield the same representation an n-dimensional vector where each dimension represents the probability of a particular anonymous walk pattern in the graph.\nRandom Walk Sampling:\nA crucial aspect discussed is determining the number of random walks needed to reliably capture the graph’s structure.\n\nLearning Embeddings for Entire Graphs:\nThe idea is to learn a vector Zg that describes the graph. This is done by:\n\nRunning T different random walks on the graph.\nTreating the set (or neighborhood) of random walks as the context, much like in DeepWalk for nodes.\nOptimizing the embeddings to maximize the likelihood of the observed co-occurrences of these random walks.\n\nThe final graph embedding can be used for tasks such as graph classification, where the dot product between embeddings is used to measure similarity or as input features to a neural network.\nHierarchical Aggregation:\nOne important question is to find methods to hierarchically aggregate node-level and walk-level information to obtain a comprehensive embedding of the entire graph."
+    "text": "This lecture explores traditional, handcrafted approaches for link prediction, focusing on how to extract and utilize graph structural features to predict the presence of links between nodes. Key topics include:\n\nLink Prediction Overview:\nThe task is formulated as a binary classification problem where, given a pair of nodes, the goal is to predict whether a link exists. Handcrafted features derived from the graph’s topology are used as predictors.\nLocal Similarity Metrics:\nSeveral metrics are introduced to assess the likelihood of a link:\n\nCommon Neighbors: counts the number of shared neighbors between two nodes.\nJaccard Coefficient: ratio of common neighbors on the union of their neighbors.\nAdamic/Adar Index: weighs shared neighbors inversely by their overall connectivity.\n\nKatz Index:\nMoves beyond immediate neighborhoods by summing over the total number of paths between node pairs. A damping factor exponentially penalizes longer paths, thus incorporating both local and global network information.\nAdjacency Matrix Powers:\nThe lecture explains that the k-th power of the adjacency matrix reveals the number of distinct paths of length k between nodes. Under the proper conditions, the infinite series summing the weighted powers of the adjacency matrix can be expressed in a closed form. This provides an elegant mathematical formulation of link prediction that unifies local metrics (like common neighbors) with contributions from longer-range connections."
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#my-personal-takeaways",
-    "title": "Embedding Entire Graphs",
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#my-personal-takeaways",
+    "title": "Traditional Feature-based Methods: Link",
     "section": "",
-    "text": "Power of Anonymous Walks:\nThe anonymous walk approach abstracts away node identities and focuses solely on structural patterns. This invariance allows for a generalized representation of graph topology across different graphs.\nTrade-offs in Random Walk Sampling:\nA key challenge is determining the adequate number of random walks to accurately capture the underlying structure. It’s a delicate balance between sampling enough information and maintaining computational efficiency.\nTask Independence:\nMuch like node embeddings, these graph-level embeddings are task-independent. They provide a general-purpose representation that can be plugged into various downstream applications—whether for graph classification, similarity assessment, or as inputs to more complex models."
+    "text": "Capturing Global Structure:\nTechniques like the Katz Index and adjacency matrix powers allow for the consideration of paths of varying lengths, integrating both local and global information.\nMathematical Elegance:\nThe closed-form expression derived from the weighted sum of adjacency matrix powers offers a powerful and compact way to summarize connectivity, even if it is often computationally intensive for large graphs.\nScalability Concerns:\nTraditional metrics can be computationally expensive on large graphs, emphasizing the importance of exploring scalable alternatives in modern graph learning."
   },
   {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 3/3.3_Embedding Entire Graphs.html#next-steps",
-    "title": "Embedding Entire Graphs",
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.2_Traditional Feature-based Methods.html#next-steps",
+    "title": "Traditional Feature-based Methods: Link",
     "section": "",
-    "text": "Explore Hierarchical Methods:\nDelve into upcoming lectures and readings that address how to hierarchically aggregate information from nodes and substructures to further refine graph embeddings.\nFurther Reading:\nInvestigate seminal papers on graph kernels and graph embedding methods (Graph2Vec) to deepen your understanding of the theory and applications behind these techniques.\n\n\nEnd of Lecture 3.3 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "Video: Lecture 1.2 – Applications of Graph ML\nOfficial Course Slides: Stanford CS224W\n\n\n\n\n\n\nProtein Structure & AlphaFold:\n\nModeling the three-dimensional organization of proteins as graphs.\nSpatial Graph Idea:\n\nNodes: Represent amino acids.\n\nEdges: Connect amino acids based on proximity.\n\nUnderpins methods like AlphaFold.\n\n\n\n\n\n\nEdge Prediction & Recommender Systems:\n\nPredicting the existence or strength of edges between nodes.\nLearning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.\n\nBipartite Graphs in Image Analysis:\n\nCombining image features with graph structure can outperform using image data alone.\n\nPredicting Drug-Protein Impact:\n\nAnalyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.\n\n\n\n\n\n\nTraffic Prediction:\n\nUsing subgraph-level ML tasks to forecast traffic patterns.\nDeployed in production systems like Google Maps. ### Graph-Level Tasks\n\nDrug Discovery & Molecule Generation:\n\nApplying graph-level ML for drug discovery, including deep learning for antibiotic discovery.\nGraph Generation:\n\nGenerating molecules in a targeted way for novel drug design.\n\n\n\n\n\n\n\n\n\nTask Diversity:\nGraph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.\nRepresentation Learning is Central:\nLearning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.\nReal-World Impact:\nApplications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations.\n\n\n\n\n\n\n“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”\n(Paraphrased from the lecture)\n\n\n\n\n\n\nLecture 1.3:\nNext lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.\nFurther Reading:\nReview the notes from Lecture 1.2 and consult the Glossary for key terms related to graph representation.\n\n\nEnd of Lecture 1.2 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#key-topics",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#key-topics",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "Protein Structure & AlphaFold:\n\nModeling the three-dimensional organization of proteins as graphs.\nSpatial Graph Idea:\n\nNodes: Represent amino acids.\n\nEdges: Connect amino acids based on proximity.\n\nUnderpins methods like AlphaFold.\n\n\n\n\n\n\nEdge Prediction & Recommender Systems:\n\nPredicting the existence or strength of edges between nodes.\nLearning embeddings so that related nodes are closer in the d-dimensional space than unrelated ones.\n\nBipartite Graphs in Image Analysis:\n\nCombining image features with graph structure can outperform using image data alone.\n\nPredicting Drug-Protein Impact:\n\nAnalyzing drug-protein interaction networks to forecast the impact of drug combinations and potential side effects.\n\n\n\n\n\n\nTraffic Prediction:\n\nUsing subgraph-level ML tasks to forecast traffic patterns.\nDeployed in production systems like Google Maps. ### Graph-Level Tasks\n\nDrug Discovery & Molecule Generation:\n\nApplying graph-level ML for drug discovery, including deep learning for antibiotic discovery.\nGraph Generation:\n\nGenerating molecules in a targeted way for novel drug design."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#my-personal-takeaways",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "Task Diversity:\nGraph ML spans from node-level tasks (protein modeling) to graph-level tasks (drug discovery), showcasing its versatility.\nRepresentation Learning is Central:\nLearning embeddings that reflect similarity is key to tasks like edge prediction and recommender systems.\nReal-World Impact:\nApplications such as traffic prediction and drug-protein interaction analysis demonstrate how Graph ML can drive practical innovations."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#quotes-or-interesting-points",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#quotes-or-interesting-points",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "“Capturing structure at different levels—from individual nodes to entire graphs—unlocks powerful applications across diverse domains.”\n(Paraphrased from the lecture)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.2 Applications & Tasks in Graph ML.html#next-steps",
-    "title": "Applications & Tasks in Graph ML",
-    "section": "",
-    "text": "Lecture 1.3:\nNext lecture will cover the choice of graph representation, exploring various methods, their trade-offs and how these representations affect the performance of Graph ML applications.\nFurther Reading:\nReview the notes from Lecture 1.2 and consult the Glossary for key terms related to graph representation.\n\n\nEnd of Lecture 1.2 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "Video: Lecture 1.3 – Choice of Graph Representation\nOfficial Course Slides: Stanford CS224W\n\n\n\n\nBuilding a Graph:\n\nDeciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.\n\nGraph Types:\n\nUndirected vs. Directed:\n\nRefer to the Glossary for definitions on node degree and other related terms.\n\nBipartite Graphs:\n\nGraphs that consist of two distinct sets of nodes with edges only between sets.\n\n\nGraph Representations:\n\nAdjacency Matrix:\n\nA common method to represent graphs.\nThese matrices are typically sparse (e.g., in human social networks or email graphs).\n\nAdjacency List:\n\nOften more efficient and easier to use for sparse graphs.\n\n\nNodes and Edges Properties:\n\nBoth nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.\n\nMultigraphs:\n\nGraphs that allow more than one edge between the same pair of nodes.\n\nConnectivity Concepts:\n- General Connectivity:\n- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - Directed Graph Connectivity:\n- Strong Connectivity: A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\n- Weak Connectivity: A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.\n\nStrongly Connected Components:\n\nThese are maximal subgraphs in which every node is reachable from every other node via directed paths.\n\n\n\n\n\n\n\n\nChoosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.\nDeciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.\nFamiliarity with different representations (adjacency matrices vs. lists) and connectivity concepts is key to harnessing the full power of Graph ML.\n\n\n\n\n\n\n“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”\n(Paraphrased from the lecture)\n\n\n\n\n\n\nNext lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#key-topics",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#key-topics",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "Building a Graph:\n\nDeciding on the object of interest is crucial. In some cases, the choice is unambiguous, while in others, multiple valid options exist—making the decision particularly important.\n\nGraph Types:\n\nUndirected vs. Directed:\n\nRefer to the Glossary for definitions on node degree and other related terms.\n\nBipartite Graphs:\n\nGraphs that consist of two distinct sets of nodes with edges only between sets.\n\n\nGraph Representations:\n\nAdjacency Matrix:\n\nA common method to represent graphs.\nThese matrices are typically sparse (e.g., in human social networks or email graphs).\n\nAdjacency List:\n\nOften more efficient and easier to use for sparse graphs.\n\n\nNodes and Edges Properties:\n\nBoth nodes and edges can carry additional properties such as weight, ranking, type, sign, etc.\n\nMultigraphs:\n\nGraphs that allow more than one edge between the same pair of nodes.\n\nConnectivity Concepts:\n- General Connectivity:\n- A graph is considered connected if every node can be reached from every other node via a path; otherwise, there may be isolated nodes. - In graphs with multiple components, the adjacency matrix often displays a block diagonal structure. - Directed Graph Connectivity:\n- Strong Connectivity: A directed graph is strongly connected if, for every pair of nodes (u, v), there exists a directed path from u to v and from v to u.\n- Weak Connectivity: A directed graph is weakly connected if, when all edges are treated as undirected, the graph becomes connected—even though a directed path between every pair of nodes may not exist.\n\nStrongly Connected Components:\n\nThese are maximal subgraphs in which every node is reachable from every other node via directed paths."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#my-personal-takeaways",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "Choosing the right graph representation is foundational—it shapes how effectively structural information is captured and utilized.\nDeciding what constitutes the object of interest in graph construction can vary by application and is a non-trivial decision.\nFamiliarity with different representations (adjacency matrices vs. lists) and connectivity concepts is key to harnessing the full power of Graph ML."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#quotes-or-interesting-points",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#quotes-or-interesting-points",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "“The way a graph is represented can drastically affect the performance of downstream Graph ML tasks.”\n(Paraphrased from the lecture)"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 1/1.3_Choice of Graph Representation.html#next-steps",
-    "title": "Choice of Graph Representation",
-    "section": "",
-    "text": "Next lecture on Node Embeddings will give a deeper understanding of how nodes are embedded based on structural and attribute similarities.\nRefer to the Glossary for detailed definitions of key terms like node degree, connectivity, and graph types.\n\n\nEnd of Lecture 1.3 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#discussion-of-key-concepts",
-    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
-    "section": "Discussion of Key Concepts",
-    "text": "Discussion of Key Concepts\nThis lecture explores traditional, handcrafted approaches to assess node importance within a graph. It covers:\n\nNode Degree:\nThe simplest metric that counts the number of edges incident to a node. It provides a basic measure of connectivity and hints at a node’s potential influence.\nCentrality Measures:\nThese go beyond simple connectivity to evaluate the role of a node within the overall structure of the network.\n\nEigenvector Centrality:\nMeasures a node’s influence by considering the importance of its neighbors. It is computed from the leading eigenvector of the graph’s adjacency matrix (associated with the largest eigenvalue).\nBetweenness Centrality:\nQuantifies how frequently a node lies on the shortest paths between other nodes, indicating its role as a bridge or bottleneck within the network.\nCloseness Centrality:\nAssesses how close a node is to all other nodes based on the average shortest path lengths, showing how quickly information can spread from that node.\nClustering Centrality:\nReflects the degree to which a node’s neighbors are interconnected, offering insights into the local density and community structure.\n\nGraphlets:\nThese are small, connected subgraphs that capture recurring local patterns in the network. Graphlets serve as additional features to describe the local topology around each node, complementing the traditional centrality metrics.\n\nBy combining these techniques, one can obtain a robust and multi-faceted understanding of node importance, which not only aids in interpreting graph structure but also sets the stage for advanced approaches like Graph Neural Networks."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#my-personal-takeaways",
-    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
-    "section": "My Personal Takeaways",
-    "text": "My Personal Takeaways\n\nBaseline Interpretability:\nTraditional metrics such as node degree and centrality measures are straightforward and provide an intuitive starting point for assessing node importance.\nImportance of Feature Normalization:\nA critical point from the slides is the need to normalize centrality measures. Normalization ensures that values are comparable across nodes and minimizes the impact of outliers.\nSimplicity vs. Complexity Trade-off:\nWhile handcrafted features are transparent and easy to compute, they may fail to capture complex interactions in the data, highlighting the limitations that motivate the shift toward learning-based methods like GNNs.\nComplementary Insights:\nNo single metric tells the whole story—combining multiple centrality measures with graphlet features leads to a more comprehensive view of node importance.\nScalability and Robustness:\nAn additional important insight from the slides is the challenge of scaling these methods to large graphs and ensuring robustness to noise, issues that further justify the move to automated representation learning with GNNs."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 2/2.1_Traditional Feature-based Methods Node.html#next-steps",
-    "title": "Lecture 2.1: Traditional Feature-based Methods: Node",
-    "section": "Next Steps",
-    "text": "Next Steps\n\nLecture 2.2:\nThe next lecture will focus on GNN-based approaches for node representation learning, addressing the limitations of traditional feature-based methods.\nFurther Reading:\nExplore foundational papers on centrality measures and graphlet analysis for a deeper understanding of these traditional techniques.\n\n\nEnd of Lecture 2.1 Notes"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html",
-    "title": "GNN CS224W Notes",
-    "section": "",
-    "text": "Lecture 4.2 – PageRank: How to Solve?\nVideo: Lecture 4.2 - PageRank: How to Solve?\nOfficial Course Slides: Link to Slides"
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#discussion-of-key-concepts",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#discussion-of-key-concepts",
-    "title": "GNN CS224W Notes",
-    "section": "Discussion of Key Concepts",
-    "text": "Discussion of Key Concepts\n\nPower Iteration Method:\nTo compute the PageRank vector , we use power iteration. Starting from any initial probability distribution , we repeatedly apply it until convergence. Each iteration involves one sparse matrix–vector multiplication plus a simple teleportation adjustment.\nConvergence & Uniqueness:\nThe Google matrix is constructed to be positive and column‑stochastic, ensuring a unique stationary distribution. Power iteration converges geometrically at a rate determined by the spectral gap, which is closely related to the damping factor.\nDead Ends & Spider Traps:\nNodes with zero out‑degree (dead ends) and subgraphs with no outgoing edges (spider traps) cause probability mass to vanish or become trapped, breaking the Markov chain’s stochasticity and preventing meaningful global rankings.\nTeleportation Fix:\nIt has been introduced a damping factor (commonly set to 0.8–0.9) and define the Google matrix, where teleportation simultaneously solves both dead ends and spider traps by ensuring irreducibility and aperiodicity.\nPageRank Equation:\nWe compute this solution via power iteration rather than sampling random walks, trading Monte Carlo variability for deterministic precision.\nDamping Factor Choice:\nEmpirically, setting balances following links and exploring new nodes, yielding robust rankings and reasonable convergence speeds."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#my-personal-takeaways",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#my-personal-takeaways",
-    "title": "GNN CS224W Notes",
-    "section": "My Personal Takeaways",
-    "text": "My Personal Takeaways\n\nTeleportation as Global Reset & Discovery:\nTeleportation not only prevents rank sinks but also injects a uniform exploration step, akin to hitting the “shuffle” button and discovering fresh parts of the graph.\nSpectral Gap as a Graph Health Indicator:\nThe speed of convergence reveals graph cohesion: well connected, rapidly mixing networks converge quickly, while modular graphs with tight communities stall the iteration.\nDeterministic Precision over Stochastic Trials:\nBy solving an eigenvector problem directly, we bypass the noise and variance of sampling random walks, gaining repeatable and exact rankings at the expense of relying on linear algebraic solvers."
-  },
-  {
-    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#next-steps",
-    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.2_PageRank_How_to_Solve?.html#next-steps",
-    "title": "GNN CS224W Notes",
-    "section": "Next Steps",
-    "text": "Next Steps\n\nExplore Localized PageRank:\nInvestigate push algorithms for personalized PageRank to see how local computations approximate global importance efficiently.\nFurther Reading:\n\nPage et al. (1999): The PageRank Citation Ranking: Bringing Order to the Web\nAndersen, Chung & Lang (2006): _Local Graph Partitioning using PageRank Vectors\nJeh & Widom (2003): Scaling Personalized Web Search\n\n\n\nEnd of Lecture 4.2 Notes"
+    "text": "Further Reading:\nExplore research on the Katz Index, matrix power methods, and their closed-form solutions to understand the theoretical foundations behind these techniques.\nPractical Applications:\nConsider how these traditional metrics can serve as baseline features when designing and benchmarking modern link prediction algorithms.\n\n\nEnd of Lecture 2.2 Notes"
   },
   {
     "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.3_Random Walk with Restarts.html",
@@ -635,5 +586,54 @@
     "title": "GNN CS224W Notes",
     "section": "Next Steps",
     "text": "Next Steps\n\nTest on Real Data:\nRun RWR on social or citation graphs, comparing top-k proximity to known labels or communities.\nFurther Reading:\n\nTong, Faloutsos & Pan (2006): _Fast Random Walk with Restart and Its Applications\n\nMaehara & Kawarabayashi (2020): Computing Approximate Personalized PageRank on Dynamic Graphs\n\n\n\nEnd of Lecture 4.3 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html",
+    "title": "GNN CS224W Notes",
+    "section": "",
+    "text": "Lecture 4.4 – Matrix Factorization and Node Embeddings\nVideo: Lecture 4.4 - Matrix Factorization and Node Embeddings\nOfficial Course Slides: Link to Slides"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#discussion-of-key-concepts",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#discussion-of-key-concepts",
+    "title": "GNN CS224W Notes",
+    "section": "Discussion of Key Concepts",
+    "text": "Discussion of Key Concepts\n\nEmbedding via Matrix Factorization:\nWe represent the graph by its adjacency matrix \\(A\\) and seek a low dimensional embedding matrix \\(Z \\in R^{N \\times d}\\) such that: \\[\n              A \\approx Z\\,Z^T\n              \\] We solve \\(\\min_{Z} \\|A - Z Z^T\\|_F^2\\) to find our embeddings, where is the Frobenius norm. This factorization yields node vectors whose inner products reconstruct original link strengths.\nScalability & Computation:\nComputing the full factorization is and memory‑heavy for large graphs. Techniques include truncated SVD or sampling to approximate the Frobenius‑norm minimization.\nLimitations:\n\nNo Inductive Ability: only nodes seen during training have embeddings; new or unseen nodes cannot be embedded without retraining.\nStructural Similarity Blindness: captures identity of neighbors but fails to detect isomorphic or structurally equivalent roles (e.g., two nodes with similar patterns but different neighbor identities yield different embeddings).\nFeature Agnosticism: uses only adjacency structure; ignores potentially useful node attributes or edge labels.\n\nBridging to GNNs:\nTo incorporate both structure and feature information and to support inductive learning—Graph Neural Networks (GNNs) and deep graph architectures learn parametric aggregation functions. They generalize embeddings to unseen nodes and capture structural patterns beyond direct neighbor identity."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#my-personal-takeaways",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#my-personal-takeaways",
+    "title": "GNN CS224W Notes",
+    "section": "My Personal Takeaways:",
+    "text": "My Personal Takeaways:\n\nFrobenius Norm as Graph Memory:\nMinimizing is like preserving every edge weight in a compressed memory bank, each dimension in stores a global snapshot of connectivity.\nInduction Gap as Achilles’ Heel:\nMatrix factorization is brilliant at compression but deaf to change: once the graph grows, the old embeddings sit static, requiring full retraining to learn new patterns.\nFrom Static Factorization to Dynamic Filtering:\nGNNs extend pure MF by learning filters that convolve node features over structure; this shift from memorizing links to learning propagation rules bridges the gap between representation and reasoning on graphs."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#next-steps",
+    "href": "GNN-CS224W-Notes/Notes/Lesson 4/4.4_Matrix Factorization and Node Embeddings.html#next-steps",
+    "title": "GNN CS224W Notes",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nImplement MF Embeddings:\nApply truncated SVD or gradient‑descent on for a small citation or social graph. Visualize how embedding quality (reconstruction error) varies with.\nFurther Reading:\n\nBelkin & Niyogi (2001): Laplacian Eigenmaps for Dimensionality Reduction and Data Representation\n\nKipf & Welling (2017): Semi‑Supervised Classification with Graph Convolutional Networks\n\n\n\nEnd of Lecture 4.4 Notes"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html",
+    "href": "GNN-CS224W-Notes/Lessons_index.html",
+    "title": "GNN CS224W Notes",
+    "section": "",
+    "text": "Below is a high-level index for all 60+ lessons in the Stanford GNN Course.\nFeel free to update these groupings if you prefer a different organization."
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
+    "href": "GNN-CS224W-Notes/Lessons_index.html#module-1-introduction-basics",
+    "title": "GNN CS224W Notes",
+    "section": "Module 1: Introduction & Basics",
+    "text": "Module 1: Introduction & Basics\n\n1.1_Why_Graphs\n1.2_Applications & Tasks in Graph ML\n1.3_Choice of Graph Representation"
+  },
+  {
+    "objectID": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
+    "href": "GNN-CS224W-Notes/Lessons_index.html#module-2-core-gnn-architectures",
+    "title": "GNN CS224W Notes",
+    "section": "Module 2: Core GNN Architectures",
+    "text": "Module 2: Core GNN Architectures"
   }
 ]
